@@ -115,6 +115,10 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
+                            <nonFilteredFileExtensions>
+                                <nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>swf</nonFilteredFileExtension>
+                            </nonFilteredFileExtensions>
                             <outputDirectory>${basedir}/target/classes/resources</outputDirectory>
                             <resources>
                                 <resource>
