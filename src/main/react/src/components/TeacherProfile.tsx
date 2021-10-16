@@ -9,7 +9,11 @@ import {
   ListItemText,
 } from "@mui/material";
 
-import { SIDE_MENU_STRING_1, SIDE_MENU_STRING_2, SIDE_MENU_STRING_3 } from '../utility/constants'
+import {
+  SIDE_MENU_STRING_1,
+  SIDE_MENU_STRING_2,
+  SIDE_MENU_STRING_3,
+} from "../utility/constants";
 
 import ArchiveIcon from "@mui/icons-material/Archive";
 import AddBoxIcon from "@mui/icons-material/AddBox";

@@ -1,49 +1,42 @@
-import { List, Divider } from "@mui/material";
+import { List, Grid } from "@mui/material";
+import { IOffersInterface } from "../types/interfaces";
+import { TeacherProfile } from "./TeacherProfile";
 import OfferListItem from "./OfferListItem";
 
-export const OffersList = () => {
+export const OffersList = ({ offers }: IOffersInterface) => {
+
   return (
-      <List>
-        <OfferListItem
-          avatarUrl={"avatar.jpg"}
-          avatarAlt={"Whitney Houston"}
-          title={"Javascript korepetycje"}
-          subtitle={
-            "Korepetycje z React.js + Typescript w trybie przyspieszonym"
+    <Grid container direction="row">
+      <Grid item xs={12} md={9}>
+        <List>
+          {
+            offers.map((offer) => (
+              <OfferListItem
+                key={offer.offerId}
+                offerId={offer.offerId}
+                avatarUrl={offer.avatarUrl}
+                avatarAlt={offer.avatarAlt}
+                title={offer.title}
+                subtitle={offer.subtitle}
+                languageChip={offer.languageChip}
+                cityChip={offer.cityChip}
+                onlineChip={offer.onlineChip}
+                price={offer.price}
+                time={offer.time}
+                rating={offer.rating}
+              />
+            ))
           }
-          languageChip={"Javascript"}
-          cityChip={"Gdynia"}
-          onlineChip={"Zdalnie"}
-          price={120}
-          time={60}
-          rating={4}
+          </List>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <TeacherProfile
+          avatarUrl={"userAvatar.jpg"}
+          avatarAlt={"Gary Oldman"}
+          username="Josh"
+          accountType="Teacher"
         />
-        <Divider />
-        <OfferListItem
-          avatarUrl={"avatar2.jpg"}
-          avatarAlt={"Rocky Balboa"}
-          title={"Szybki kurs RUST"}
-          subtitle={"Rust dla początkujących"}
-          languageChip={"Rust"}
-          cityChip={"Katowice"}
-          onlineChip={"Zdalnie"}
-          price={70}
-          time={90}
-          rating={2}
-        />
-        <Divider />
-        <OfferListItem
-          avatarUrl={"avatar3.jpg"}
-          avatarAlt={"Gandalf Szary"}
-          title={"HTML & CSS - od zera do frontendowca"}
-          subtitle={"Podstawy tworzenia stron www"}
-          languageChip={"Html & Css"}
-          cityChip={"Bydgoszcz"}
-          onlineChip={"Zdalnie"}
-          price={49}
-          time={120}
-          rating={5}
-        />
-      </List>
+      </Grid>
+    </Grid>
   );
 };

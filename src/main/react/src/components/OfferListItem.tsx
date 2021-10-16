@@ -14,8 +14,10 @@ import CodeIcon from "@mui/icons-material/Code";
 import PlaceIcon from "@mui/icons-material/Place";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows";
+import { Link as RouterLink } from "react-router-dom";
 
-interface OfferListProps {
+interface IOfferListItem {
+  offerId: number;
   avatarUrl: string;
   avatarAlt: string;
   title: string;
@@ -28,9 +30,11 @@ interface OfferListProps {
   rating: number;
 }
 
-const OfferListItem = (props: OfferListProps) => {
+const OfferListItem = (props: IOfferListItem) => {
   const {
+    offerId,
     avatarUrl,
+    avatarAlt,
     title,
     subtitle,
     languageChip,
@@ -39,7 +43,6 @@ const OfferListItem = (props: OfferListProps) => {
     price,
     time,
     rating,
-    avatarAlt,
   } = props;
 
   return (
@@ -57,8 +60,12 @@ const OfferListItem = (props: OfferListProps) => {
           </Grid>
           <Grid item sm={8}>
             <Typography variant="h5">
-              <Link href="#" underline="hover">
-                {title}
+              <Link underline="hover">
+                <RouterLink
+                  to={{ pathname: "/offer-details", state: { props } }}
+                >
+                  {title}
+                </RouterLink>
               </Link>
               <Typography variant="body2">{subtitle}</Typography>
               <Stack direction="row" spacing={3} sx={{ paddingTop: 2 }}>
@@ -87,7 +94,7 @@ const OfferListItem = (props: OfferListProps) => {
             <Stack direction="column" spacing={0.5}>
               <Box component="span" sx={{ display: "flex" }}>
                 <Typography variant="h5">
-                  {price} zł{" "}
+                  {price} zł
                   <Typography variant="body2">{time} min.</Typography>
                 </Typography>
               </Box>
