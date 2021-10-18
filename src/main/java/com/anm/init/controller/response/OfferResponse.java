@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @Builder(setterPrefix = "with")
 public class OfferResponse {
 
+    private Long id;
     private String firstName;
     private String lastName;
     private String shortDescription;

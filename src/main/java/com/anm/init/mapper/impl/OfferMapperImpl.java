@@ -25,6 +25,7 @@ public class OfferMapperImpl implements OfferMapper {
     @Override
     public OfferResponse mapEntityToResponse(Offer offer) {
         return OfferResponse.builder()
+                .withId(offer.getId())
                 .withFirstName(offer.getFirstName())
                 .withLastName(offer.getLastName())
                 .withShortDescription(offer.getShortDescription())

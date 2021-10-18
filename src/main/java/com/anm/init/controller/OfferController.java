@@ -4,12 +4,12 @@ import com.anm.init.controller.request.OfferRequest;
 import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.service.OfferService;
 import com.anm.init.service.impl.OfferServiceImpl;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -24,14 +24,20 @@ public class OfferController {
     }
 
     @PostMapping("/save")
-    ResponseEntity<Void> saveOffer(@RequestBody OfferRequest request){
+    ResponseEntity<Void> saveOffer(@Valid @RequestBody OfferRequest request){
         offerService.saveOffer(request);
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/get")
     ResponseEntity<List<OfferResponse>> getAll(){
         List<OfferResponse> allOffers = offerService.findAll();
-        return new ResponseEntity<List<OfferResponse>>(allOffers, HttpStatus.OK);
+        return new ResponseEntity<>(allOffers, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> deleteOffer(@PathVariable Long id){
+        offerService.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
