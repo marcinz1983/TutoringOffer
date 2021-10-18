@@ -9,6 +9,7 @@ import {
   Box,
   Rating,
   Button,
+  Paper,
 } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import PlaceIcon from "@mui/icons-material/Place";
@@ -17,45 +18,37 @@ import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows";
 import { Link as RouterLink } from "react-router-dom";
 
 interface IOfferListItem {
-  offerId: number;
-  avatarUrl: string;
-  avatarAlt: string;
-  title: string;
-  subtitle: string;
-  languageChip: string;
-  cityChip: string;
-  onlineChip: string;
+  backgroundDescription: string;
+  firstName: string;
+  lastName: string;
+  longDescription: string;
   price: number;
-  time: number;
-  rating: number;
+  rateDescription: string;
+  shortDescription: string;
 }
 
 const OfferListItem = (props: IOfferListItem) => {
   const {
-    offerId,
-    avatarUrl,
-    avatarAlt,
-    title,
-    subtitle,
-    languageChip,
-    cityChip,
-    onlineChip,
+    firstName,
+    lastName,
+    shortDescription,
+    longDescription,
+    rateDescription,
+    backgroundDescription,
     price,
-    time,
-    rating,
   } = props;
 
   return (
     <>
-      <ListItem>
+      <ListItem sx={{ margin: 2 }}>
         <Grid container>
           <Grid item sm={2}>
             <Avatar
-              alt={avatarAlt}
-              src={avatarUrl}
+              alt={`${firstName} ${lastName}`}
+              src={`${lastName}.jpg`}
               sx={{ width: 80, height: 80 }}
             >
-              {avatarAlt[0]}
+              {firstName[0]}
             </Avatar>
           </Grid>
           <Grid item sm={8}>
@@ -64,26 +57,14 @@ const OfferListItem = (props: IOfferListItem) => {
                 <RouterLink
                   to={{ pathname: "/offer-details", state: { props } }}
                 >
-                  {title}
+                  {shortDescription}
                 </RouterLink>
               </Link>
-              <Typography variant="body2">{subtitle}</Typography>
+              <Typography variant="body2">{longDescription}</Typography>
               <Stack direction="row" spacing={3} sx={{ paddingTop: 2 }}>
                 <Chip
-                  label={languageChip}
+                  label={backgroundDescription}
                   icon={<CodeIcon />}
-                  size="small"
-                  color="info"
-                />
-                <Chip
-                  label={cityChip}
-                  icon={<PlaceIcon />}
-                  size="small"
-                  color="info"
-                />
-                <Chip
-                  label={onlineChip}
-                  icon={<DesktopWindowsIcon />}
                   size="small"
                   color="info"
                 />
@@ -91,19 +72,14 @@ const OfferListItem = (props: IOfferListItem) => {
             </Typography>
           </Grid>
           <Grid item sm={2}>
+            <Typography variant="body1">{`${lastName} ${firstName}`}</Typography>
             <Stack direction="column" spacing={0.5}>
               <Box component="span" sx={{ display: "flex" }}>
                 <Typography variant="h5">
                   {price} zł
-                  <Typography variant="body2">{time} min.</Typography>
+                  <Typography variant="body2">{rateDescription}</Typography>
                 </Typography>
               </Box>
-              <Rating
-                name="size-small"
-                defaultValue={rating}
-                size="small"
-                readOnly
-              />
               <Button variant="text" startIcon={<MailOutlineIcon />}>
                 Kontakt
               </Button>

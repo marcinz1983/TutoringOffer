@@ -20,17 +20,13 @@ type TLocationState = {
     path: string;
   };
   props: {
-    offerId: number;
-    avatarUrl: string;
-    avatarAlt: string;
-    title: string;
-    subtitle: string;
-    languageChip: string;
-    cityChip: string;
-    onlineChip: string;
+    backgroundDescription: string;
+    firstName: string;
+    lastName: string;
+    longDescription: string;
     price: number;
-    time: number;
-    rating: number;
+    rateDescription: string;
+    shortDescription: string;
   };
 };
 export const OfferDetails = (props: object) => {
@@ -38,16 +34,13 @@ export const OfferDetails = (props: object) => {
   const location = useLocation<TLocationState>();
 
   const {
-    avatarUrl,
-    avatarAlt,
-    title,
-    subtitle,
-    languageChip,
-    cityChip,
-    onlineChip,
+    firstName,
+    lastName,
+    shortDescription,
+    longDescription,
+    rateDescription,
+    backgroundDescription,
     price,
-    time,
-    rating,
   } = location.state.props;
 
   return (
@@ -55,22 +48,26 @@ export const OfferDetails = (props: object) => {
       <Grid container sx={{ paddingTop: 10 }}>
         <Grid item sm={2}>
           <Avatar
-            alt={avatarAlt}
-            src={avatarUrl}
+            alt={`${firstName} ${lastName}`}
+            src={`${lastName}.jpg`}
             sx={{ width: 120, height: 120 }}
           >
-            {avatarAlt[0]}
+            {firstName[0]}
           </Avatar>
         </Grid>
         <Grid item sm={8}>
           <Typography variant="h5">
-            <Typography variant="h4">{title}</Typography>
-            <Typography variant="h5">{subtitle}</Typography>
+            <Typography variant="h4">{shortDescription}</Typography>
+            <Typography variant="h5">{longDescription}</Typography>
             <Stack direction="row" spacing={3} sx={{ paddingTop: 2 }}>
-              <Chip label={languageChip} icon={<CodeIcon />} color="info" />
-              <Chip label={cityChip} icon={<PlaceIcon />} color="info" />
               <Chip
-                label={onlineChip}
+                label={backgroundDescription}
+                icon={<CodeIcon />}
+                color="info"
+              />
+              <Chip label={firstName} icon={<PlaceIcon />} color="info" />
+              <Chip
+                label={lastName}
                 icon={<DesktopWindowsIcon />}
                 color="info"
               />
@@ -82,15 +79,9 @@ export const OfferDetails = (props: object) => {
             <Box component="span" sx={{ display: "flex" }}>
               <Typography variant="h5">
                 {price} zł
-                <Typography variant="body2">{time} min.</Typography>
+                <Typography variant="body2">{rateDescription} min.</Typography>
               </Typography>
             </Box>
-            <Rating
-              name="size-small"
-              defaultValue={rating}
-              size="small"
-              readOnly
-            />
             <Button variant="text" startIcon={<MailOutlineIcon />}>
               Kontakt
             </Button>

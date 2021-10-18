@@ -10,67 +10,22 @@ import { OfferDetails } from "./components/OfferDetails";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { IOffersInterface } from "./types/interfaces";
+import { TOffersInterface } from "./types/interfaces";
 import axios from "axios";
 
 function App() {
-
-  //remove this table when api will return data
-  const fakeOffersData = [
-    {
-      offerId: 0,
-      avatarUrl: "avatar2.jpg",
-      avatarAlt: "Whitney Houston",
-      title: "Javascript korepetycje",
-      subtitle: "Korepetycje z React.js + Typescript w trybie przyspieszonym",
-      languageChip: "Javascript",
-      cityChip: "Gdynia",
-      onlineChip: "Zdalnie",
-      price: 120,
-      time: 60,
-      rating: 4,
-    },
-    {
-      offerId: 1,
-      avatarUrl: "avatar2.jpg",
-      avatarAlt: "Rocky Balboa",
-      title: "Szybki kurs RUST",
-      subtitle: "Rust dla początkujących",
-      languageChip: "Rust",
-      cityChip: "Katowice",
-      onlineChip: "Zdalnie",
-      price: 70,
-      time: 90,
-      rating: 2,
-    },
-    {
-      offerId: 2,
-      avatarUrl: "avatar3.jpg",
-      avatarAlt: "Gandalf Szary",
-      title: "HTML & CSS - od zera do frontendowca",
-      subtitle: "Podstawy tworzenia stron www",
-      languageChip: "Html & Css",
-      cityChip: "Bydgoszcz",
-      onlineChip: "Stacjonarnie",
-      price: 49,
-      time: 120,
-      rating: 5,
-    },
-  ];
-  //remove this state when api will return data
-  const [offers, setOffers] =
-    useState<IOffersInterface["offers"]>(fakeOffersData);
-
-    const [offersData, setOffersData] = useState({})
+  const [offersData, setOffersData] = useState<TOffersInterface>([]);
 
   useEffect(() => {
-    axios.get("/api/offer/get")
-        .then(response=>{
-          setOffersData(response.data)
-        })
-        .catch( function (error) {
-            console.log(`${error}`)
-        })
+    axios
+      .get("/api/offer/get")
+      .then((response) => {
+        setOffersData(response.data);
+      })
+      .catch(function (error) {
+        //TODO: add some error display for user
+        console.log(`Something went wrong. ${error}`);
+      });
   }, []);
 
   return (
@@ -87,7 +42,9 @@ function App() {
                 <Route
                   exact
                   path="/"
-                  render={(props) => <OffersList {...props} offers={offers} />}
+                  render={(props) => (
+                    <OffersList {...props} offers={offersData} />
+                  )}
                 />
                 <Route path="/offer-details" component={OfferDetails} />
               </Switch>
