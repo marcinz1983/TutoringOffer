@@ -6,7 +6,6 @@ import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.model.Offer;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface OfferService {
 
@@ -14,7 +13,7 @@ public interface OfferService {
 
     List<OfferResponse> findAll();
 
-    Optional<Offer> findById(Long id);
+    Offer findById(Long id);
 
     void deleteById(Long id);
 

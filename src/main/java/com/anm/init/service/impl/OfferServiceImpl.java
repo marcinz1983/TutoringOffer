@@ -12,12 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class OfferServiceImpl implements OfferService {
 
+    private final static String MISSING_OFFER_MESSAGE = "Offer with the given id does not exist !";
     private final OfferMapper offerMapper;
     private final OfferRepository offerRepository;
 
@@ -39,13 +39,14 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
-    public Optional<Offer> findById(Long id) {
-        return offerRepository.findById(id);
+    public Offer findById(Long id) {
+        return offerRepository.findById(id).orElseThrow(() -> new MissingOfferException(MISSING_OFFER_MESSAGE));
     }
 
     @Override
     public void deleteById(Long id) {
-        offerRepository.findById(id).orElseThrow(()-> new MissingOfferException("Offer with the given id does not exist !"));
+        Offer offer = offerRepository.findById(id).orElseThrow(() -> new MissingOfferException(MISSING_OFFER_MESSAGE));
+        offerRepository.delete(offer);
     }
 
 }
