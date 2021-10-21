@@ -1,8 +1,9 @@
 import { Button,Typography, InputAdornment, Switch, Stack, TextField, Box} from '@mui/material';
-import React, {useState} from "react";
+import {Link} from 'react-router-dom';
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import {useState} from "react";
 import axios from 'axios';
 
-const API_URL = "http://localhost:8080";
 
 
 
@@ -34,19 +35,16 @@ export const CreateOfferForm = () =>{
         }else{
             setOfferDetails({...offerDetails, rateDescription: 'Stawka za zlecenie'});
         }
-        if(offerDetails.price !== 0){
-        axios.post(`${API_URL}/api/offer/save`, JSON.stringify(offerDetails))
-        .then(Response => console.log(Response));
+        axios.post('/api/offer/save', JSON.stringify(offerDetails))
+          .then(Response => console.log(Response));
         }
-    }
 
     return (
         
         <Box component="form" sx={{
             display: "flex",
-            flexDirection: "column",
-            width: 400,
-            height: 200
+            flexDirection: "column"
+
             }}>
                 <Typography variant="h2">Create your offer</Typography>
                 <TextField 
@@ -88,7 +86,7 @@ export const CreateOfferForm = () =>{
                     id="filled-basic" label="Price"
                     type="number"
                     value={offerDetails.price}
-                    onChange={e => setOfferDetails({...offerDetails, price: e.target.value})}
+                    onChange={e => setOfferDetails({...offerDetails, price: parseFloat(e.target.value)})}
                     InputProps={{startAdornment: (
                         <InputAdornment position="start">
                             PLN
@@ -114,6 +112,11 @@ export const CreateOfferForm = () =>{
                     value={offerDetails.backgroundDescription} onChange={e => setOfferDetails({...offerDetails, backgroundDescription: e.target.value})} 
                     multiline required/>
                 <Button variant="contained" type="submit" onSubmit={() => handleSubmit}>Submit</Button>        
+                <Link to="/">
+                    <Button variant="outlined" fullWidth startIcon={<ArrowBackIosIcon />}>
+                        Powrót
+                    </Button>
+                </Link>
         </Box>
     )
 }

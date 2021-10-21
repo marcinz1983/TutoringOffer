@@ -18,6 +18,7 @@ import {
 import ArchiveIcon from "@mui/icons-material/Archive";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import SmsIcon from "@mui/icons-material/Sms";
+import { Link } from "react-router-dom";
 
 interface TeacherProfileProps {
   avatarAlt: string;
@@ -57,13 +58,15 @@ export const TeacherProfile = (props: TeacherProfileProps) => {
             </ListItemIcon>
             <ListItemText primary={SIDE_MENU_STRING_1} />
           </ListItemButton>
-          <ListItemButton>
-            <ListItemIcon>
-              <AddBoxIcon />
-            </ListItemIcon>
-            <ListItemText primary={SIDE_MENU_STRING_2} />
-          </ListItemButton>
-          <ListItemButton>
+          <Link to="/add-offer">
+            <ListItemButton>
+              <ListItemIcon>
+                <AddBoxIcon />
+              </ListItemIcon>
+              <ListItemText primary={SIDE_MENU_STRING_2} />
+            </ListItemButton>
+          </Link>
+            <ListItemButton>
             <ListItemIcon>
               <SmsIcon />
             </ListItemIcon>

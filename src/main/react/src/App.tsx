@@ -8,6 +8,7 @@ import { Container, CssBaseline, Grid } from "@mui/material";
 import { AppTopBar } from "./components/AppTopBar";
 import { OffersList } from "./components/OffersList";
 import { OfferDetails } from "./components/OfferDetails";
+import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
 
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -54,6 +55,7 @@ function App() {
                 />
                 <Route path="/edit-offer" component={EditOffer} />
                 <Route path="/offer-details" component={OfferDetails} />
+                <Route path="/add-offer" component={CreateOfferForm} />
               </Switch>
             </Grid>
           </Grid>
