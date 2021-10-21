@@ -27,12 +27,12 @@ interface TeacherProfileProps {
 }
 
 export const TeacherProfile = (props: TeacherProfileProps) => {
-  const { avatarAlt, avatarUrl, username, accountType } = props;
+  const { avatarAlt, username, accountType } = props;
 
   return (
     <Grid container spacing={2}>
       <Grid item sm={4}>
-        <Avatar alt={avatarAlt} src={avatarUrl} sx={{ width: 80, height: 80 }}>
+        <Avatar alt={avatarAlt} src={"#"} sx={{ width: 80, height: 80 }}>
           {avatarAlt[0]}
         </Avatar>
       </Grid>

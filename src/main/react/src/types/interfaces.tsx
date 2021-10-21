@@ -1,4 +1,4 @@
-export type TOffersInterface = {
+export type TOffers = {
   backgroundDescription: string;
   firstName: string;
   lastName: string;
