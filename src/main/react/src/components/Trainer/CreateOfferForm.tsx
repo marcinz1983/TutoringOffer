@@ -30,21 +30,27 @@ export const CreateOfferForm = () =>{
     });
 
     const handleSubmit = () => {
+        const headers = 
+        {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json"
+        }
+
         if(offerDetails.rateDescription){
             setOfferDetails({...offerDetails, rateDescription: 'Stawka za 1h'});
         }else{
             setOfferDetails({...offerDetails, rateDescription: 'Stawka za zlecenie'});
         }
-        axios.post('/api/offer/save', JSON.stringify(offerDetails))
-          .then(Response => console.log(Response));
-        }
+        axios.post('./api/offer/save', JSON.stringify(offerDetails),
+        {headers: headers})
+        .then(Response => console.log(Response));
+    }
 
     return (
         
         <Box component="form" sx={{
             display: "flex",
             flexDirection: "column"
-
             }}>
                 <Typography variant="h2">Create your offer</Typography>
                 <TextField 
@@ -111,12 +117,13 @@ export const CreateOfferForm = () =>{
                     variant="filled" 
                     value={offerDetails.backgroundDescription} onChange={e => setOfferDetails({...offerDetails, backgroundDescription: e.target.value})} 
                     multiline required/>
-                <Button variant="contained" type="submit" onSubmit={() => handleSubmit}>Submit</Button>        
+                <Button variant="contained" type="submit" onSubmit={() => handleSubmit}>Submit</Button>       
+
                 <Link to="/">
                     <Button variant="outlined" fullWidth startIcon={<ArrowBackIosIcon />}>
                         Powrót
                     </Button>
-                </Link>
+                </Link> 
         </Box>
     )
 }

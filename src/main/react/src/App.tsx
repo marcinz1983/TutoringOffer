@@ -10,7 +10,6 @@ import { OffersList } from "./components/OffersList";
 import { OfferDetails } from "./components/OfferDetails";
 import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
 
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { TOffers } from "./types/interfaces";
