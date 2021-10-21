@@ -4,9 +4,11 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Container, CssBaseline, Grid } from "@mui/material";
 
+
 import { AppTopBar } from "./components/AppTopBar";
 import { OffersList } from "./components/OffersList";
 import { OfferDetails } from "./components/OfferDetails";
+
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
