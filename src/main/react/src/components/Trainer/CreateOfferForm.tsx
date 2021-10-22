@@ -4,9 +4,6 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import {useState} from "react";
 import axios from 'axios';
 
-
-
-
 interface OfferDetails {
     firstName: string,
     lastName: string,
@@ -24,27 +21,33 @@ export const CreateOfferForm = () =>{
         lastName: '',
         shortDescription: '',
         longDescription: '',
-        price: 0,
         rateDescription: false,
-        backgroundDescription: ''
+        backgroundDescription: '',
+        price: 0
     });
 
-    const handleSubmit = () => {
+    const handleSubmit = (e: Event) => {
+        e.preventDefault();
         const headers = 
         {
             "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json"
         }
-
         if(offerDetails.rateDescription){
             setOfferDetails({...offerDetails, rateDescription: 'Stawka za 1h'});
-        }else{
+        }
+        else{
             setOfferDetails({...offerDetails, rateDescription: 'Stawka za zlecenie'});
         }
-        axios.post('/api/offer/save', JSON.stringify(offerDetails),
-        {headers: headers})
-        .then(Response => console.log(Response));
-    }
+        console.log(offerDetails);
+        
+         axios({
+                method: 'post',
+                url: '/api/offer/save',
+                data: JSON.stringify(offerDetails),
+                headers: headers
+            }).then(response => console.log(response)).catch(error => console.log(error))
+        }       
 
     return (
         
@@ -118,7 +121,6 @@ export const CreateOfferForm = () =>{
                     value={offerDetails.backgroundDescription} onChange={e => setOfferDetails({...offerDetails, backgroundDescription: e.target.value})} 
                     multiline required/>
                 <Button variant="contained" type="submit" onSubmit={() => handleSubmit}>Submit</Button>       
-
                 <Link to="/">
                     <Button variant="outlined" fullWidth startIcon={<ArrowBackIosIcon />}>
                         Powrót
