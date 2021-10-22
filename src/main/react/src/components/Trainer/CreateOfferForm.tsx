@@ -41,7 +41,7 @@ export const CreateOfferForm = () =>{
         }else{
             setOfferDetails({...offerDetails, rateDescription: 'Stawka za zlecenie'});
         }
-        axios.post('./api/offer/save', JSON.stringify(offerDetails),
+        axios.post('/api/offer/save', JSON.stringify(offerDetails),
         {headers: headers})
         .then(Response => console.log(Response));
     }
