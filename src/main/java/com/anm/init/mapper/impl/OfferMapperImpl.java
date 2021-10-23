@@ -1,10 +1,13 @@
 package com.anm.init.mapper.impl;
 
+import com.anm.init.controller.request.EditOfferRequest;
 import com.anm.init.controller.request.OfferRequest;
 import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.mapper.OfferMapper;
 import com.anm.init.model.Offer;
 import org.springframework.stereotype.Component;
+
+import java.util.UUID;
 
 @Component
 public class OfferMapperImpl implements OfferMapper {
@@ -19,6 +22,7 @@ public class OfferMapperImpl implements OfferMapper {
                 .withBackgroundDescription(request.getBackgroundDescription())
                 .withRateDescription(request.getRateDescription())
                 .withPrice(request.getPrice())
+                .withUuid(UUID.randomUUID())
                 .build();
     }
 
@@ -33,6 +37,21 @@ public class OfferMapperImpl implements OfferMapper {
                 .withBackgroundDescription(offer.getBackgroundDescription())
                 .withRateDescription(offer.getRateDescription())
                 .withPrice(offer.getPrice())
+                .build();
+    }
+
+    @Override
+    public Offer mapEditOfferRequestToOffer(Offer oldOffer, EditOfferRequest editOfferRequest) {
+        return Offer.builder()
+                .withId(oldOffer.getId())
+                .withFirstName(editOfferRequest.getFirstName())
+                .withLastName(editOfferRequest.getLastName())
+                .withShortDescription(editOfferRequest.getShortDescription())
+                .withLongDescription(editOfferRequest.getLongDescription())
+                .withBackgroundDescription(editOfferRequest.getBackgroundDescription())
+                .withRateDescription(editOfferRequest.getRateDescription())
+                .withPrice(editOfferRequest.getPrice())
+                .withUuid(editOfferRequest.getUuid())
                 .build();
     }
 }

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Entity
 @Table(name = "OFFER")
@@ -40,5 +41,8 @@ public class Offer {
 
     @Column(name = "PRICE")
     private BigDecimal price;
+
+    @Column(name = "UUID")
+    private UUID uuid;
 
 }

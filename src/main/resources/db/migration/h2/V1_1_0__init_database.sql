@@ -7,5 +7,6 @@ CREATE TABLE OFFER (
                        PRICE decimal(19,2),
                        RATE_DESCRIPTION varchar(255),
                        SHORT_DESCRIPTION varchar(255),
+                       UUID uuid NOT NULL,
                        primary key (id)
 );

@@ -1,4 +1,4 @@
-package com.anm.init.exeption;
+package com.anm.init.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

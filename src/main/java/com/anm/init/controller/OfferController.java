@@ -1,5 +1,6 @@
 package com.anm.init.controller;
 
+import com.anm.init.controller.request.EditOfferRequest;
 import com.anm.init.controller.request.OfferRequest;
 import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.service.OfferService;
@@ -40,4 +41,11 @@ public class OfferController {
         offerService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PutMapping("/edit")
+    ResponseEntity<Void> editOffer(@Valid @RequestBody EditOfferRequest editOfferRequest) {
+        offerService.editOffer(editOfferRequest);
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
 }
