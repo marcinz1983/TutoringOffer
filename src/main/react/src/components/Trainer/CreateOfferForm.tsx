@@ -1,7 +1,7 @@
-import { Button,Typography, InputAdornment, Switch, Stack, TextField, Box} from '@mui/material';
+import { Button,Typography, InputAdornment, TextField, Box, MenuItem, Select, FormControl, InputLabel} from '@mui/material';
 import {Link} from 'react-router-dom';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import {useState} from "react";
+import {useState, FormEvent} from "react";
 import axios from 'axios';
 
 interface OfferDetails {
@@ -10,7 +10,7 @@ interface OfferDetails {
     shortDescription: string,
     longDescription: string,
     price: number,
-    rateDescription: boolean | string,
+    rateDescription: string,
     backgroundDescription: string
 }
 
@@ -21,40 +21,36 @@ export const CreateOfferForm = () =>{
         lastName: '',
         shortDescription: '',
         longDescription: '',
-        rateDescription: false,
+        rateDescription: '',
         backgroundDescription: '',
         price: 0
     });
-
-    const handleSubmit = (e: Event) => {
+  
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         const headers = 
         {
             "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json"
         }
-        if(offerDetails.rateDescription){
-            setOfferDetails({...offerDetails, rateDescription: 'Stawka za 1h'});
-        }
-        else{
-            setOfferDetails({...offerDetails, rateDescription: 'Stawka za zlecenie'});
-        }
-        console.log(offerDetails);
-        
-         axios({
+            axios({
                 method: 'post',
                 url: '/api/offer/save',
                 data: JSON.stringify(offerDetails),
                 headers: headers
             }).then(response => console.log(response)).catch(error => console.log(error))
-        }       
-
+    }       
+        
     return (
         
-        <Box component="form" sx={{
-            display: "flex",
-            flexDirection: "column"
-            }}>
+        <Box>
+            <form 
+            style={{
+                display: 'flex',
+                flexDirection: 'column'
+            }} 
+            onSubmit={handleSubmit}>
+
                 <Typography variant="h2">Create your offer</Typography>
                 <TextField 
                     margin="normal" 
@@ -102,15 +98,20 @@ export const CreateOfferForm = () =>{
                         </InputAdornment>
                     ),}}
                     variant="filled" required/>
-                    <Stack direction="row" spacing={1} alignItems="center">
-                        <Typography>Płatność za projekt</Typography>
-                        <Switch 
-                            value={offerDetails.rateDescription}
-                            onChange={e => setOfferDetails({...offerDetails, rateDescription: !offerDetails.rateDescription})}
-                        /> 
-                        <Typography>Płatność za godzinę</Typography>
-                    </Stack>
-                
+                    <FormControl>
+                        <InputLabel id="filled-select-label">Rate Description</InputLabel>
+                        <Select
+                        labelId="filled-select-label"
+                        id="filled-select"
+                        variant="filled"
+                        value={offerDetails.rateDescription}
+                        label="rate description"
+                        onChange={e => setOfferDetails({...offerDetails, rateDescription: e.target.value})}
+                        >
+                        <MenuItem value={'Stawka za 1h'}>Stawka za 1h</MenuItem>
+                        <MenuItem value={'Stawka za zlecenie'}>Stawka za zlecenie</MenuItem>
+                        </Select>
+                    </FormControl>
                 <TextField 
                     margin="normal" 
                     id="filled-multiline" 
@@ -120,12 +121,13 @@ export const CreateOfferForm = () =>{
                     variant="filled" 
                     value={offerDetails.backgroundDescription} onChange={e => setOfferDetails({...offerDetails, backgroundDescription: e.target.value})} 
                     multiline required/>
-                <Button variant="contained" type="submit" onSubmit={() => handleSubmit}>Submit</Button>       
+                <Button variant="contained" type="submit">Submit</Button>       
                 <Link to="/">
                     <Button variant="outlined" fullWidth startIcon={<ArrowBackIosIcon />}>
                         Powrót
                     </Button>
                 </Link> 
+            </form>
         </Box>
     )
 }
