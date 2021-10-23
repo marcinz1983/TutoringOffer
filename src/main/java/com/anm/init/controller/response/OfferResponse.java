@@ -1,4 +1,5 @@
 package com.anm.init.controller.response;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

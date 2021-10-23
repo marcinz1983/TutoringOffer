@@ -29,7 +29,7 @@ public class EditOfferRequest {
     private String shortDescription;
 
     @NotNull
-    @Size(min = 1, max= 500)
+    @Size(min = 1, max = 500)
     private String longDescription;
 
     @NotNull
@@ -37,7 +37,7 @@ public class EditOfferRequest {
     private String rateDescription;
 
     @NotNull
-    @Size(min = 1,max = 500)
+    @Size(min = 1, max = 500)
     private String backgroundDescription;
 
     @NotNull

@@ -1,14 +1,13 @@
 package com.anm.init.exception;
 
-import java.util.function.Supplier;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-public class OfferNotFoundException extends RuntimeException implements Supplier<OfferNotFoundException> {
-    public OfferNotFoundException(String message) {
-        super(message);
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+public class OfferNotFoundException extends RuntimeException {
+
+    public OfferNotFoundException(String errorMessage) {
+        super(errorMessage);
     }
 
-    @Override
-    public OfferNotFoundException get() {
-        return new OfferNotFoundException("Offer not found");
-    }
 }

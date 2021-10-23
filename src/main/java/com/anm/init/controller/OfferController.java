@@ -8,7 +8,14 @@ import com.anm.init.service.impl.OfferServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -25,19 +32,19 @@ public class OfferController {
     }
 
     @PostMapping("/save")
-    ResponseEntity<Void> saveOffer(@Valid @RequestBody OfferRequest request){
+    ResponseEntity<Void> saveOffer(@Valid @RequestBody OfferRequest request) {
         offerService.saveOffer(request);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/get")
-    ResponseEntity<List<OfferResponse>> getAll(){
+    ResponseEntity<List<OfferResponse>> getAll() {
         List<OfferResponse> allOffers = offerService.findAll();
         return new ResponseEntity<>(allOffers, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    ResponseEntity<Void> deleteOffer(@PathVariable Long id){
+    ResponseEntity<Void> deleteOffer(@PathVariable Long id) {
         offerService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
