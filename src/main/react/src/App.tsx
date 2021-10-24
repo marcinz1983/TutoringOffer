@@ -16,17 +16,21 @@ import { TOffers } from "./types/interfaces";
 import axios from "axios";
 import { EditOffer } from "./components/EditOffer";
 
+import { IOffer } from "./typescript/interfaces";
+
 function App() {
-  const [offersData, setOffersData] = useState<TOffers>([]);
+  const [offersData, setOffersData] = useState<Array<IOffer>>([]);
 
   useEffect(() => {
-    axios({
-      method: 'get',
-      url: '/api/offer/get'
-    }).then(response => setOffersData(response.data))
-        .catch(e => {
-          //TODO HANDLE ERROR HERE
-        })
+    axios
+      .get(`/api/offer/get`)
+      .then((response) => {
+        setOffersData(response.data);
+      })
+      .catch(function (error) {
+        //TODO: ADD SOME ERROR DISPLAY FOR USER
+        console.log(`Something went wrong. ${error}`);
+      });
   }, []);
 
   return (

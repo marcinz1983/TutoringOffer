@@ -1,3 +1,5 @@
 export const SIDE_MENU_STRING_1 = "Moje ogłoszenia"
 export const SIDE_MENU_STRING_2 = "Dodaj ogłoszenie"
 export const SIDE_MENU_STRING_3 = "Wiadomości"
+export const EDIT_OFFER = "Edytuj ogłoszenie"
+export const DELETE_OFFER = "Usuń ogłoszenie"
