@@ -24,9 +24,6 @@ export const OfferDetails = (props: object) => {
     } = location.state.props;
 
     const offerProps = location.state.props;
-
-    console.log(offerProps)
-
     return (
         <>
             <Grid container sx={{paddingTop: 10}}>
@@ -39,7 +36,7 @@ export const OfferDetails = (props: object) => {
                         {firstName[0]}
                     </Avatar>
                 </Grid>
-                <Grid item xs={12} md={9} sx={{paddingTop: 5}}>
+                <Grid item xs={12} md={7} sx={{paddingTop: 5}}>
                     <Typography variant="h4">{shortDescription}</Typography>
                     <Typography variant="subtitle1">
                         Poziom: {backgroundDescription}
