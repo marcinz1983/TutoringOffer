@@ -54,15 +54,19 @@ export const OfferDetails = (props: object) => {
                 <Grid item xs={12} md={3}>
                     <List disablePadding>
                         <Grid item xs={6} md={12}>
+                            <Link
+                            to={{ pathname: "/edit-offer", state: { offerProps } }}
+                            style={{ textDecoration: "none", color: "inherit" }}
+                            >
                             <ListItem divider disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon>
                                         <EditIcon/>
                                     </ListItemIcon>
                                     <ListItemText primary={EDIT_OFFER}/>{" "}
-                                    {/* TODO: ADD LINK AND ROUTE TO EDIT PAGE: JIRA EL-37 */}
                                 </ListItemButton>
                             </ListItem>
+                            </Link>
                         </Grid>
                         <Grid item xs={6} md={12}>
                             <ListItem disablePadding>
