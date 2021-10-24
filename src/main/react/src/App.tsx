@@ -19,19 +19,14 @@ import { EditOffer } from "./components/EditOffer";
 function App() {
   const [offersData, setOffersData] = useState<TOffers>([]);
 
-  //TODO: MOVE CONST TO .ENV FILE
-  const API_URL: string = "https://init-dev.herokuapp.com";
-
   useEffect(() => {
-    axios
-      .get(`${API_URL}/api/offer/get`)
-      .then((response) => {
-        setOffersData(response.data);
-      })
-      .catch(function (error) {
-        //TODO: ADD SOME ERROR DISPLAY FOR USER
-        console.log(`Something went wrong. ${error}`);
-      });
+    axios({
+      method: 'get',
+      url: '/api/offer/get'
+    }).then(response => setOffersData(response.data))
+        .catch(e => {
+          //TODO HANDLE ERROR HERE
+        })
   }, []);
 
   return (

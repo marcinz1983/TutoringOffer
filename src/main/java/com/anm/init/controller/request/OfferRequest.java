@@ -43,6 +43,6 @@ public class OfferRequest {
     @NotNull
     private BigDecimal price;
 
-    @NotNull
-    private UUID uuid;
+//     @NotNull
+//     private UUID uuid;
 }
