@@ -12,7 +12,6 @@ import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { TOffers } from "./types/interfaces";
 import axios from "axios";
 import { EditOffer } from "./components/EditOffer";
 
