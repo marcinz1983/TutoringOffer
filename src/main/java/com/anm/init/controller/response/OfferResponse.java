@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,7 +14,7 @@ import java.math.BigDecimal;
 @Builder(setterPrefix = "with")
 public class OfferResponse {
 
-    private Long id;
+    private UUID uuid;
     private String firstName;
     private String lastName;
     private String shortDescription;

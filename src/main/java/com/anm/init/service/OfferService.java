@@ -1,21 +1,21 @@
 package com.anm.init.service;
 
 import com.anm.init.controller.request.EditOfferRequest;
-import com.anm.init.controller.request.OfferRequest;
+import com.anm.init.controller.request.AddOfferRequest;
 import com.anm.init.controller.response.OfferResponse;
-import com.anm.init.model.Offer;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface OfferService {
 
-    void saveOffer(OfferRequest request);
+    void saveOffer(AddOfferRequest request);
 
     List<OfferResponse> findAll();
 
-    Offer findById(Long id);
+    OfferResponse findByUUID(UUID uuid);
 
-    void deleteById(Long id);
+    void deleteByUUID(UUID uuid);
 
     void editOffer(EditOfferRequest editOfferRequest);
 

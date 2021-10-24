@@ -1,7 +1,7 @@
 package com.anm.init.service.impl;
 
+import com.anm.init.controller.request.AddOfferRequest;
 import com.anm.init.controller.request.EditOfferRequest;
-import com.anm.init.controller.request.OfferRequest;
 import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.exception.OfferNotFoundException;
 import com.anm.init.mapper.OfferMapper;
@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,7 +31,7 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
-    public void saveOffer(OfferRequest request) {
+    public void saveOffer(AddOfferRequest request) {
         Offer newOffer = offerMapper.mapRequestToEntity(request);
         offerRepository.save(newOffer);
     }
@@ -42,14 +43,20 @@ public class OfferServiceImpl implements OfferService {
                 .collect(Collectors.toList());
     }
 
+    //TODO nie wiem czy ta metoda jest do czegoś potrzebna
+    //TODO do sprwawdzenia
     @Override
-    public Offer findById(Long id) {
-        return offerRepository.findById(id).get();
+    public OfferResponse findByUUID(UUID uuid) {
+        OfferResponse offerResponse = offerRepository.findByUuidEquals(uuid).map(offerMapper::mapEntityToResponse)
+                .orElseThrow(() -> new OfferNotFoundException(OFFER_NOT_FOUND_EXCEPTION_MESSAGE));
+        return offerResponse;
     }
 
     @Override
-    public void deleteById(Long id) {
-        offerRepository.findById(id).orElseThrow(() -> new OfferNotFoundException(OFFER_NOT_FOUND_EXCEPTION_MESSAGE));
+    public void deleteByUUID(UUID uuid) {
+        Offer offer = offerRepository.findByUuidEquals(uuid)
+                .orElseThrow(() -> new OfferNotFoundException(OFFER_NOT_FOUND_EXCEPTION_MESSAGE));
+        offerRepository.delete(offer);
     }
 
     @Override

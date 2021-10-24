@@ -1,6 +1,6 @@
 package com.anm.init.service.impl;
 
-import com.anm.init.controller.request.OfferRequest;
+import com.anm.init.controller.request.AddOfferRequest;
 import com.anm.init.mapper.OfferMapper;
 import com.anm.init.model.Offer;
 import com.anm.init.repository.OfferRepository;
@@ -36,7 +36,7 @@ class OfferServiceImplTest {
     @Test
     void test_saveOffer_givenValidOfferRequest_saveNewOffer() {
         //given
-        OfferRequest offerRequest = OfferRequest.builder()
+        AddOfferRequest offerRequest = AddOfferRequest.builder()
                 .withBackgroundDescription("BackgroundDescription")
                 .withFirstName("FirstName")
                 .withLastName("LastName")

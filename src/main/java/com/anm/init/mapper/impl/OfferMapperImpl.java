@@ -1,7 +1,7 @@
 package com.anm.init.mapper.impl;
 
 import com.anm.init.controller.request.EditOfferRequest;
-import com.anm.init.controller.request.OfferRequest;
+import com.anm.init.controller.request.AddOfferRequest;
 import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.mapper.OfferMapper;
 import com.anm.init.model.Offer;
@@ -13,7 +13,7 @@ import java.util.UUID;
 public class OfferMapperImpl implements OfferMapper {
 
     @Override
-    public Offer mapRequestToEntity(OfferRequest request) {
+    public Offer mapRequestToEntity(AddOfferRequest request) {
         return Offer.builder()
                 .withFirstName(request.getFirstName())
                 .withLastName(request.getLastName())
@@ -29,7 +29,7 @@ public class OfferMapperImpl implements OfferMapper {
     @Override
     public OfferResponse mapEntityToResponse(Offer offer) {
         return OfferResponse.builder()
-                .withId(offer.getId())
+                .withUuid(offer.getUuid())
                 .withFirstName(offer.getFirstName())
                 .withLastName(offer.getLastName())
                 .withShortDescription(offer.getShortDescription())

@@ -1,7 +1,7 @@
 package com.anm.init.controller;
 
+import com.anm.init.controller.request.AddOfferRequest;
 import com.anm.init.controller.request.EditOfferRequest;
-import com.anm.init.controller.request.OfferRequest;
 import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.service.OfferService;
 import com.anm.init.service.impl.OfferServiceImpl;
@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/offer")
@@ -32,7 +33,7 @@ public class OfferController {
     }
 
     @PostMapping("/save")
-    ResponseEntity<Void> saveOffer(@Valid @RequestBody OfferRequest request) {
+    ResponseEntity<Void> saveOffer(@Valid @RequestBody AddOfferRequest request) {
         offerService.saveOffer(request);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -43,16 +44,16 @@ public class OfferController {
         return new ResponseEntity<>(allOffers, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
-    ResponseEntity<Void> deleteOffer(@PathVariable Long id) {
-        offerService.deleteById(id);
+    @DeleteMapping("/{uuid}")
+    ResponseEntity<Void> deleteOffer(@PathVariable UUID uuid) {
+        offerService.deleteByUUID(uuid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PutMapping("/edit")
     ResponseEntity<Void> editOffer(@Valid @RequestBody EditOfferRequest editOfferRequest) {
         offerService.editOffer(editOfferRequest);
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
