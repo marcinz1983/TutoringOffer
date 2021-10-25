@@ -8,6 +8,8 @@ import com.anm.init.mapper.OfferMapper;
 import com.anm.init.model.Offer;
 import com.anm.init.repository.OfferRepository;
 import com.anm.init.service.OfferService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class OfferServiceImpl implements OfferService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(OfferServiceImpl.class);
 
     private static final String OFFER_NOT_FOUND_EXCEPTION_MESSAGE = "Offer not found!";
 
@@ -65,6 +69,18 @@ public class OfferServiceImpl implements OfferService {
                 .orElseThrow(() -> new OfferNotFoundException(OFFER_NOT_FOUND_EXCEPTION_MESSAGE));
         oldOffer = offerMapper.mapEditOfferRequestToOffer(oldOffer, editOfferRequest);
         offerRepository.save(oldOffer);
+    }
+
+
+    @Override
+    public OfferResponse findOfferByUUID(UUID offerId) {
+
+        LOG.debug("Finding offer with id: [{}]", offerId);
+
+        Offer offer = offerRepository.findByUuidEquals(offerId)
+                .orElseThrow(() -> new OfferNotFoundException(OFFER_NOT_FOUND_EXCEPTION_MESSAGE));
+
+        return offerMapper.mapEntityToResponse(offer);
     }
 
 }

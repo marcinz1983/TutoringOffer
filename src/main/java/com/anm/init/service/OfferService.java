@@ -19,4 +19,5 @@ public interface OfferService {
 
     void editOffer(EditOfferRequest editOfferRequest);
 
+    OfferResponse findOfferByUUID(UUID offerId);
 }

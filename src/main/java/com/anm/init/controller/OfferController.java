@@ -56,4 +56,10 @@ public class OfferController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @GetMapping("/{uuid}")
+    public ResponseEntity<OfferResponse> getOfferByID(@PathVariable("uuid") UUID id) {
+        var offerById = offerService.findOfferByUUID(id);
+        return new ResponseEntity<>(offerById, HttpStatus.OK);
+    }
+
 }
