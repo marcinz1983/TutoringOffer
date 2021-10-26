@@ -2,21 +2,13 @@ import { Button,Typography, InputAdornment, TextField, Box, MenuItem, Select, Fo
 import {Link} from 'react-router-dom';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import {useState, FormEvent} from "react";
-import axios from 'axios';
+import { addOffer } from "../../services/offer.service"
+import { IOffer } from '../../typescript/interfaces';
 
-interface OfferDetails {
-    firstName: string,
-    lastName: string,
-    shortDescription: string,
-    longDescription: string,
-    price: number,
-    rateDescription: string,
-    backgroundDescription: string
-}
 
 export const CreateOfferForm = () =>{
     //State
-    const [offerDetails, setOfferDetails] = useState<OfferDetails>({
+    const [offerDetails, setOfferDetails] = useState<IOffer>({
         firstName: '',
         lastName: '',
         shortDescription: '',
@@ -28,17 +20,8 @@ export const CreateOfferForm = () =>{
   
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        const headers = 
-        {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json"
-        }
-            axios({
-                method: 'post',
-                url: '/api/offer/save',
-                data: JSON.stringify(offerDetails),
-                headers: headers
-            }).then(response => console.log(response)).catch(error => console.log(error))
+
+        addOffer(offerDetails)
     }       
         
     return (

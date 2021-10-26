@@ -6,7 +6,7 @@ export interface ITeacherProfile {
 }
 
 export interface IOffer {
-  uuid: number;
+  uuid?: number;
   backgroundDescription: string;
   firstName: string;
   lastName: string;

@@ -12,25 +12,23 @@ import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { EditOffer } from "./components/EditOffer";
 
 import { IOffer } from "./typescript/interfaces";
+import { getAllOffers } from "./services/offer.service";
 
 function App() {
-  const [offersData, setOffersData] = useState<Array<IOffer>>([]);
+  const [offersData, setOffersData] = useState<Array<IOffer>>([])
 
+  
   useEffect(() => {
-    axios
-      .get(`/api/offer/get`)
-      .then((response) => {
-        setOffersData(response.data);
-      })
-      .catch(function (error) {
-        //TODO: ADD SOME ERROR DISPLAY FOR USER
-        console.log(`Something went wrong. ${error}`);
-      });
-  }, []);
+     async function getOffersData () {
+      let getOffersData = await getAllOffers();
+      setOffersData(getOffersData)
+    }
+
+    getOffersData();
+  })
 
   return (
     <Router>
