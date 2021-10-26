@@ -4,7 +4,6 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Container, CssBaseline, Grid } from "@mui/material";
 
-
 import { AppTopBar } from "./components/AppTopBar";
 import { OffersList } from "./components/OffersList";
 import { OfferDetails } from "./components/OfferDetails";
@@ -16,6 +15,28 @@ import { EditOffer } from "./components/EditOffer";
 
 import { IOffer } from "./typescript/interfaces";
 import { getAllOffers } from "./services/offer.service";
+import { env } from "process";
+
+//FIREBASE SHIZ
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+};
+
+
+// Initialize Firebase
+
+const app = initializeApp(firebaseConfig);
+
+//END OF FIREBASE SHIZ
+
 
 function App() {
   const [offersData, setOffersData] = useState<Array<IOffer>>([])
