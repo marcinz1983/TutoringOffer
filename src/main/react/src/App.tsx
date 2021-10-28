@@ -47,9 +47,8 @@ function App() {
       let getOffersData = await getAllOffers();
       setOffersData(getOffersData)
     }
-
     getOffersData();
-  })
+  },[])
 
   return (
     <Router>
