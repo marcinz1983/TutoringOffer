@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useHistory } from "react-router";
 import { IOffer } from "../typescript/interfaces";
 
 export const getAllOffers = async () => {
@@ -27,5 +28,22 @@ export const addOffer = (payload:IOffer) => {
         }
     })
     .then(response => console.log(response))
+    .catch(error => console.log(error))
+}
+
+export const editOffer = (payload: IOffer, callback: () => void) => {
+    const URL= '/api/offer/edit'
+    axios(URL, {
+        method: 'put',
+        data: JSON.stringify(payload),
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => {
+        console.log(response)
+        callback();
+    })
     .catch(error => console.log(error))
 }

@@ -15,12 +15,12 @@ export interface IOffer {
   rateDescription: string;
   shortDescription: string;
 }
-
-export type IOfferLocationState = {
+export interface IOfferLocationState {
   from: {
     path: string;
   };
   props: {
+    uuid?: number;
     backgroundDescription: string;
     firstName: string;
     lastName: string;
@@ -30,3 +30,13 @@ export type IOfferLocationState = {
     shortDescription: string;
   };
 };
+
+export interface ILocationDefaultObject {
+  hash: string,
+  key: string,
+  pathname: string,
+  search: string,
+  state: {
+    editSucess?: boolean
+  }
+}

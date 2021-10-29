@@ -8,12 +8,12 @@ import { AppTopBar } from "./components/AppTopBar";
 import { OffersList } from "./components/OffersList";
 import { OfferDetails } from "./components/OfferDetails";
 import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { EditOffer } from "./components/EditOffer";
 
-import { IOffer } from "./typescript/interfaces";
+import { Switch, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import { IOffer, ILocationDefaultObject } from "./typescript/interfaces";
 import { getAllOffers } from "./services/offer.service";
 import { env } from "process";
 
@@ -27,9 +27,8 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
-
 
 // Initialize Firebase
 
@@ -37,46 +36,47 @@ const app = initializeApp(firebaseConfig);
 
 //END OF FIREBASE SHIZ
 
-
 function App() {
-  const [offersData, setOffersData] = useState<Array<IOffer>>([])
+  const [offersData, setOffersData] = useState<Array<IOffer>>([]);
 
-  
+  const location = useLocation<ILocationDefaultObject>();
+
+  console.log(location);
+
   useEffect(() => {
-     async function getOffersData () {
+    async function getOffersData() {
       let getOffersData = await getAllOffers();
-      setOffersData(getOffersData)
+      setOffersData(getOffersData);
     }
     getOffersData();
-  },[])
+  },[location]);
+
 
   return (
-    <Router>
-      <div className="App">
-        <Container>
-          <CssBaseline />
-          <Grid container spacing={2} direction={"row"}>
-            <Grid item xs={12} md={12}>
-              <AppTopBar />
-            </Grid>
-            <Grid item container xs={12} md={12} direction={"row"}>
-              <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={(props) => (
-                    <OffersList {...props} offers={offersData} />
-                  )}
-                />
-                <Route path="/edit-offer" component={EditOffer} />
-                <Route path="/offer-details" component={OfferDetails} />
-                <Route path="/add-offer" component={CreateOfferForm} />
-              </Switch>
-            </Grid>
+    <div className="App">
+      <Container>
+        <CssBaseline />
+        <Grid container spacing={2} direction={"row"}>
+          <Grid item xs={12} md={12}>
+            <AppTopBar />
           </Grid>
-        </Container>
-      </div>
-    </Router>
+          <Grid item container xs={12} md={12} direction={"row"}>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={(props) => (
+                  <OffersList {...props} offers={offersData} />
+                )}
+              />
+              <Route path="/edit-offer" component={EditOffer} />
+              <Route path="/offer-details" component={OfferDetails} />
+              <Route path="/add-offer" component={CreateOfferForm} />
+            </Switch>
+          </Grid>
+        </Grid>
+      </Container>
+    </div>
   );
 }
 
