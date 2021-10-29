@@ -6,7 +6,7 @@ export interface ITeacherProfile {
 }
 
 export interface IOffer {
-  uuid?: number;
+  uuid?: string;
   backgroundDescription: string;
   firstName: string;
   lastName: string;
@@ -20,7 +20,7 @@ export interface IOfferLocationState {
     path: string;
   };
   props: {
-    uuid?: number;
+    uuid?: string;
     backgroundDescription: string;
     firstName: string;
     lastName: string;
@@ -37,6 +37,6 @@ export interface ILocationDefaultObject {
   pathname: string,
   search: string,
   state: {
-    editSucess?: boolean
+    displayMessage?: string
   }
 }

@@ -41,7 +41,8 @@ function App() {
 
   const location = useLocation<ILocationDefaultObject>();
 
-  console.log(location);
+  //this is the base for displaying messages for user
+  console.log(location.state)
 
   useEffect(() => {
     async function getOffersData() {
@@ -51,6 +52,7 @@ function App() {
     getOffersData();
   },[location]);
 
+  console.log(location.state)
 
   return (
     <div className="App">
@@ -75,7 +77,7 @@ function App() {
             </Switch>
           </Grid>
         </Grid>
-      </Container>
+      </Container>      
     </div>
   );
 }

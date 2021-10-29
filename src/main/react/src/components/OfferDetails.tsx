@@ -3,17 +3,20 @@ import {Button, Grid, Typography, Avatar, List, ListItem, ListItemButton, ListIt
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useHistory} from "react-router-dom";
 
 import {IOfferLocationState} from "../typescript/interfaces";
+import { deleteOffer } from "../services/offer.service";
 
-import { EDIT_OFFER, DELETE_OFFER } from "../utility/constants";
+import { EDIT_OFFER, DELETE_OFFER, DELETE_OFFER_SUCCESS_MESSAGE } from "../utility/constants";
 
 export const OfferDetails = (props: object) => {
     //data is passed from OfferlistItem by Router <Link as RouterLink>
     const location = useLocation<IOfferLocationState>();
+    const history = useHistory();
 
     const {
+        uuid,
         firstName,
         lastName,
         shortDescription,
@@ -24,6 +27,15 @@ export const OfferDetails = (props: object) => {
     } = location.state.props;
 
     const offerProps = location.state.props;
+
+    const handleDeleteClick = () => {
+        deleteOffer(uuid, (): void => 
+        history.push({
+            pathname: '/',
+            state: { displayMessage: DELETE_OFFER_SUCCESS_MESSAGE }
+        }) )
+    }
+
     return (
         <>
             <Grid container sx={{paddingTop: 10}}>
@@ -67,7 +79,7 @@ export const OfferDetails = (props: object) => {
                         </Grid>
                         <Grid item xs={6} md={12}>
                             <ListItem disablePadding>
-                                <ListItemButton>
+                                <ListItemButton onClick={handleDeleteClick}>
                                     <ListItemIcon>
                                         <DeleteForeverIcon/>
                                     </ListItemIcon>

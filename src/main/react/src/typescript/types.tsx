@@ -3,7 +3,7 @@ export type TLocationState = {
       path: string;
     };
     offerProps: {
-      uuid?: number;
+      uuid?: string;
       backgroundDescription: string;
       firstName: string;
       lastName: string;

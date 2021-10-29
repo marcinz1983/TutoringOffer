@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useHistory } from "react-router";
 import { IOffer } from "../typescript/interfaces";
 
 export const getAllOffers = async () => {
@@ -46,4 +45,10 @@ export const editOffer = (payload: IOffer, callback: () => void) => {
         callback();
     })
     .catch(error => console.log(error))
+}
+
+export const deleteOffer = (uuid: string | undefined, callback: () => void) => {
+    const URL=`/api/offer/${uuid}`
+    axios.delete(URL)
+    callback();
 }
