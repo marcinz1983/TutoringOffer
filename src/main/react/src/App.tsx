@@ -3,8 +3,10 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Container, CssBaseline, Grid } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
+import { mainTheme } from "./themes/mainTheme";
 
-import { AppTopBar } from "./components/AppTopBar";
+import { AppTopBar } from "./components/AppTopBar/AppTopBar";
 import { OffersList } from "./components/OffersList";
 import { OfferDetails } from "./components/OfferDetails";
 import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
@@ -42,7 +44,7 @@ function App() {
   const location = useLocation<ILocationDefaultObject>();
 
   //this is the base for displaying messages for user
-  console.log(location.state)
+  console.log(location.state);
 
   useEffect(() => {
     async function getOffersData() {
@@ -50,35 +52,35 @@ function App() {
       setOffersData(getOffersData);
     }
     getOffersData();
-  },[location]);
-
-  console.log(location.state)
+  }, [location]);
 
   return (
-    <div className="App">
-      <Container>
-        <CssBaseline />
-        <Grid container spacing={2} direction={"row"}>
-          <Grid item xs={12} md={12}>
-            <AppTopBar />
+    <ThemeProvider theme={mainTheme}>
+      <div className="App">
+        <Container maxWidth="xl">
+          <CssBaseline />
+          <Grid container spacing={2} direction={"row"}>
+            <Grid item xs={12} md={12}>
+              <AppTopBar />
+            </Grid>
+            <Grid item container xs={12} md={12} direction={"row"}>
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={(props) => (
+                    <OffersList {...props} offers={offersData} />
+                  )}
+                />
+                <Route path="/edit-offer" component={EditOffer} />
+                <Route path="/offer-details" component={OfferDetails} />
+                <Route path="/add-offer" component={CreateOfferForm} />
+              </Switch>
+            </Grid>
           </Grid>
-          <Grid item container xs={12} md={12} direction={"row"}>
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={(props) => (
-                  <OffersList {...props} offers={offersData} />
-                )}
-              />
-              <Route path="/edit-offer" component={EditOffer} />
-              <Route path="/offer-details" component={OfferDetails} />
-              <Route path="/add-offer" component={CreateOfferForm} />
-            </Switch>
-          </Grid>
-        </Grid>
-      </Container>      
-    </div>
+        </Container>
+      </div>
+    </ThemeProvider>
   );
 }
 

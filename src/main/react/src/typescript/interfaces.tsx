@@ -29,14 +29,26 @@ export interface IOfferLocationState {
     rateDescription: string;
     shortDescription: string;
   };
-};
+}
 
 export interface ILocationDefaultObject {
-  hash: string,
-  key: string,
-  pathname: string,
-  search: string,
+  hash: string;
+  key: string;
+  pathname: string;
+  search: string;
   state: {
-    displayMessage?: string
+    displayMessage?: string;
+  };
+}
+
+export interface IMainTheme {
+  breakpoints: {
+    values: {
+      xs?: number,
+      sm?: number,
+      md?: number,
+      lg?: number,
+      xl?: number,
+    }
   }
 }
