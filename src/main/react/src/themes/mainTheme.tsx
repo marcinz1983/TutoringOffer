@@ -9,7 +9,19 @@ export const mainTheme: IMainTheme = createTheme({
             sm: 600,
             md: 900,
             lg: 1200,
-            xl: 1920
+            xl: 1640
+        }
+    },
+    palette: {
+        primary: {
+            main: "#F28705",
+            light: "#F2A007"
+        },
+        secondary: {
+            main: "#04ADBF"
+        },
+        background: {
+            default: "#F2D7D0"
         }
     }
 });

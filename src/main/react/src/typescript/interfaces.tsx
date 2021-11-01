@@ -51,4 +51,20 @@ export interface IMainTheme {
       xl?: number,
     }
   }
+  palette: {
+    primary: {
+      main?: string,
+      light?: string,
+      dark?: string,
+    }
+    secondary: {
+      main?: string,
+      light?: string,
+      dark?: string,
+    },
+    background: {
+      default: string,
+    }
+  }
+  
 }
