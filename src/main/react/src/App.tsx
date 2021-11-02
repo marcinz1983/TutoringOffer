@@ -2,25 +2,25 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import { Container, CssBaseline, Grid } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
-import { mainTheme } from "./themes/mainTheme";
+import {Container, CssBaseline, Grid} from "@mui/material";
+import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import {ThemeProvider} from "@mui/material/styles";
+import {mainTheme} from "./themes/mainTheme";
 
-import { AppTopBar } from "./components/AppTopBar/AppTopBar";
-import { OffersList } from "./components/OffersList";
-import { OfferDetails } from "./components/OfferDetails";
-import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
-import { EditOffer } from "./components/EditOffer";
+import {AppTopBar} from "./components/AppTopBar/AppTopBar";
+import {OffersList} from "./components/OffersList";
+import {OfferDetails} from "./components/OfferDetails";
+import {CreateOfferForm} from "./components/Trainer/CreateOfferForm";
 
-import { Switch, Route, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {Route, Switch, useLocation} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {EditOffer} from "./components/EditOffer";
 
-import { IOffer, ILocationDefaultObject } from "./typescript/interfaces";
-import { getAllOffers } from "./services/offer.service";
-import { env } from "process";
+import {ILocationDefaultObject, IOffer} from "./typescript/interfaces";
+import {getAllOffers} from "./services/offer.service";
 
 //FIREBASE SHIZ
-import { initializeApp } from "firebase/app";
+import {initializeApp} from "firebase/app";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -39,49 +39,55 @@ const app = initializeApp(firebaseConfig);
 //END OF FIREBASE SHIZ
 
 function App() {
-  const [offersData, setOffersData] = useState<Array<IOffer>>([]);
+    const [offersData, setOffersData] = useState<Array<IOffer>>([]);
 
-  const location = useLocation<ILocationDefaultObject>();
+    const location = useLocation<ILocationDefaultObject>();
 
-  //this is the base for displaying messages for user
-  console.log(location.state);
+    //this is the base for displaying messages for user
+    console.log(location.state);
 
-  useEffect(() => {
-    async function getOffersData() {
-      let getOffersData = await getAllOffers();
-      setOffersData(getOffersData);
+    useEffect(() => {
+        async function getOffersData() {
+            let getOffersData = await getAllOffers();
+            setOffersData(getOffersData);
+        }
+
+        getOffersData();
+    },  [location])
+    //TESTUNG
+    const login = async () => {
+        await signInWithEmailAndPassword(getAuth(), 'adye47@hotmail.com', 'adye47@hotmail.com').then(res => console.log(res));
     }
-    getOffersData();
-  }, [location]);
 
-  return (
-    <ThemeProvider theme={mainTheme}>
-      <div className="App">
-        <Container maxWidth="xl">
-          <CssBaseline />
-          <Grid container spacing={2} direction={"row"}>
-            <Grid item xs={12} md={12}>
-              <AppTopBar />
-            </Grid>
-            <Grid item container xs={12} md={12} direction={"row"}>
-              <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={(props) => (
-                    <OffersList {...props} offers={offersData} />
-                  )}
-                />
-                <Route path="/edit-offer" component={EditOffer} />
-                <Route path="/offer-details" component={OfferDetails} />
-                <Route path="/add-offer" component={CreateOfferForm} />
-              </Switch>
-            </Grid>
-          </Grid>
-        </Container>
-      </div>
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={mainTheme}>
+            <div className="App">
+                <Container maxWidth="xl">
+                    <CssBaseline/>
+                    <Grid container spacing={2} direction={"row"}>
+                        <Grid item xs={12} md={12}>
+                            <AppTopBar/>
+                        </Grid>
+                        <Grid item container xs={12} md={12} direction={"row"}>
+                            <Switch>
+                                <Route
+                                    exact
+                                    path="/"
+                                    render={(props) => (
+                                        <OffersList {...props} offers={offersData}/>
+                                    )}
+                                />
+                                <Route path="/edit-offer" component={EditOffer}/>
+                                <Route path="/offer-details" component={OfferDetails}/>
+                                <Route path="/add-offer" component={CreateOfferForm}/>
+                            </Switch>
+                            <button onClick={login}>Login</button>
+                        </Grid>
+                    </Grid>
+                </Container>
+            </div>
+        </ThemeProvider>
+    );
 }
 
 export default App;
