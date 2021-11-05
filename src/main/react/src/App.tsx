@@ -14,9 +14,6 @@ import { OffersList } from "./components/OffersList";
 import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
 import { FirebaseInitService } from "./services/firebase-init.service";
 import { getAllOffers } from "./services/offer.service";
-import { mainTheme } from "./themes/mainTheme";
-import { ILocationDefaultObject, IOffer } from "./typescript/interfaces";
-
 
 FirebaseInitService.initializeApp();
 
@@ -62,7 +59,8 @@ function App() {
                   exact
                   path="/"
                   render={(props) => (
-                    <OffersList {...props} offers={offersData} />
+                    <Homepage />
+                    // <OffersList {...props} offers={offersData} />
                   )}
                 />
                 <Route path="/edit-offer" component={EditOffer} />

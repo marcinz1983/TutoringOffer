@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Global scrollbar style. This should probably be somwhere in MUI create theme, but 
+I have no idea how to set it up in theme correctly without typescript errors. 
+*/
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #f28705 #ffffff;
+  }
+
+  *::-webkit-scrollbar {
+    width: 20px;
+    background-color: white;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #f28705;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #04ADBF;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }

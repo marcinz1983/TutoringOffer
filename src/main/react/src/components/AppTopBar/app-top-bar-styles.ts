@@ -1,12 +1,16 @@
-export const styles = {
+import { appTopBarConf as config } from "../../themes/component-styles.conf"
+
+export const appTopBarStyles = {
   box: {
     flexGrow: 1,
-    paddingTop: "25px"
+    paddingTop: config.boxPaddingTop
   },
   
   appBar: {
     background: "transparent",
-    boxShadow: "none"
+    boxShadow: "none",
+    maxWidth: config.appBarMaxWidth
+
   },
 
   toolbar: {
@@ -18,37 +22,37 @@ export const styles = {
     },
   
     menuPaper: {
-      height: "354px",
-      width: "342px",
+      height: config.menuPaperHeight,
+      width: config.menuPaperWidth,
       background:
         "transparent linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 100%) 0% 0% no-repeat padding-box",
       border: "2px solid rgba(255, 255, 255, 0.6)",
-      borderRadius: "40px",
-      backdropFilter: "blur(40px)",
+      borderRadius: config.menuPaperBorderRadius,
+      backdropFilter: `blur(${config.menuPaperBackdropBlurFilter})`,
     },
     
     menuRoundedIcon: {
-      fontSize: 60
+      fontSize: config.menuRoundedIconFontSize
     },
   
     menuItem: {
-      fontSize: 24,
+      fontSize: config.menuItemFontSize,
       fontWeight: "bold",
-      paddingTop: "20px",
-      paddingBottom: "20px",
+      paddingTop: config.menuItemPaddingTop,
+      paddingBottom: config.menuItemPaddingBottom,
       '&:hover' : {
         backgroundColor: 'transparent',
-        color: '#04ADBF'
+        color: config.menuItemHoverColor
       }
     },
   
     iconButton: {
-      marginLeft: '260px',
-      padding: '10px'
+      marginLeft: config.iconButtonMarginLeft,
+      padding: config.menuItemPadding
     },
 
     highlightOffOutlinedIcon: {
-      fontSize: 50
+      fontSize: config.highlightOffOutlinedIconFontSize
     }
   
   };

@@ -3,6 +3,7 @@ import { createTheme } from "@mui/material";
 import { IMainTheme } from "../typescript/interfaces";
 
 export const mainTheme: IMainTheme = createTheme({
+
     breakpoints:{
         values:{
             xs: 0,

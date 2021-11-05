@@ -66,5 +66,4 @@ export interface IMainTheme {
       default: string,
     }
   }
-  
 }
