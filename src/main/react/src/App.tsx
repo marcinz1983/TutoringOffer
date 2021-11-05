@@ -14,6 +14,7 @@ import { OffersList } from "./components/OffersList";
 import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
 import { FirebaseInitService } from "./services/firebase-init.service";
 import { getAllOffers } from "./services/offer.service";
+import { Homepage } from "./pages/Homepage/Homepage";
 
 FirebaseInitService.initializeApp();
 
