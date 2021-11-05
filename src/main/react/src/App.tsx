@@ -15,6 +15,8 @@ import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
 import { FirebaseInitService } from "./services/firebase-init.service";
 import { getAllOffers } from "./services/offer.service";
 import { Homepage } from "./pages/Homepage/Homepage";
+import { IOffer, ILocationDefaultObject} from "./typescript/interfaces"
+import { mainTheme } from './themes/mainTheme'
 
 FirebaseInitService.initializeApp();
 
