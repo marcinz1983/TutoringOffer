@@ -1,5 +1,6 @@
 package com.anm.init.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "APP_USER")
 @Builder(setterPrefix = "with")
 public class AppUser {
@@ -17,7 +19,7 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", unique = true)
-    private long id;
+    private Long id;
     @Column(name = "FIREBASE_UID")
     private String firebaseUid;
     @Column(name = "FIREBASE_NAME")
