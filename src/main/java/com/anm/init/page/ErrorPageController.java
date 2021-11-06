@@ -25,7 +25,7 @@ public class ErrorPageController implements ErrorController {
             case NOT_FOUND:
                 String redirectUri = (String) request.getAttribute(RequestDispatcher.FORWARD_REQUEST_URI);
                 model.addAttribute("redirect", redirectUri);
-                return new ModelAndView("redirect:/", model);
+                return new ModelAndView("forward:/", model);
             case INTERNAL_SERVER_ERROR:
                 return new ModelAndView("error-500", model);
             default:
