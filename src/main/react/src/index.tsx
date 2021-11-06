@@ -6,6 +6,8 @@ import { BrowserRouter as Router} from "react-router-dom";
 
 console.log(process.env.REACT_APP_TEST)
 
+handleRedirectUrl();
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
@@ -14,3 +16,12 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
+function handleRedirectUrl(){
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    if(params.redirect){
+        (window as any).history.pushState("", "", params.redirect);
+    }
+}
