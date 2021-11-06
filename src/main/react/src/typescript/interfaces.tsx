@@ -1,3 +1,20 @@
+export interface IRegisterForm {
+  firstName: string,
+  lastName: string,
+  username: string,
+  email: string,
+  password: string,
+  repassword: string,
+}
+
+export interface IErrorsForm {
+  email: string,
+  password: string,
+  repassword: string,
+  valid: boolean,
+}
+
+
 export interface ITeacherProfile {
   avatarAlt: string;
   avatarUrl: string;

@@ -21,6 +21,19 @@ export const HOMEPAGE_STEPSECTION_TITLE_1 = "Znajdź"
 export const HOMEPAGE_STEPSECTION_TITLE_2 = "Skontaktuj się"
 export const HOMEPAGE_STEPSECTION_TITLE_3 = "Zaplanuj lekcję"
 
+//Form Register
+export const FORM_TITLE_REGISTER = "Rejestracja"
+export const FORM_BUTTON_REGISTER = "Rejestruj się"
+export const FORM_BUTTON_BACK = "Powrót"
+export const FORM_EMAIL_ERROR = "Podaj Prawidłowy Email"
+export const FORM_PASSWORD_ERROR = "Hasło wymaga: Min 8 znaków, przynamniej 1 dużą litere, 1 znak specialny, 1 cyfrę"
+export const FORM_REPASSWORD_ERROR = "Podaj te same hasło"
+export const FORM_INPUT_NAME = "Imie"
+export const FORM_INPUT_SURNAME = "Nazwisko"
+export const FORM_INPUT_USERNAME = "Nazwa użytkownika"
+export const FORM_INPUT_EMAIL = "Email"
+export const FORM_INPUT_PASSWORD = "Hasło"
+export const FORM_INPUT_REPASSWORD = "Powtórz haslo"
 
 export const AUTOCOMPLETE_INPUT_OPTIONS = [
     {label: 'Javascript', id: '1'},

@@ -15,6 +15,7 @@ import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
 import { FirebaseInitService } from "./services/firebase-init.service";
 import { getAllOffers } from "./services/offer.service";
 import { Homepage } from "./pages/Homepage/Homepage";
+import {RegisterForm} from "./components/User/RegisterForm";
 import { IOffer, ILocationDefaultObject} from "./typescript/interfaces"
 import { mainTheme } from './themes/mainTheme'
 
@@ -69,6 +70,7 @@ function App() {
                 <Route path="/edit-offer" component={EditOffer} />
                 <Route path="/offer-details" component={OfferDetails} />
                 <Route path="/add-offer" component={CreateOfferForm} />
+                <Route path="/register" component={RegisterForm} />
               </Switch>
               <button onClick={login}>Login</button>
             </Grid>
