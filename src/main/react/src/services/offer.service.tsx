@@ -1,12 +1,13 @@
 import axios from "axios";
 import { IOffer } from "../typescript/interfaces";
 
-export const getAllOffers = async () => {
+export const getAllOffers = async (IDToken:any) => {
     const URL = '/api/offer/get'
     const data = await axios(URL, {
         method: 'GET',
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            Authorization: `Bearer ${IDToken}`
         }
     })
     .then (response => response.data)

@@ -10,7 +10,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import { AppTopBar } from "./components/AppTopBar/AppTopBar";
 import { EditOffer } from "./components/EditOffer";
 import { OfferDetails } from "./components/OfferDetails";
-import { OffersList } from "./components/OffersList";
+// import { OffersList } from "./components/OffersList";
 import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
 import { FirebaseInitService } from "./services/firebase-init.service";
 import { getAllOffers } from "./services/offer.service";
@@ -36,24 +36,32 @@ function App() {
     // Handle negative response
     // });
   });
-
-
+  
   useEffect(() => {
     async function getOffersData() {
-      let getOffersData = await getAllOffers();
-      setOffersData(getOffersData);
+      // let getOffersData = await getAllOffers();
+      // setOffersData(getOffersData);
+      await signInWithEmailAndPassword(getAuth(), 'adye47@hotmail.com', 'adye47@hotmail.com')
+    .then(res => res.user.getIdToken()
+    .then(data => getAllOffers(data).then(data => setOffersData(data))));
     }
     getOffersData();
   }, [location]);
   const login = async () => {
-    await signInWithEmailAndPassword(getAuth(), 'adye47@hotmail.com', 'adye47@hotmail.com').then(res => console.log(res));
+    await signInWithEmailAndPassword(getAuth(), 'adye47@hotmail.com', 'adye47@hotmail.com')
+    .then(res => res.user.getIdToken()
+    .then(data => getAllOffers(data)));
   }
+
+
+  
+  console.log(offersData)
   return (
     <ThemeProvider theme={mainTheme}>
       <div className="App">
         <Container maxWidth="xl">
           <CssBaseline />
-          <Grid container spacing={2} direction={"row"}>
+          <Grid container direction={"row"}>
             <Grid item xs={12} md={12}>
               <AppTopBar />
             </Grid>
@@ -72,7 +80,6 @@ function App() {
                 <Route path="/add-offer" component={CreateOfferForm} />
                 <Route path="/register" component={RegisterForm} />
               </Switch>
-              <button onClick={login}>Login</button>
             </Grid>
           </Grid>
         </Container>

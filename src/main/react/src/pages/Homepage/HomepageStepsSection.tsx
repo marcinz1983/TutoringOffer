@@ -15,7 +15,7 @@ import {
 
 export const HomepageStepsSection = () => {
   return (
-    <Grid gap={2} xs={12} sx={styles.stepsSectionContainer}>
+    <Grid item gap={2} xs={12} sx={styles.stepsSectionContainer}>
       <Grid item sx={styles.stepsGridItem}>
         <img src={findPersonIcon} alt="find-icon" />
         <Typography variant="h5">{HOMEPAGE_STEPSECTION_TITLE_1}</Typography>

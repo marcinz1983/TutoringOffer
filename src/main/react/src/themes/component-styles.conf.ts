@@ -16,7 +16,12 @@ export const appTopBarConf = {
 }
 
 export const searchInputConf = {
-    paperWidth: '454px',
+    paperWidth: {
+        xs: '80vw',
+        sm: '60vw',
+        md: '454px',
+        lg: '454px',
+    },
     paperHeight: '76px',
     paperBorderRadius: '38px',
     paperZIndex: 1,
@@ -39,11 +44,20 @@ export const searchInputConf = {
 }
 
 export const homepageConf = {
+    //Hero Search
     homepageHeroSearchGridItemPaddingTopLG: '200px',
     inputContainerWidth: '100%',
     heroHeaderPaddingBottom: '20px',
     heroSubheaderPaddingTop: '20px',
-    stepsSectionContainerMargin: '100px',
+    
+    //Steps
+    stepsSectionContainerMarginTop: {
+        xs: '0px',
+        sm: '80px',
+        md: '80px',
+        lg: '160px'
+    },
+    stepsSectionContainerMarginBottom: '372px',
     stepsGridItemWidth: '100%',
     stepsGridItemHeight: '300px',
     stepsGridItemImgMarginBottom: '20px',
@@ -52,4 +66,60 @@ export const homepageConf = {
     hideOnMobileStepsGridItemWidth: '100%',
     hideOnMobileStepsGridItemHeight: '300px',
     hideOnMobileStepsGridItemImgMarginBottom: '20px',
+    mobileImgPaddingTop: '100px',
+    mobileImgWidth: '70vw',
+    stepsGridItemMarginTop: {
+        xs: '180px',
+        sm: '180px',
+        md: '180px',
+        lg: '0'
+    },
+    //Homepage Offer Tiles
+    offerTilesTitleMarginBottom: '125px',
+    offerTilesFontSize: '36px',
+    offerTilesLineHeight: '70px',
+    offerTilesContainerMarginBottom: '200px',
+    offerGridItemHeight: '200px',
+    offerGridItemBorderRadius: '10px',
+    offerGridItemFontSize: '30px',
+    //Homepage Client Say
+    clientsSayPaperMinHeight: '230px',
+    clientsSayBorderRadius: '30px',
+    clientsSayAvatarWidth: {
+        xs: '80px',
+        sm: '100px',
+        md: '120px',
+        lg: '120px',
+      },
+    clientsSayAvatarHeight: {
+        xs: '80px',
+        sm: '100px',
+        md: '120px',
+        lg: '120px',
+      },
+    clientsSayAvatarBorder: '1px solid gray',
+    clientsSayNameMarginTop: '50px',
+    clientSayPaginationGridItemPadding: '30px',
+    //Homepage Bottom Image
+    bottomImgGridItemMarginTop: '100px',
+    bottomImgWidth: {
+        xs: '80vw',
+        sm: '80 vw',
+        md: '60vw',
+        lg: '40vw',
+      }
+
+}
+
+export const FooterConf = {
+    footerContainerMarginTop: '170px',
+    ulMarginTop: '30px',
+    ulMarginBottom: '50px',
+    logoTypographyPaddingBottom: '30px',
+    rightUlPadding: 0,
+    rightLiPadding: '15px 0 15px 0',
+    whiteBarWidth: '100vw',
+    whiteBarPaddingRightLeft: 0,
+    whiteBarHeight: '55px',
+    spanWidth: '20em'
 }

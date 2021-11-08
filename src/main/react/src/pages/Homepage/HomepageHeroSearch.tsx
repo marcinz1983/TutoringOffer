@@ -12,7 +12,7 @@ import {
 
 export const HomepageHeroSearch = () => {
   return (
-    <Grid container xs={12} sx={styles.homepageContainer}>
+    <Grid container item xs={12} sx={styles.homepageContainer}>
       <Grid item xs={12} md={12} lg={5} sx={styles.homepageHeroSearchGridItem}>
         <Grid item xs={12}>
           <Box sx={styles.heroHeader}>
@@ -27,7 +27,7 @@ export const HomepageHeroSearch = () => {
               </Typography>
             </Box>
           </Box>
-          <Grid xs={12} sx={styles.inputContainer}>
+          <Grid item xs={12} sx={styles.inputContainer}>
             <SearchInput/>
           </Grid>
         </Grid>
