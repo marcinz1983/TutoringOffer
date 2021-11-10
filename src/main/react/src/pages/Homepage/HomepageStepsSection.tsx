@@ -15,14 +15,14 @@ import {
 
 export const HomepageStepsSection = () => {
   return (
-    <Grid item gap={2} xs={12} sx={styles.stepsSectionContainer}>
+    <Grid item xs={11} sm={11} md={11} gap={2} lg={8} xl={8} sx={styles.stepsSectionContainer}>
       <Grid item sx={styles.stepsGridItem}>
         <img src={findPersonIcon} alt="find-icon" />
         <Typography variant="h5">{HOMEPAGE_STEPSECTION_TITLE_1}</Typography>
         <Typography variant="body1">{INFOICON_CARD_STRING_1}</Typography>
       </Grid>
       <Grid item sx={styles.hideOnmobileStepsGridItem}>
-        <img src={arrowBlue} alt="find-icon" />
+        <img src={arrowBlue} alt="find-icon" style={{display:'flex', width: '10vw'}} />
       </Grid>
       <Grid item sx={styles.stepsGridItem}>
         <img src={contactIcon} alt="contact-icon" />
@@ -30,7 +30,7 @@ export const HomepageStepsSection = () => {
         <Typography variant="body1">{INFOICON_CARD_STRING_2}</Typography>
       </Grid>
       <Grid item sx={styles.hideOnmobileStepsGridItem}>
-        <img src={arrowYellow} alt="find-icon" />
+        <img src={arrowYellow} alt="find-icon" style={{display:'flex', width: '10vw'}} />
       </Grid>
       <Grid item sx={styles.stepsGridItem}>
         <img src={callendarIcon} alt="contact-icon" />

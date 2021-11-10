@@ -5,10 +5,7 @@ export const HomepageStyles = {
   //Hero Search
   homepageContainer: {
     display: "flex",
-    justifyContent: {
-      md: "center",
-      lg: "left",
-    },
+    justifyContent: 'space-between',
     height: window.innerHeight - 185,
   },
 
@@ -20,20 +17,22 @@ export const HomepageStyles = {
       md: "column",
       lg: "row",
     },
-    paddingTop: {
-      lg: config.homepageHeroSearchGridItemPaddingTopLG,
-    },
+    paddingTop: config.homepageHeroSearchGridItemPaddingTop,
   },
 
   homepageHeroImgGridItem: {
     display: {
       xs: "none",
       sm: "none",
-      md: "none",
-      lg: "block",
+      md: "flex",
+      lg: "flex",
     },
     alignItems: "center",
     justifyContent: "center",
+    img: {
+      width: '40vw',
+      height: '40vw'
+    },
   },
 
   inputContainer: {
@@ -42,7 +41,7 @@ export const HomepageStyles = {
     justifyContent: {
       xs: "center",
       sm: "center",
-      md: "center",
+      md: "left",
       lg: "left",
     },
   },
@@ -51,7 +50,7 @@ export const HomepageStyles = {
     display: {
       xs: "flex",
       sm: "flex",
-      md: "flex",
+      md: "none",
       lg: "none",
     },
     alignItems: "center",
@@ -61,6 +60,28 @@ export const HomepageStyles = {
   heroHeader: {
     paddingBottom: config.heroHeaderPaddingBottom,
     whiteSpace: "pre-wrap",
+    paddingLeft: {
+      xs: '15px',
+      sm: '15px',
+      md: 'px',
+      lg: '0'
+    },
+    h3: {
+      fontSize: {
+        xs: '2rem',
+        sm: '3rem',
+        md: '3rem',
+        lg: '3rem',
+      }
+    },
+    h4: {
+      fontSize: {
+        xs: '1.3rem',
+        sm: '2rem',
+        md: '2rem',
+        lg: '2rem',
+      }
+    },
   },
 
   heroSubheader: {
@@ -83,7 +104,7 @@ export const HomepageStyles = {
     flexDirection: {
       xs: "column",
       sm: "column",
-      md: "column",
+      md: "row",
       lg: "row",
     },
     marginTop: config.stepsSectionContainerMarginTop,
@@ -141,6 +162,9 @@ export const HomepageStyles = {
 
   offerTilesContainer: {
     marginBottom: config.offerTilesContainerMarginBottom,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   
   offerGridItem: {

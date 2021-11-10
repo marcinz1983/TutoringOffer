@@ -3,7 +3,8 @@ import { appTopBarConf as config } from "../../themes/component-styles.conf"
 export const appTopBarStyles = {
   box: {
     flexGrow: 1,
-    paddingTop: config.boxPaddingTop
+    padding: 0,
+    paddingTop: config.boxPaddingTop,
   },
   
   appBar: {
@@ -30,9 +31,14 @@ export const appTopBarStyles = {
       borderRadius: config.menuPaperBorderRadius,
       backdropFilter: `blur(${config.menuPaperBackdropBlurFilter})`,
     },
+
+    menuIconButton: {
+      padding: "0"
+    },
+
     
     menuRoundedIcon: {
-      fontSize: config.menuRoundedIconFontSize
+      fontSize: config.menuRoundedIconFontSize,
     },
   
     menuItem: {

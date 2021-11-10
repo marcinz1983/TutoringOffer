@@ -39,6 +39,7 @@ export const AppTopBar = () => {
             aria-haspopup="true"
             onClick={handleMenu}
             color="primary"
+            sx={styles.menuIconButton}
           >
             <MenuRoundedIcon sx={styles.menuRoundedIcon} />
           </IconButton>

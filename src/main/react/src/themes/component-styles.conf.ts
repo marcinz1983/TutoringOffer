@@ -17,12 +17,14 @@ export const appTopBarConf = {
 
 export const searchInputConf = {
     paperWidth: {
-        xs: '80vw',
+        xs: '90vw',
         sm: '60vw',
         md: '454px',
         lg: '454px',
     },
-    paperHeight: '76px',
+    paperHeight: {
+        xs: '70px',
+    },
     paperBorderRadius: '38px',
     paperZIndex: 1,
     listBoxPropsHeight: '250px',
@@ -45,7 +47,12 @@ export const searchInputConf = {
 
 export const homepageConf = {
     //Hero Search
-    homepageHeroSearchGridItemPaddingTopLG: '200px',
+    homepageHeroSearchGridItemPaddingTop: {
+        xs: '50px',
+        sm: '50px',
+        md: '50px',
+        lg: '200px',
+    },
     inputContainerWidth: '100%',
     heroHeaderPaddingBottom: '20px',
     heroSubheaderPaddingTop: '20px',
@@ -53,11 +60,14 @@ export const homepageConf = {
     //Steps
     stepsSectionContainerMarginTop: {
         xs: '0px',
-        sm: '80px',
-        md: '80px',
-        lg: '160px'
+        sm: '120px',
+        md: '120px',
+        lg: '250px'
     },
-    stepsSectionContainerMarginBottom: '372px',
+    stepsSectionContainerMarginBottom: {
+        xs: '200px',
+        lg: '300px',
+    },
     stepsGridItemWidth: '100%',
     stepsGridItemHeight: '300px',
     stepsGridItemImgMarginBottom: '20px',
@@ -111,6 +121,7 @@ export const homepageConf = {
 
 }
 
+//Footer
 export const FooterConf = {
     footerContainerMarginTop: '170px',
     ulMarginTop: '30px',
@@ -120,6 +131,9 @@ export const FooterConf = {
     rightLiPadding: '15px 0 15px 0',
     whiteBarWidth: '100vw',
     whiteBarPaddingRightLeft: 0,
-    whiteBarHeight: '55px',
+    whiteBarHeight: {
+        xs: '55px',
+        lg: '133px'
+    },
     spanWidth: '20em'
 }

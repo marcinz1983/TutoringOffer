@@ -26,7 +26,7 @@ export const FOOTER_LINK_3_TEXT="Link 3"
 export const FOOTER_LINK_4_TEXT="Link 4"
 export const FOOTER_COPYRIGHT_TEXT="© 2021 Logo. All rights Reserved."
 export const FOOTER_WHITEBAR_PRIVACY="Privacy Policy"
-export const FOOTER_WHITEBAR_TERMS_OF_SERVICE="Privacy Policy"
+export const FOOTER_WHITEBAR_TERMS_OF_SERVICE="Terms of service"
 
 //Form Register
 export const FORM_TITLE_REGISTER = "Rejestracja"

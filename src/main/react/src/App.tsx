@@ -2,7 +2,7 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import { Container, CssBaseline, Grid } from "@mui/material";
+import { CssBaseline, Grid } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -15,9 +15,10 @@ import { CreateOfferForm } from "./components/Trainer/CreateOfferForm";
 import { FirebaseInitService } from "./services/firebase-init.service";
 import { getAllOffers } from "./services/offer.service";
 import { Homepage } from "./pages/Homepage/Homepage";
-import {RegisterForm} from "./components/User/RegisterForm";
-import { IOffer, ILocationDefaultObject} from "./typescript/interfaces"
-import { mainTheme } from './themes/mainTheme'
+import { RegisterForm } from "./components/User/RegisterForm";
+import { IOffer, ILocationDefaultObject } from "./typescript/interfaces";
+import { mainTheme } from "./themes/mainTheme";
+import { Footer } from "./components/Footer/Footer";
 
 FirebaseInitService.initializeApp();
 
@@ -37,53 +38,61 @@ function App() {
     // Handle negative response
     // });
   });
-  
+
   useEffect(() => {
     async function getOffersData() {
       // let getOffersData = await getAllOffers();
       // setOffersData(getOffersData);
-      await signInWithEmailAndPassword(getAuth(), 'adye47@hotmail.com', 'adye47@hotmail.com')
-    .then(res => res.user.getIdToken()
-    .then(data => getAllOffers(data).then(data => setOffersData(data))));
+      await signInWithEmailAndPassword(
+        getAuth(),
+        "adye47@hotmail.com",
+        "adye47@hotmail.com"
+      ).then((res) =>
+        res.user
+          .getIdToken()
+          .then((data) =>
+            getAllOffers(data).then((data) => setOffersData(data))
+          )
+      );
     }
     getOffersData();
   }, [location]);
- 
+
   const login = async () => {
     await signInWithEmailAndPassword(getAuth(), 'adye47@hotmail.com', 'adye47@hotmail.com')
     .then(res => res.user.getIdToken()
     .then(data => getAllOffers(data)));
   }
 
-
-  
   return (
     <ThemeProvider theme={mainTheme}>
       <div className="App">
-        <Container maxWidth="xl">
-          <CssBaseline />
-          <Grid container direction={"row"}>
-            <Grid item xs={12} md={12}>
-              <AppTopBar />
-            </Grid>
-            <Grid item container xs={12} md={12} direction={"row"}>
-              <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={(props) => (
-                    <Homepage />
-                    // <OffersList {...props} offers={offersData} />
-                  )}
-                />
-                <Route path="/edit-offer" component={EditOffer} />
-                <Route path="/offer-details" component={OfferDetails} />
-                <Route path="/add-offer" component={CreateOfferForm} />
-                <Route path="/register" component={RegisterForm} />
-              </Switch>
+        <CssBaseline />
+
+          <Grid container style={{ minWidth: '99vw', justifyContent: 'center'}}>
+            <Grid item xs={11} md={11} lg={8}>
+              <AppTopBar/>
             </Grid>
           </Grid>
-        </Container>
+          
+          <Grid item container xs={12} direction={"row"}>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={(props) => (
+                  <Homepage />
+                  // <OffersList {...props} offers={offersData} />
+                )}
+              />
+              <Route path="/edit-offer" component={EditOffer} />
+              <Route path="/offer-details" component={OfferDetails} />
+              <Route path="/add-offer" component={CreateOfferForm} />
+              <Route path="/register" component={RegisterForm} />
+            </Switch>
+            <Footer />
+          </Grid>
+          
       </div>
     </ThemeProvider>
   );

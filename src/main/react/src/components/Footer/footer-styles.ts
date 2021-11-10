@@ -4,8 +4,7 @@ export const footerStyles = {
     footerContainer: {
         marginTop: config.footerContainerMarginTop,
         display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'space-between'
+        justifyContent: 'center',
     },
     ul: {
         marginTop: config.ulMarginTop,
@@ -15,7 +14,7 @@ export const footerStyles = {
         marginBottom: config.ulMarginBottom
     },
     footerRightContainer: {
-        display: 'flex'
+        display: 'flex',
     },
     footerLogoTypography: {
         paddingBottom: config.logoTypographyPaddingBottom,
@@ -33,23 +32,25 @@ export const footerStyles = {
         color: 'black'
     },
     footerWhiteBar: {
-        backgroundColor: 'white',
-        width: config.whiteBarWidth,
-        paddingLeft: config.whiteBarPaddingRightLeft,
-        paddingRight: config.whiteBarPaddingRightLeft,
+        backgroundColor: '#FFF7F5',
         height: config.whiteBarHeight,
         display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    footerWhiteBarGridItem: {
+        display:'flex',
+        flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center',
         span: {
-            width: config.spanWidth,
-            justifyContent: 'space-between',
-            display: {
+            display:{
                 xs: 'none',
-                sm: 'none',
-                md: 'flex',
-                lg: 'flex'
-            }
+                md: 'flex'
+            },
+            flexDirection: 'row',
+            width: '330px',
+            justifyContent: 'space-between',
         }
-    }
+    },
 } as const

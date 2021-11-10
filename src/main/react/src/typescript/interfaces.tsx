@@ -82,5 +82,9 @@ export interface IMainTheme {
     background: {
       default: string,
     }
+  },
+
+  overrides?: {
+    
   }
 }

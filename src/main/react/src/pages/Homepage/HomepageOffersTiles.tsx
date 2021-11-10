@@ -338,8 +338,8 @@ export const HomepageOffersTiles = () => {
   ];
 
   return (
-    <Grid container>
-      <Grid item xs={12}>
+    <>
+      <Grid container xs={11} lg={8}>
         <Typography variant="h3" sx={styles.offerTilesTitle}>
           {HOMEPAGE_OFFERSTILES_TITLE}
         </Typography>
@@ -353,6 +353,6 @@ export const HomepageOffersTiles = () => {
           </Grid>
         ))}
       </Grid>
-    </Grid>
+      </>
   );
 };

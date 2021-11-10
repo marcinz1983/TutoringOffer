@@ -12,8 +12,8 @@ import {
 
 export const HomepageHeroSearch = () => {
   return (
-    <Grid container item xs={12} sx={styles.homepageContainer}>
-      <Grid item xs={12} md={12} lg={5} sx={styles.homepageHeroSearchGridItem}>
+    <Grid container item xs={11} md={11} lg={8} sx={styles.homepageContainer}>
+      <Grid item xs={12} md={6} lg={5} sx={styles.homepageHeroSearchGridItem}>
         <Grid item xs={12}>
           <Box sx={styles.heroHeader}>
             <Typography variant="h3">{HOMEPAGE_HERO_TITLE}</Typography>
@@ -32,8 +32,8 @@ export const HomepageHeroSearch = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} md={7} sx={styles.homepageHeroImgGridItem}>
-        <img src={headerImage} alt="header-img" />
+      <Grid item xs={12} md={6} lg={7} sx={styles.homepageHeroImgGridItem}>
+        <img src={headerImage} alt="header-img"/>
       </Grid>
       <Grid item xs={12} sx={styles.homepageHeroMobileImgGridItem}>
         <img src={headerMobileImage} alt="mobileHeader-img" style={styles.mobileImg} />

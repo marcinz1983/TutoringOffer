@@ -1,8 +1,17 @@
 import { createTheme } from "@mui/material";
 
-import { IMainTheme } from "../typescript/interfaces";
+export const mainTheme = createTheme({
 
-export const mainTheme: IMainTheme = createTheme({
+    //ovverride for default <CssBaseline /> styles
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    background: 'linear-gradient(0deg, #F2D7D0 0%, #FFFFFF 50%, #F2D7D0 100%)'
+                }
+            }
+        }
+    },
 
     breakpoints:{
         values:{
@@ -21,8 +30,10 @@ export const mainTheme: IMainTheme = createTheme({
         secondary: {
             main: "#04ADBF"
         },
-        background: {
-            default: "#F2D7D0"
-        }
-    }
+    },
+
+    
+
 });
+
+
