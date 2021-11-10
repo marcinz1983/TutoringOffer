@@ -50,7 +50,7 @@ export const ClientsSaySection = () => {
       </Typography>
       <Grid container spacing={2} sx={styles.clientsSayContainer}>
         {fakeData.map((item) => (
-          <Grid item xs={12} sm={12} md={12} lg={5}>
+          <Grid item xs={12} sm={12} md={12} lg={5} key={item.name}>
             <Paper sx={styles.clientSayPaper}>
               <Grid container sx={styles.clientsSayPaperContainer}>
                 <Grid item xs={4} sx={styles.clientsSayAvatarGridItem}>

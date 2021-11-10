@@ -22,6 +22,7 @@ import { mainTheme } from './themes/mainTheme'
 FirebaseInitService.initializeApp();
 
 function App() {
+
   const [offersData, setOffersData] = useState<Array<IOffer>>([]);
 
   const location = useLocation<ILocationDefaultObject>();
@@ -47,6 +48,7 @@ function App() {
     }
     getOffersData();
   }, [location]);
+ 
   const login = async () => {
     await signInWithEmailAndPassword(getAuth(), 'adye47@hotmail.com', 'adye47@hotmail.com')
     .then(res => res.user.getIdToken()
@@ -55,7 +57,6 @@ function App() {
 
 
   
-  console.log(offersData)
   return (
     <ThemeProvider theme={mainTheme}>
       <div className="App">

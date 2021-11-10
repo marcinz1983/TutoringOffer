@@ -19,7 +19,7 @@ export const Footer = () => {
         <Typography variant="body1">{FOOTER_LOGO_TEXT}</Typography>
         <ul style={styles.ul}>
           {socialIcons.map((icon) => (
-            <li>
+            <li key={icon}>
               <Button>
                 <img src={icon} alt={icon.toString()} />
               </Button>

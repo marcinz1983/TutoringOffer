@@ -13,7 +13,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "1",
     },
     {
       backgroundDescription: "Python",
@@ -23,7 +23,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "2",
     },
     {
       backgroundDescription: "Java",
@@ -33,7 +33,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "3",
     },
     {
       backgroundDescription: "C++",
@@ -43,7 +43,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "4",
     },
     {
       backgroundDescription: "C++",
@@ -53,7 +53,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "5",
     },
     {
       backgroundDescription: "C++",
@@ -63,7 +63,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "6",
     },
     {
       backgroundDescription: "Java",
@@ -73,7 +73,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "7",
     },
     {
       backgroundDescription: "MySQL",
@@ -83,7 +83,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "8",
     },
     {
       backgroundDescription: "Python",
@@ -93,7 +93,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "9",
     },
     {
       backgroundDescription: "Django",
@@ -103,7 +103,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "10",
     },
     {
       backgroundDescription: "Spring",
@@ -113,7 +113,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "11",
     },
     {
       backgroundDescription: "C#",
@@ -123,7 +123,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "12",
     },
     {
       backgroundDescription: "React",
@@ -133,7 +133,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "13",
     },
     {
       backgroundDescription: "Ruby",
@@ -143,7 +143,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "14",
     },
     {
       backgroundDescription: "C++",
@@ -153,7 +153,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "15",
     },
     {
       backgroundDescription: "Perl",
@@ -163,7 +163,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "16",
     },
     {
       backgroundDescription: "Javascript",
@@ -173,7 +173,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "17",
     },
     {
       backgroundDescription: "C++",
@@ -183,7 +183,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "18",
     },
     {
       backgroundDescription: "Golang",
@@ -193,7 +193,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "19",
     },
     {
       backgroundDescription: "Typescript",
@@ -203,7 +203,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "20",
     },
     {
       backgroundDescription: "Visual Basic",
@@ -213,7 +213,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "21",
     },
     {
       backgroundDescription: "C++",
@@ -223,7 +223,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "22",
     },
     {
       backgroundDescription: "Java",
@@ -233,7 +233,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "23",
     },
     {
       backgroundDescription: "PHP",
@@ -243,7 +243,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "24",
     },
     {
       backgroundDescription: "C++",
@@ -253,7 +253,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "25",
     },
     {
       backgroundDescription: "C++",
@@ -263,7 +263,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "26",
     },
     {
       backgroundDescription: "C++",
@@ -273,7 +273,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "27",
     },
     {
       backgroundDescription: "Ruby",
@@ -283,7 +283,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "28",
     },
     {
       backgroundDescription: "PHP",
@@ -293,7 +293,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "29",
     },
     {
       backgroundDescription: "C++",
@@ -303,7 +303,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "30",
     },
     {
       backgroundDescription: "Python",
@@ -313,7 +313,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "31",
     },
     {
       backgroundDescription: "Perl",
@@ -323,7 +323,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "32",
     },
     {
       backgroundDescription: "Java",
@@ -333,7 +333,7 @@ export const HomepageOffersTiles = () => {
       price: 0,
       rateDescription: "string",
       shortDescription: "string",
-      uuid: "string",
+      uuid: "33",
     },
   ];
 
@@ -344,9 +344,9 @@ export const HomepageOffersTiles = () => {
           {HOMEPAGE_OFFERSTILES_TITLE}
         </Typography>
       </Grid>
-      <Grid container xs={12} spacing={2} sx={styles.offerTilesContainer}>
+      <Grid container columns={12} spacing={2} sx={styles.offerTilesContainer}>
         {fakeData.slice(0, 18).map((item) => (
-          <Grid item lg={2} md={4} sm={6} xs={6}>
+          <Grid item lg={2} md={4} sm={6} xs={6} key={item.uuid}>
             <Paper sx={styles.offerGridItem}>
                {item.backgroundDescription}
             </Paper>

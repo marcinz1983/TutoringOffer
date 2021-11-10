@@ -4,7 +4,6 @@ import './index.scss';
 import App from './App';
 import { BrowserRouter as Router} from "react-router-dom";
 
-console.log(process.env.REACT_APP_TEST)
 
 handleRedirectUrl();
 
