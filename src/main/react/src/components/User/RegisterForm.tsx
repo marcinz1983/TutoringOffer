@@ -5,7 +5,7 @@ import {useState, FormEvent} from "react";
 import {IRegisterForm} from "../../typescript/interfaces";
 import {IErrorsForm}  from "../../typescript/interfaces";
 import { FormRegisterStyles as styles } from "./registerform-styles";
-import {FORM_EMAIL_ERROR,FORM_REPASSWORD_ERROR,FORM_PASSWORD_ERROR,FORM_BUTTON_REGISTER,FORM_BUTTON_BACK,FORM_TITLE_REGISTER,FORM_INPUT_EMAIL,FORM_INPUT_REPASSWORD,FORM_INPUT_PASSWORD,FORM_INPUT_USERNAME,FORM_INPUT_NAME,FORM_INPUT_SURNAME } from "../../utility/constants";
+import {FORM_EMAIL_ERROR,FORM_REPASSWORD_ERROR,FORM_PASSWORD_ERROR,FORM_BUTTON_REGISTER,FORM_BUTTON_BACK,FORM_TITLE_REGISTER,FORM_INPUT_EMAIL,FORM_INPUT_REPASSWORD,FORM_INPUT_PASSWORD,FORM_INPUT_NAME,FORM_INPUT_SURNAME } from "../../utility/constants";
 //import axios from 'axios';
 
 export const RegisterForm = () =>{
@@ -26,7 +26,6 @@ export const RegisterForm = () =>{
     const [registerForm , setRegisterForm] = useState<IRegisterForm>({
         firstName: '',
         lastName: '',
-        username: '',
         email: '',
         password: '',
         repassword: '',
@@ -88,14 +87,6 @@ export const RegisterForm = () =>{
                     value={registerForm.lastName}
                     onChange={e => setRegisterForm({...registerForm, lastName: e.target.value})}
                 />
-                <TextField
-                    margin="normal"
-                    id="username"
-                    label={FORM_INPUT_USERNAME}
-                    variant="filled"
-                    value={registerForm.username}
-                    onChange={e => setRegisterForm({...registerForm, username: e.target.value})}
-                    required/>
                 <TextField
                     margin="normal"
                     id="email"
