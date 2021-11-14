@@ -14,22 +14,22 @@ export const FooterLinks = () => {
     <div>
       <Typography variant="h5">{FOOTER_HEADING}</Typography>
       <ul style={styles.footerRightUl}>
-        <li style={styles.footerRightLi}>
+        <li style={styles.footerRightLi} key={FOOTER_LINK_1_TEXT}>
           <Link to="#" style={styles.footerRightLiLink}>
             {FOOTER_LINK_1_TEXT}
           </Link>
         </li>
-        <li style={styles.footerRightLi}>
+        <li style={styles.footerRightLi} key={FOOTER_LINK_2_TEXT}>
           <Link to="#" style={styles.footerRightLiLink}>
             {FOOTER_LINK_2_TEXT}
           </Link>
         </li>
-        <li style={styles.footerRightLi}>
+        <li style={styles.footerRightLi} key={FOOTER_LINK_3_TEXT}>
           <Link to="#" style={styles.footerRightLiLink}>
             {FOOTER_LINK_3_TEXT}
           </Link>
         </li>
-        <li style={styles.footerRightLi}>
+        <li style={styles.footerRightLi} key={FOOTER_LINK_4_TEXT}>
           <Link to="#" style={styles.footerRightLiLink}>
             {FOOTER_LINK_4_TEXT}
           </Link>

@@ -339,20 +339,22 @@ export const HomepageOffersTiles = () => {
 
   return (
     <>
-      <Grid container xs={11} lg={8}>
+      <Grid container columns={8}>
         <Typography variant="h3" sx={styles.offerTilesTitle}>
           {HOMEPAGE_OFFERSTILES_TITLE}
         </Typography>
       </Grid>
       <Grid container columns={12} spacing={2} sx={styles.offerTilesContainer}>
         {fakeData.slice(0, 18).map((item) => (
-          <Grid item lg={2} md={4} sm={6} xs={6} key={item.uuid}>
+
+          <Grid item xs={6} sm={6} md={4} lg={2} key={item.uuid}>
+
             <Paper sx={styles.offerGridItem}>
                {item.backgroundDescription}
             </Paper>
           </Grid>
         ))}
       </Grid>
-      </>
+    </>
   );
 };

@@ -64,6 +64,7 @@ function App() {
     .then(data => getAllOffers(data)));
   }
 
+
   return (
     <ThemeProvider theme={mainTheme}>
       <div className="App">

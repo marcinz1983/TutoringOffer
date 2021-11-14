@@ -16,8 +16,9 @@ export const Footer = () => {
   const socialIcons = [facebookIcon, twitterIcon, youtubeIcon, phoneIcon];
 
   return (
-    <Grid container lg={12} sx={styles.footerContainer}>
-      <Grid container xs={11} lg={8} sx={{justifyContent: 'space-between'}}>
+    <Grid container columns={12} sx={styles.footerContainer}>
+      <Grid container columns={12} sx={{justifyContent: 'space-between'}}>
+
         <Grid item sm={12} lg={5}>
           <Typography variant="h4" sx={styles.footerLogoTypography}>
             Logo
@@ -25,7 +26,8 @@ export const Footer = () => {
           <Typography variant="body1">{FOOTER_LOGO_TEXT}</Typography>
           <ul style={styles.ul}>
             {socialIcons.map((icon) => (
-              <li>
+              <li key={icon.toString()}>
+
                 <Button>
                   <img src={icon} alt={icon.toString()} />
                 </Button>
@@ -49,8 +51,8 @@ export const Footer = () => {
         </Grid>
       </Grid>
       
-      <Grid container xs={12} sx={styles.footerWhiteBar}>
-        <Grid item xs={11} sm={11} md={11} lg={8} sx={styles.footerWhiteBarGridItem}>
+      <Grid container columns={12} sx={styles.footerWhiteBar}>
+        <Grid item xs={11} sm={11} md={11} lg={8} sx={styles.footerWhiteBar}>
           <Typography variant="body1">{FOOTER_COPYRIGHT_TEXT}</Typography>
           <span>
             <Typography variant="h6">{FOOTER_WHITEBAR_PRIVACY}</Typography>
