@@ -1,3 +1,8 @@
+import auth from "firebase/auth"
+
+export interface User extends auth.User {
+}
+
 export interface IRegisterForm {
   firstName: string,
   lastName: string,
@@ -12,7 +17,6 @@ export interface IErrorsForm {
   repassword: string,
   valid: boolean,
 }
-
 
 export interface ITeacherProfile {
   avatarAlt: string;
@@ -31,6 +35,7 @@ export interface IOffer {
   rateDescription: string;
   shortDescription: string;
 }
+
 export interface IOfferLocationState {
   from: {
     path: string;
@@ -83,7 +88,5 @@ export interface IMainTheme {
     }
   },
 
-  overrides?: {
-    
-  }
+  overrides?: {}
 }
