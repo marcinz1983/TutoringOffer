@@ -16,8 +16,8 @@ export const Footer = () => {
   const socialIcons = [facebookIcon, twitterIcon, youtubeIcon, phoneIcon];
 
   return (
-    <Grid container columns={12} sx={styles.footerContainer}>
-      <Grid container columns={12} sx={{justifyContent: 'space-between'}}>
+    <Grid container columns={14} sx={styles.footerContainer}>
+      <Grid container columns={12} sx={{justifyContent: 'center'}}>
 
         <Grid item sm={12} lg={5}>
           <Typography variant="h4" sx={styles.footerLogoTypography}>
@@ -52,14 +52,12 @@ export const Footer = () => {
       </Grid>
       
       <Grid container columns={12} sx={styles.footerWhiteBar}>
-        <Grid item xs={11} sm={11} md={11} lg={8} sx={styles.footerWhiteBar}>
+        <Grid item xs={11} sm={11} md={11} lg={10} sx={styles.footerWhiteBarGridItem}>
           <Typography variant="body1">{FOOTER_COPYRIGHT_TEXT}</Typography>
-          <span>
             <Typography variant="h6">{FOOTER_WHITEBAR_PRIVACY}</Typography>
             <Typography variant="h6">
               {FOOTER_WHITEBAR_TERMS_OF_SERVICE}
             </Typography>
-          </span>
         </Grid>
       </Grid>      
     </Grid>

@@ -44,8 +44,7 @@ export const ClientsSaySection = () => {
   ];
 
   return (
-    <Grid container columns={12}>
-
+    <Grid container columns={12} sx={{justifyContent: 'center', textAlign: 'center'}}>
       <Typography variant="h3" sx={styles.offerTilesTitle}>
         {HOMEPAGE_CLIENTSSAY_TITLE}
       </Typography>

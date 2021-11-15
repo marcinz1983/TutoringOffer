@@ -339,7 +339,7 @@ export const HomepageOffersTiles = () => {
 
   return (
     <>
-      <Grid container columns={8}>
+      <Grid container columns={8} sx={{justifyContent: 'center',textAlign: 'center'}}>
         <Typography variant="h3" sx={styles.offerTilesTitle}>
           {HOMEPAGE_OFFERSTILES_TITLE}
         </Typography>

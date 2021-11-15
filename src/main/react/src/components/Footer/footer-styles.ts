@@ -42,15 +42,6 @@ export const footerStyles = {
     footerWhiteBarGridItem: {
         display:'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        span: {
-            display:{
-                xs: 'none',
-                md: 'flex'
-            },
-            flexDirection: 'row',
-            width: '330px',
-            justifyContent: 'space-between',
-        }
+        justifyContent: 'space-between'
     },
 } as const

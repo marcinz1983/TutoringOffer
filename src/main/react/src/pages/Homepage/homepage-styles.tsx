@@ -156,7 +156,6 @@ export const HomepageStyles = {
     marginBottom: config.offerTilesTitleMarginBottom,
     fontWeight: "bold",
     fontSize: config.offerTilesFontSize,
-    whiteSpace: "pre-wrap",
     lineHeight: config.offerTilesLineHeight,
   },
 
@@ -179,7 +178,7 @@ export const HomepageStyles = {
   //ClientSaySection
   clientsSayContainer: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
   },
 
