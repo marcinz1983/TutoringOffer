@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { AppBar, IconButton, Toolbar, Menu, MenuItem } from "@mui/material";
+import { AppBar, IconButton, Toolbar, Menu, MenuItem, } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
 import { Box } from "@mui/system";
@@ -9,6 +9,7 @@ import { Box } from "@mui/system";
 import logo from "../../assets/logo.png";
 import { appTopBarStyles as styles } from "./app-top-bar-styles";
 import {HAMBURGER_LIST_ITEM_1, HAMBURGER_LIST_ITEM_2, HAMBURGER_LIST_ITEM_3 } from "../../utility/constants"
+import {RegisterForm} from "../User/RegisterForm";
 
 export const AppTopBar = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -74,7 +75,7 @@ export const AppTopBar = () => {
             <Box>
               <MenuItem sx={styles.menuItem}>{HAMBURGER_LIST_ITEM_1}</MenuItem>
               <MenuItem sx={styles.menuItem}>{HAMBURGER_LIST_ITEM_2}</MenuItem>
-              <MenuItem sx={styles.menuItem}>{HAMBURGER_LIST_ITEM_3}</MenuItem>
+              <MenuItem  component={Link} to="/register" sx={styles.menuItem}>{HAMBURGER_LIST_ITEM_3}</MenuItem>
             </Box>
           </Menu>
         </Toolbar>

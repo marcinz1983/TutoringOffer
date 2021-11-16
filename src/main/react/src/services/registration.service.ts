@@ -1,5 +1,6 @@
-import { createUserWithEmailAndPassword, getAuth, User, UserCredential } from "firebase/auth";
-import { RegisterCredentials, RegistrationError } from "../typescript/registration.model";
+import {createUserWithEmailAndPassword, getAuth, User, UserCredential} from "firebase/auth";
+import {IRegisterUserRequest, RegisterCredentials, RegistrationError} from "../typescript/registration.model";
+import axios from "axios";
 
 export enum FirebaseRegisterError {
     EMAIL_ALREADY_IN_USE = 'auth/email-already-in-use',
@@ -21,20 +22,14 @@ export abstract class RegistrationService {
             });
     }
 
-    public static async registerUser(userInfo: any): Promise<any> {
-        const URL = '/api/ADD PROPER PATH'
 
-        // TODO: it will be uncomment after EL-59
-        // axios(URL, {
-        //     method: 'post',
-        //     data: JSON.stringify(userInfo),
-        //     headers: {
-        //         "Access-Control-Allow-Origin": "*",
-        //         "Content-Type": "application/json"
-        //     }
-        // })
-        //     .then(response => console.log(response))
-        //     .catch(error => console.log(error))
+
+    public static async registerUser(userData: IRegisterUserRequest): Promise<any> {
+        const URL = '/public/api/user/save'
+
+        axios.post(URL, userData)
+            .then(response => response)
+            .catch(error => console.log(error))
     }
 
     private static mapErrorCode(code: FirebaseRegisterError): RegistrationError {

@@ -1,4 +1,4 @@
-package com.anm.init.controller;
+package com.anm.init.controller.secured;
 
 import com.anm.init.controller.request.AddOfferRequest;
 import com.anm.init.controller.request.EditOfferRequest;

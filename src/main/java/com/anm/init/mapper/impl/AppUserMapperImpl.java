@@ -2,7 +2,7 @@ package com.anm.init.mapper.impl;
 
 import com.anm.init.mapper.AppUserMapper;
 import com.anm.init.model.AppUser;
-import com.anm.init.security.registration.controller.request.AppUserRequest;
+import com.anm.init.controller.request.AppUserRequest;
 import org.springframework.stereotype.Component;
 
 @Component

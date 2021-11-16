@@ -1,4 +1,4 @@
-package com.anm.init.security.registration.controller.request;
+package com.anm.init.controller.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

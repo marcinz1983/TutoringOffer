@@ -1,7 +1,7 @@
 package com.anm.init.mapper;
 
 import com.anm.init.model.AppUser;
-import com.anm.init.security.registration.controller.request.AppUserRequest;
+import com.anm.init.controller.request.AppUserRequest;
 
 public interface AppUserMapper {
 

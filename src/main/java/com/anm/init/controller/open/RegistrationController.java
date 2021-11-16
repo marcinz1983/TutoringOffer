@@ -1,6 +1,6 @@
-package com.anm.init.security.registration.controller;
+package com.anm.init.controller.open;
 
-import com.anm.init.security.registration.controller.request.AppUserRequest;
+import com.anm.init.controller.request.AppUserRequest;
 import com.anm.init.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/public/api/user")
 public class RegistrationController {
 
     private final AppUserService appUserService;
 
     @Autowired
-    public RegistrationController(AppUserService appUserService) {
+    public RegistrationController(final AppUserService appUserService) {
         this.appUserService = appUserService;
     }
 

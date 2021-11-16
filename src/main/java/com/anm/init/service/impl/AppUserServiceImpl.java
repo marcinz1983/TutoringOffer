@@ -3,7 +3,7 @@ package com.anm.init.service.impl;
 import com.anm.init.mapper.AppUserMapper;
 import com.anm.init.model.AppUser;
 import com.anm.init.repository.AppUserRepository;
-import com.anm.init.security.registration.controller.request.AppUserRequest;
+import com.anm.init.controller.request.AppUserRequest;
 import com.anm.init.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
