@@ -23,10 +23,9 @@ export const AuthContextProvider = (props: IAuthContextProviderProps) => {
       .onAuthStateChanged(user => {
         console.log("Auth state changed: ", user);
         setUser(user)
-      });
+      })
 
   }, []);
-
 
   return (<AuthContext.Provider value={{user: user}}>
     {props.children}
@@ -34,4 +33,3 @@ export const AuthContextProvider = (props: IAuthContextProviderProps) => {
 }
 
 export default AuthContext;
-

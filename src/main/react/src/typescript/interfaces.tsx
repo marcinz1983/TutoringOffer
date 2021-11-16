@@ -11,6 +11,23 @@ export interface IRegisterForm {
   repassword: string,
 }
 
+export interface ILoginFormDialogProps {
+  onClose: any,
+  open: boolean
+}
+
+export interface ILoginForm {
+  email : string,
+  password: string,
+}
+
+export interface ILoginErrorForm {
+  firebaseErrorCode: string,
+  firebaseErrorMessage: string,
+  inputEmptyError?: boolean,
+  displayError: boolean
+}
+
 export interface IErrorsForm {
   email: string,
   password: string,

@@ -1,7 +1,7 @@
 export const appTopBarConf = {
     boxPaddingTop: '25px',
     appBarMaxWidth: '1650px',
-    menuPaperHeight: '354px',
+    menuPaperHeight: '200px',
     menuPaperWidth: '342px',
     menuPaperBorderRadius: '40px',
     menuPaperBackdropBlurFilter: '40px',

@@ -22,34 +22,34 @@ import {AuthContextProvider} from "./context/AuthContext";
 
 function App() {
 
-  const [offersData, setOffersData] = useState<Array<IOffer>>([]);
+  const [offersData, setOffersData] = useState<Array<IOffer> | void>([]);
 
-  useEffect(() => {
-    async function getOffersData() {
-      // let getOffersData = await getAllOffers();
-      // setOffersData(getOffersData);
-      await signInWithEmailAndPassword(
-        getAuth(),
-        "adye47@hotmail.com",
-        "adye47@hotmail.com"
-      ).then((res) =>
-        res.user
-          .getIdToken()
-          .then((data) =>
-            getAllOffers(data).then((data) => setOffersData(data))
-          )
-      );
-    }
+  // useEffect(() => {
+  //   async function getOffersData() {
+  //     // let getOffersData = await getAllOffers();
+  //     // setOffersData(getOffersData);
+  //     await signInWithEmailAndPassword(
+  //       getAuth(),
+  //       "adye47@hotmail.com",
+  //       "adye47@hotmail.com"
+  //     ).then((res) =>
+  //       res.user
+  //         .getIdToken()
+  //         .then((data) =>
+  //           getAllOffers().then((data) => setOffersData(data))
+  //         )
+  //     );
+  //   }
 
-    getOffersData();
-  }, []);
-
+  //   getOffersData();
+  // }, []);
   return (
     <AuthContextProvider>
       <ThemeProvider theme={mainTheme}>
         <Router>
           <div className="App">
             <CssBaseline/>
+
 
             <Grid container style={{minWidth: '99vw', justifyContent: 'center'}}>
               <Grid item xs={11} md={11} lg={8}>
@@ -74,7 +74,6 @@ function App() {
               </Switch>
               <Footer/>
             </Grid>
-
           </div>
         </Router>
       </ThemeProvider>

@@ -53,6 +53,21 @@ export const SUCESS_MESSAGE_LONG = "Udało się!"
 export const DELETE_OFFER_SUCCESS_MESSAGE = "Usunęliśmy Twoje ogłoszenie."
 export const EDIT_OFFER_SUCCESS_MESSAGE = "Twoje ogłoszenie zostało pomyślnie edytowane."
 
+//Login Form Modal
+export const LOGIN_FORM_CONSTS={
+    FORM_HEADER: "Zaloguj się",
+    LOGIN_INPUT_LABEL: "Adres e-mail",
+    PASSWORD_INPUT_LABEL: "Hasło",
+    RECOVER_PASSWORD: "Odzyskaj hasło",
+    LOGIN_BUTTON: "Zaloguj się",
+    REMEMBER_ME_CHECKBOX_LABEL: "Zapamiętaj mnie",
+    FORM_BOTTOM_TEXT: "Nie masz jeszcze konta?",
+    FORM_REGISTER_LINK: "Zarejestruj się!",
+    LOGIN_ERROR_MESSAGE: "Email lub hasło są nieprawidłowe",
+    EMPTY_INPUT_ERROR: "Podaj login i hasło aby się zalogować."
+
+}
+
 export const AUTOCOMPLETE_INPUT_OPTIONS = [
     {label: 'Javascript', id: '1'},
     {label: 'Python', id: '2'},

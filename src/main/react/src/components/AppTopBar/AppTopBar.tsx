@@ -1,17 +1,56 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
-import { AppBar, IconButton, Toolbar, Menu, MenuItem, } from "@mui/material";
-import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import {
+  HAMBURGER_LIST_ITEM_1,
+  HAMBURGER_LIST_ITEM_2,
+  HAMBURGER_LIST_ITEM_3,
+} from "../../utility/constants";
+import {
+  AppBar,
+  IconButton,
+  Toolbar,
+  Menu,
+  MenuItem,
+  Chip,
+  Button,
+} from "@mui/material";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
+import { LoginFormDialog } from "../forms/LoginFormDialog/LoginFormDialog";
+import { appTopBarStyles as styles } from "./app-top-bar-styles";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import { getAllOffers } from "../../services/offer.service";
+import { getAuth, signOut } from "firebase/auth";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
+import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 import { Box } from "@mui/system";
 
-import logo from "../../assets/logo.png";
-import { appTopBarStyles as styles } from "./app-top-bar-styles";
-import {HAMBURGER_LIST_ITEM_1, HAMBURGER_LIST_ITEM_2, HAMBURGER_LIST_ITEM_3 } from "../../utility/constants"
-import {RegisterForm} from "../User/RegisterForm";
-
 export const AppTopBar = () => {
+  const history = useHistory();
+  const auth = getAuth();
+
+  const [currentUserEmail, setUserEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserEmail(user.email);
+      } else {
+        setUserEmail(null);
+      }
+    });
+  });
+
+  const handleLogOut = () => {
+    signOut(auth)
+      .then(() => {
+        history.push("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  //logic for hamburger menu
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -22,17 +61,30 @@ export const AppTopBar = () => {
     setAnchorEl(null);
   };
 
+  //logic for login modal
+  const [open, setOpen] = useState<boolean>(false);
+
+  const handleModalClickOpen = () => {
+    setOpen(true);
+    handleClose();
+  };
+
+  const handleModalClose = (): void => {
+    setOpen(false);
+  };
+
   return (
     <Box sx={styles.box}>
-      <AppBar
-        position="sticky"
-        style={styles.appBar}
-      >
+      <AppBar position="sticky" style={styles.appBar}>
         <Toolbar sx={styles.toolbar}>
           <Link to="/">
             <img src={logo} alt="DoIT" />
           </Link>
-
+          {/*TODO: Remove this user display after tests*/}
+          <Button onClick={getAllOffers}>Test Api Call</Button>
+          {currentUserEmail ? (
+            <Chip label={"Zalogowano " + currentUserEmail} color="secondary" />
+          ) : null}
           <IconButton
             size="large"
             aria-label="account of current user"
@@ -74,11 +126,30 @@ export const AppTopBar = () => {
             </IconButton>
             <Box>
               <MenuItem sx={styles.menuItem}>{HAMBURGER_LIST_ITEM_1}</MenuItem>
-              <MenuItem sx={styles.menuItem}>{HAMBURGER_LIST_ITEM_2}</MenuItem>
-              <MenuItem  component={Link} to="/register" sx={styles.menuItem}>{HAMBURGER_LIST_ITEM_3}</MenuItem>
+              {currentUserEmail ? (
+                <>
+                  <MenuItem onClick={handleLogOut} sx={styles.menuItem}>
+                    Wyloguj się
+                  </MenuItem>
+                </>
+              ) : (
+                <>
+                  <MenuItem onClick={handleModalClickOpen} sx={styles.menuItem}>
+                    {HAMBURGER_LIST_ITEM_2}
+                  </MenuItem>
+                  <MenuItem  
+                    component={Link}
+                    to="/register"
+                    sx={styles.menuItem}>
+                    {HAMBURGER_LIST_ITEM_3}
+                  </MenuItem>
+                </>
+              )}
+              
             </Box>
           </Menu>
         </Toolbar>
+        <LoginFormDialog onClose={handleModalClose} open={open} />
       </AppBar>
     </Box>
   );

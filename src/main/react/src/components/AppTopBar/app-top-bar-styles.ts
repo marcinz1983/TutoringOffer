@@ -23,7 +23,7 @@ export const appTopBarStyles = {
     },
   
     menuPaper: {
-      height: config.menuPaperHeight,
+      minHeight: config.menuPaperHeight,
       width: config.menuPaperWidth,
       background:
         "transparent linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 100%) 0% 0% no-repeat padding-box",
