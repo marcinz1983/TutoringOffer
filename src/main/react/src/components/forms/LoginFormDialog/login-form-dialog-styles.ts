@@ -2,7 +2,10 @@ import { mainTheme } from "../../../themes/mainTheme"
 
 export const loginFormDialogStyles = {
     paper:{
-        width: '430px',
+        width: {
+            xs: '80vw',
+            sm: '430px',
+        },
         minHeight: '500px',
         borderRadius: '30px',
         display: 'flex',
@@ -34,12 +37,23 @@ export const loginFormDialogStyles = {
 
     formItemOptions: {
         display: 'flex',
+        flexDirection: {
+            xs: 'column',
+            sm: 'row'
+        },
         justifyContent: 'space-between',
         alignItems: 'center',
         a: {
             textDecoration: 'none',
-            color: 'black'
+            color: 'black',
+        },
+        span: {
+            paddingTop: {
+                xs: '10px',
+                sm: '0'
+            }
         }
+
     },
 
     checkbox: {
@@ -50,7 +64,10 @@ export const loginFormDialogStyles = {
         borderRadius: "20px",
         color: 'white',
         height: '40px',
-        marginTop: '40px',
+        marginTop: {
+            xs: '10px',
+            sm: '30px'
+        },
         boxShadow: 'none',
         '&:hover': {
             backgroundColor: mainTheme.palette.secondary.main,
@@ -70,8 +87,8 @@ export const loginFormDialogStyles = {
         a: {
             textDecoration: 'none',
             fontWeight: 'bold',
-            color: mainTheme.palette.secondary.main
-        }
+            color: mainTheme.palette.secondary.main,
+        },
     }
 
 } as const
