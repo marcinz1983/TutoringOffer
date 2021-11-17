@@ -9,14 +9,11 @@ import {
   Toolbar,
   Menu,
   MenuItem,
-  Chip,
-  Button,
 } from "@mui/material";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
 import { LoginFormDialog } from "../forms/LoginFormDialog/LoginFormDialog";
 import { appTopBarStyles as styles } from "./app-top-bar-styles";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
-import { getAllOffers } from "../../services/offer.service";
 import { getAuth, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
@@ -80,11 +77,6 @@ export const AppTopBar = () => {
           <Link to="/">
             <img src={logo} alt="DoIT" />
           </Link>
-          {/*TODO: Remove this user display after tests*/}
-          <Button onClick={getAllOffers}>Test Api Call</Button>
-          {currentUserEmail ? (
-            <Chip label={"Zalogowano " + currentUserEmail} color="secondary" />
-          ) : null}
           <IconButton
             size="large"
             aria-label="account of current user"
