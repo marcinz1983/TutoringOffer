@@ -18,7 +18,7 @@ export const Footer = () => {
             <Typography variant="h4" sx={styles.footerLogoTypography}>
               Logo
             </Typography>
-            <Typography variant="body1">{FOOTER_LOGO_TEXT}</Typography>
+            <Typography variant="body1">{FOOTER.LOGO_TEXT}</Typography>
             <ul style={styles.ul}>
               {socialIcons.map((icon) => (
                 <li key={icon.toString()}>
@@ -53,9 +53,9 @@ export const Footer = () => {
           lg={8}
           sx={styles.footerWhiteBarGridItem}
         >
-          <Typography variant="body1">{FOOTER_COPYRIGHT_TEXT}</Typography>
+          <Typography variant="body1">{FOOTER.COPYRIGHT_TEXT}</Typography>
           <span>
-            <Typography variant="h6">{FOOTER_WHITEBAR_PRIVACY}</Typography>
+            <Typography variant="h6">{FOOTER.WHITEBAR_PRIVACY}</Typography>
             <Typography variant="h6">
               {FOOTER.WHITEBAR_TERMS_OF_SERVICE}
             </Typography>
