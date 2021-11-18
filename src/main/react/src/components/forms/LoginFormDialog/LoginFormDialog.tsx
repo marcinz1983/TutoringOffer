@@ -93,8 +93,8 @@ export const LoginFormDialog = (props: ILoginFormDialogProps) => {
     >
       <Paper component="form" onSubmit={handleFormSubmit} sx={styles.paper}>
         <Grid item xs={12} sx={styles.iconButton}>
-          <IconButton aria-label="close-modal">
-            <CloseIcon onClick={onClose} />
+          <IconButton aria-label="close-modal" onClick={onClose}>
+            <CloseIcon />
           </IconButton>
         </Grid>
 

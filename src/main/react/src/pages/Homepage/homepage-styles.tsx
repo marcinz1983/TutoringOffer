@@ -152,6 +152,11 @@ export const HomepageStyles = {
   },
 
   //OffersTiles
+
+  mainContainer: {
+    justifyContent: 'center'
+  },
+
   offerTilesTitle: {
     marginBottom: config.offerTilesTitleMarginBottom,
     fontWeight: "bold",
@@ -176,10 +181,14 @@ export const HomepageStyles = {
   },
 
   //ClientSaySection
+  clientsSayMainContainer: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
   clientsSayContainer: {
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: "space-between",
   },
 
   clientSayPaper: {

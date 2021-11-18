@@ -44,7 +44,8 @@ export const ClientsSaySection = () => {
   ];
 
   return (
-    <Grid container columns={12} sx={{justifyContent: 'center', textAlign: 'center'}}>
+    <Grid container sx={styles.clientsSayMainContainer}>
+      <Grid item xs={11} sm={11} lg={8}>
       <Typography variant="h3" sx={styles.offerTilesTitle}>
         {HOMEPAGE_CLIENTSSAY_TITLE}
       </Typography>
@@ -70,6 +71,7 @@ export const ClientsSaySection = () => {
       </Grid>
       <Grid item xs={12} sx={styles.clientSayPaginationGridItem}>
         <Pagination count={3} color="secondary" />
+      </Grid>
       </Grid>
     </Grid>
   );

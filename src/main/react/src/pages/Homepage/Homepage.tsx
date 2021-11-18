@@ -13,7 +13,6 @@ export const Homepage = () => {
       <Grid
         item
         xs={12}
-        md={12}
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -26,7 +25,6 @@ export const Homepage = () => {
       <Grid
         item
         xs={12}
-        md={12}
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -38,7 +36,6 @@ export const Homepage = () => {
       <Grid
         item
         xs={12}
-        md={12}
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -51,7 +48,6 @@ export const Homepage = () => {
       <Grid
         item
         xs={12}
-        md={12}
         sx={{
           display: "flex",
           flexDirection: "column",
