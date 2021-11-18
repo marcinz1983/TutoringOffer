@@ -8,7 +8,7 @@ import {Link, useLocation, useHistory} from "react-router-dom";
 import {IOfferLocationState} from "../typescript/interfaces";
 import { deleteOffer } from "../services/offer.service";
 
-import { EDIT_OFFER, DELETE_OFFER, DELETE_OFFER_SUCCESS_MESSAGE } from "../utility/constants";
+import { OFFER } from "../utility/constants";
 
 export const OfferDetails = (props: object) => {
     //data is passed from OfferlistItem by Router <Link as RouterLink>
@@ -32,7 +32,7 @@ export const OfferDetails = (props: object) => {
         deleteOffer(uuid, (): void => 
         history.push({
             pathname: '/',
-            state: { displayMessage: DELETE_OFFER_SUCCESS_MESSAGE }
+            state: { displayMessage: OFFER.DELETE_OFFER_SUCCESS_MESSAGE }
         }) )
     }
 
@@ -72,7 +72,7 @@ export const OfferDetails = (props: object) => {
                                     <ListItemIcon>
                                         <EditIcon/>
                                     </ListItemIcon>
-                                    <ListItemText primary={EDIT_OFFER}/>{" "}
+                                    <ListItemText primary={OFFER.EDIT_OFFER}/>{" "}
                                 </ListItemButton>
                             </ListItem>
                             </Link>
@@ -83,7 +83,7 @@ export const OfferDetails = (props: object) => {
                                     <ListItemIcon>
                                         <DeleteForeverIcon/>
                                     </ListItemIcon>
-                                    <ListItemText primary={DELETE_OFFER}/>{" "}
+                                    <ListItemText primary={OFFER.DELETE_OFFER}/>{" "}
                                     {/* TODO: REMOVE OFFER BY UUID JIRA EL-39 */}
                                 </ListItemButton>
                             </ListItem>

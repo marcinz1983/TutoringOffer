@@ -1,13 +1,12 @@
 import { Autocomplete, IconButton, InputBase, Paper } from "@mui/material"
 import SearchIcon from '@mui/icons-material/Search';
 import { searchInputStyles as styles } from "./search-input-styles";
-import { HOMEPAGE_SEARCHBAR_PLACEHOLDER , AUTOCOMPLETE_INPUT_OPTIONS } from "../../utility/constants";
+import { HOMEPAGE , AUTOCOMPLETE_INPUT_OPTIONS } from "../../utility/constants";
 import { useState } from "react";
 
 export const SearchInput = () => {
 
     const [searchInputValue, setSearchInputValue] = useState<string | null>(null)    
-
 
     return (
         <div>
@@ -29,7 +28,7 @@ export const SearchInput = () => {
                      {...rest}
                      value={searchInputValue}
                      onChange={(e) => setSearchInputValue(e.target.value)}
-                     placeholder={HOMEPAGE_SEARCHBAR_PLACEHOLDER}/>}}/>
+                     placeholder={HOMEPAGE.SEARCHBAR_PLACEHOLDER}/>}}/>
                 <IconButton
                 //TODO: add proper API call to onClick
                 onClick={() => console.log('SearchInput buttonClick')}

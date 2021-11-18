@@ -1,71 +1,74 @@
-//TopAppBar
-export const HAMBURGER_LIST_ITEM_1 = "Znajdź korepetycje"
-export const HAMBURGER_LIST_ITEM_2 = "Logowanie"
-export const HAMBURGER_LIST_ITEM_3 = "Rejestracja"
+export enum HAMBURGER {
+    LIST_ITEM_1 = "Znajdź korepetycje",
+    LIST_ITEM_2 = "Logowanie",
+    LIST_ITEM_3 = "Rejestracja",
+}
 
-//Homepage
-export const HOMEPAGE_SEARCHBAR_PLACEHOLDER = "Czego chcesz się nauczyć?"
-export const HOMEPAGE_HERO_TITLE = "Znajdź \nkorepetycje \nz programowania"
-export const HOMEPAGE_HERO_SUBTITLE_1 = "Wyszukaj z pośród"
-export const HOMEPAGE_HERO_SUBTITLE_HIGHLIGHT = "10 tys. ofert"
-export const HOMEPAGE_HERO_SUBTITLE_2 = "od naszych\ntrenerów"
-export const INFOICON_CARD_STRING_1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus massa in nunc faucibus, vel sollicitudin sapien egestas. Cras porttitor odio sed hendrerit mollis. Nullam ac orci pharetra, tristique lacus tempor"
-export const INFOICON_CARD_STRING_2 = "Gdy znajdziesz już swojego idealnego trenera, skontaktuj się z nim w najwygodniejszy dla Ciebie sposób: za pośrednictwem naszego komunikatora, mailowo lub telefonicznie."
-export const HOMEPAGE_STEPSECTION_TITLE_1 = "Znajdź"
-export const HOMEPAGE_STEPSECTION_TITLE_2 = "Skontaktuj się"
-export const HOMEPAGE_STEPSECTION_TITLE_3 = "Zaplanuj lekcję"
-export const HOMEPAGE_CLIENTSSAY_TITLE = "Sprawdź co mówią o nas\nnasi uczniowie"
-export const HOMEPAGE_OFFERSTILES_TITLE = "Znajdź interesujące Cię korepetycje!"
+export enum HOMEPAGE {
+    SEARCHBAR_PLACEHOLDER = "Czego chcesz się nauczyć?",
+    HERO_TITLE = "Znajdź \nkorepetycje \nz programowania",
+    HERO_SUBTITLE_1 = "Wyszukaj z pośród",
+    HERO_SUBTITLE_HIGHLIGHT = "10 tys. ofert",
+    HERO_SUBTITLE_2 = "od naszych\ntrenerów",
+    INFOICON_CARD_STRING_1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus massa in nunc faucibus, vel sollicitudin sapien egestas. Cras porttitor odio sed hendrerit mollis. Nullam ac orci pharetra, tristique lacus tempor",
+    INFOICON_CARD_STRING_2 = "Gdy znajdziesz już swojego idealnego trenera, skontaktuj się z nim w najwygodniejszy dla Ciebie sposób: za pośrednictwem naszego komunikatora, mailowo lub telefonicznie.",
+    STEPSECTION_TITLE_1 = "Znajdź",
+    STEPSECTION_TITLE_2 = "Skontaktuj się",
+    STEPSECTION_TITLE_3 = "Zaplanuj lekcję",
+    CLIENTSSAY_TITLE = "Sprawdź co mówią o nas\nnasi uczniowie",
+    OFFERSTILES_TITLE = "Znajdź interesujące Cię korepetycje!",
+}
 
-//Footer
-export const FOOTER_LOGO_TEXT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies quam nec velit interdum, a cursus sem scelerisque. In tempus erat semper."
-export const FOOTER_HEADING = "Heading"
-export const FOOTER_LINK_1_TEXT="Link 1"
-export const FOOTER_LINK_2_TEXT="Link 2"
-export const FOOTER_LINK_3_TEXT="Link 3"
-export const FOOTER_LINK_4_TEXT="Link 4"
-export const FOOTER_COPYRIGHT_TEXT="© 2021 Logo. All rights Reserved."
-export const FOOTER_WHITEBAR_PRIVACY="Privacy Policy"
-export const FOOTER_WHITEBAR_TERMS_OF_SERVICE="Terms of service"
+export enum FOOTER {
+    LOGO_TEXT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies quam nec velit interdum, a cursus sem scelerisque. In tempus erat semper.",
+    HEADING = "Heading",
+    LINK_1_TEXT = "Link 1",
+    LINK_2_TEXT = "Link 2",
+    LINK_3_TEXT = "Link 3",
+    LINK_4_TEXT = "Link 4",
+    COPYRIGHT_TEXT = "© 2021 Logo. All rights Reserved.",
+    WHITEBAR_PRIVACY = "Privacy Policy",
+    WHITEBAR_TERMS_OF_SERVICE = "Terms of service",
+}
 
-//Form Register
-export const FORM_TITLE_REGISTER = "Rejestracja"
-export const FORM_BUTTON_REGISTER = "Rejestruj się"
-export const FORM_BUTTON_BACK = "Powrót"
-export const FORM_EMAIL_ERROR = "Podaj Prawidłowy Email"
-export const FORM_PASSWORD_ERROR = "Hasło wymaga: Min 6 znaków"
-export const FORM_REPASSWORD_ERROR = "Podaj te same hasło"
-export const FORM_INPUT_NAME = "Imie"
-export const FORM_INPUT_SURNAME = "Nazwisko"
-export const FORM_INPUT_USERNAME = "Nazwa użytkownika"
-export const FORM_INPUT_EMAIL = "Email"
-export const FORM_INPUT_PASSWORD = "Hasło"
-export const FORM_INPUT_REPASSWORD = "Powtórz haslo"
+export enum FORM_REGISTER {
+    TITLE_REGISTER = "Rejestracja",
+    BUTTON_REGISTER = "Rejestruj się",
+    BUTTON_BACK = "Powrót",
+    EMAIL_ERROR = "Podaj Prawidłowy Email",
+    PASSWORD_ERROR = "Hasło wymaga: Min 6 znaków",
+    REPASSWORD_ERROR = "Podaj te same hasło",
+    INPUT_NAME = "Imie",
+    INPUT_SURNAME = "Nazwisko",
+    INPUT_USERNAME = "Nazwa użytkownika",
+    INPUT_EMAIL = "Email",
+    INPUT_PASSWORD = "Hasło",
+    INPUT_REPASSWORD = "Powtórz haslo",
+}
 
-//Other
-export const SIDE_MENU_STRING_1 = "Moje ogłoszenia"
-export const SIDE_MENU_STRING_2 = "Dodaj ogłoszenie"
-export const SIDE_MENU_STRING_3 = "Wiadomości"
-export const EDIT_OFFER = "Edytuj ogłoszenie"
-export const DELETE_OFFER = "Usuń ogłoszenie"
-export const SUCESS_MESSAGE_SHORT = "Udało się!"
-export const SUCESS_MESSAGE_LONG = "Udało się!"
-export const DELETE_OFFER_SUCCESS_MESSAGE = "Usunęliśmy Twoje ogłoszenie."
-export const EDIT_OFFER_SUCCESS_MESSAGE = "Twoje ogłoszenie zostało pomyślnie edytowane."
+export enum OFFER {
+SIDE_MENU_STRING_1 = "Moje ogłoszenia",
+SIDE_MENU_STRING_2 = "Dodaj ogłoszenie",
+SIDE_MENU_STRING_3 = "Wiadomości",
+EDIT_OFFER = "Edytuj ogłoszenie",
+DELETE_OFFER = "Usuń ogłoszenie",
+SUCESS_MESSAGE_SHORT = "Udało się!",
+SUCESS_MESSAGE_LONG = "Udało się!",
+DELETE_OFFER_SUCCESS_MESSAGE = "Usunęliśmy Twoje ogłoszenie.",
+EDIT_OFFER_SUCCESS_MESSAGE = "Twoje ogłoszenie zostało pomyślnie edytowane.",
+}
 
-//Login Form Modal
-export const LOGIN_FORM_CONSTS={
-    FORM_HEADER: "Zaloguj się",
-    LOGIN_INPUT_LABEL: "Adres e-mail",
-    PASSWORD_INPUT_LABEL: "Hasło",
-    RECOVER_PASSWORD: "Odzyskaj hasło",
-    LOGIN_BUTTON: "Zaloguj się",
-    REMEMBER_ME_CHECKBOX_LABEL: "Zapamiętaj mnie",
-    FORM_BOTTOM_TEXT: "Nie masz jeszcze konta?",
-    FORM_REGISTER_LINK: "Zarejestruj się!",
-    LOGIN_ERROR_MESSAGE: "Email lub hasło są nieprawidłowe",
-    EMPTY_INPUT_ERROR: "Podaj login i hasło aby się zalogować."
-
+export enum LOGIN_FORM_CONSTS {
+    FORM_HEADER = "Zaloguj się",
+    LOGIN_INPUT_LABEL = "Adres e-mail",
+    PASSWORD_INPUT_LABEL = "Hasło",
+    RECOVER_PASSWORD = "Odzyskaj hasło",
+    LOGIN_BUTTON = "Zaloguj się",
+    REMEMBER_ME_CHECKBOX_LABEL = "Zapamiętaj mnie",
+    FORM_BOTTOM_TEXT = "Nie masz jeszcze konta?",
+    FORM_REGISTER_LINK = "Zarejestruj się!",
+    LOGIN_ERROR_MESSAGE = "Email lub hasło są nieprawidłowe",
+    EMPTY_INPUT_ERROR = "Podaj login i hasło aby się zalogować."
 }
 
 export const AUTOCOMPLETE_INPUT_OPTIONS = [

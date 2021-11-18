@@ -1,7 +1,5 @@
 import {
-  HAMBURGER_LIST_ITEM_1,
-  HAMBURGER_LIST_ITEM_2,
-  HAMBURGER_LIST_ITEM_3,
+  HAMBURGER
 } from "../../utility/constants";
 import {
   AppBar,
@@ -117,7 +115,7 @@ export const AppTopBar = () => {
               <HighlightOffOutlinedIcon sx={styles.highlightOffOutlinedIcon} />
             </IconButton>
             <Box>
-              <MenuItem sx={styles.menuItem}>{HAMBURGER_LIST_ITEM_1}</MenuItem>
+              <MenuItem sx={styles.menuItem}>{HAMBURGER.LIST_ITEM_1}</MenuItem>
               {currentUserEmail ? (
                 <>
                   <MenuItem onClick={handleLogOut} sx={styles.menuItem}>
@@ -127,13 +125,13 @@ export const AppTopBar = () => {
               ) : (
                 <>
                   <MenuItem onClick={handleModalClickOpen} sx={styles.menuItem}>
-                    {HAMBURGER_LIST_ITEM_2}
+                    {HAMBURGER.LIST_ITEM_2}
                   </MenuItem>
                   <MenuItem  
                     component={Link}
                     to="/register"
                     sx={styles.menuItem}>
-                    {HAMBURGER_LIST_ITEM_3}
+                    {HAMBURGER.LIST_ITEM_3}
                   </MenuItem>
                 </>
               )}

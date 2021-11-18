@@ -4,18 +4,14 @@ import twitterIcon from "../../assets/twitter-icon.png";
 import youtubeIcon from "../../assets/youtube-icon.png";
 import phoneIcon from "../../assets/phone-icon.png";
 import { footerStyles as styles } from "./footer-styles";
-import {
-  FOOTER_LOGO_TEXT,
-  FOOTER_COPYRIGHT_TEXT,
-  FOOTER_WHITEBAR_PRIVACY,
-  FOOTER_WHITEBAR_TERMS_OF_SERVICE,
-} from "../../utility/constants";
+import {FOOTER} from "../../utility/constants";
 import { FooterLinks } from "./FooterLinks";
 
 export const Footer = () => {
   const socialIcons = [facebookIcon, twitterIcon, youtubeIcon, phoneIcon];
 
   return (
+
     <Grid container sx={styles.footerContainer}>
         <Grid item xs={11} lg={8} sx={{display: 'flex', flexDirection: {xs: 'column',sm: 'column', lg: 'row'}, justifyContent: 'space-between'}}>
           <Grid item sm={12} lg={5}>
@@ -48,7 +44,6 @@ export const Footer = () => {
           </Grid>
         </Grid>
       
-
       <Grid container sx={styles.footerWhiteBar}>
         <Grid
           item
@@ -62,7 +57,7 @@ export const Footer = () => {
           <span>
             <Typography variant="h6">{FOOTER_WHITEBAR_PRIVACY}</Typography>
             <Typography variant="h6">
-              {FOOTER_WHITEBAR_TERMS_OF_SERVICE}
+              {FOOTER.WHITEBAR_TERMS_OF_SERVICE}
             </Typography>
           </span>
         </Grid>

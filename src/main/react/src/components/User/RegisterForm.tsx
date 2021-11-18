@@ -4,19 +4,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import {FormEvent, useState} from "react";
 import {IErrorsForm, IRegisterForm} from "../../typescript/interfaces";
 import {FormRegisterStyles as styles} from "./registerform-styles";
-import {
-  FORM_BUTTON_BACK,
-  FORM_BUTTON_REGISTER,
-  FORM_EMAIL_ERROR,
-  FORM_INPUT_EMAIL,
-  FORM_INPUT_NAME,
-  FORM_INPUT_PASSWORD,
-  FORM_INPUT_REPASSWORD,
-  FORM_INPUT_SURNAME,
-  FORM_PASSWORD_ERROR,
-  FORM_REPASSWORD_ERROR,
-  FORM_TITLE_REGISTER
-} from "../../utility/constants";
+import {FORM_REGISTER} from "../../utility/constants";
 import {RegistrationService} from "../../services/registration.service";
 import {IRegisterUserRequest} from "../../typescript/registration.model";
 
@@ -81,7 +69,7 @@ export const RegisterForm = () => {
     const {target: {value}} = event;
     const emailReg = new RegExp(/.+@.+\..+/);
     if (!emailReg.test(value)) {
-      setFormErrors({...formErrors, email: FORM_EMAIL_ERROR});
+      setFormErrors({...formErrors, email: FORM_REGISTER.EMAIL_ERROR});
     } else {
       setFormErrors({...formErrors, email: ''});
     }
@@ -91,7 +79,7 @@ export const RegisterForm = () => {
     const {target: {value}} = event;
     const passwordReg = new RegExp("^(?=.*[a-z])(?=.{6,})");
     if (!passwordReg.test(value)) {
-      setFormErrors({...formErrors, password: FORM_PASSWORD_ERROR});
+      setFormErrors({...formErrors, password: FORM_REGISTER.PASSWORD_ERROR});
     } else {
       setFormErrors({...formErrors, password: ''});
     }
@@ -101,7 +89,7 @@ export const RegisterForm = () => {
     const {target: {value}} = event;
 
     if (registerForm.password !== value) {
-      setFormErrors({...formErrors, repassword: FORM_REPASSWORD_ERROR});
+      setFormErrors({...formErrors, repassword: FORM_REGISTER.REPASSWORD_ERROR});
     } else {
       setFormErrors({...formErrors, repassword: ''});
     }
@@ -113,18 +101,18 @@ export const RegisterForm = () => {
         style={styles.formContainer}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h2">{FORM_TITLE_REGISTER}</Typography>
+        <Typography variant="h2">{FORM_REGISTER.TITLE_REGISTER}</Typography>
         <TextField
           margin="normal"
           id="firstname"
-          label={FORM_INPUT_NAME}
+          label={FORM_REGISTER.INPUT_NAME}
           variant="filled"
           value={registerForm.firstName}
           onChange={e => setRegisterForm({...registerForm, firstName: e.target.value})}/>
         <TextField
           margin="normal"
           id="lastname"
-          label={FORM_INPUT_SURNAME}
+          label={FORM_REGISTER.INPUT_SURNAME}
           variant="filled"
           value={registerForm.lastName}
           onChange={e => setRegisterForm({...registerForm, lastName: e.target.value})}
@@ -133,7 +121,7 @@ export const RegisterForm = () => {
           margin="normal"
           id="email"
           name="email"
-          label={FORM_INPUT_EMAIL}
+          label={FORM_REGISTER.INPUT_EMAIL}
           variant="filled"
           value={registerForm.email}
           //onChange= {e => setRegisterForm({...registerForm, email: e.target.value})}
@@ -147,7 +135,7 @@ export const RegisterForm = () => {
           margin="normal"
           id="password"
           name="password"
-          label={FORM_INPUT_PASSWORD}
+          label={FORM_REGISTER.INPUT_PASSWORD}
           type="password"
           variant="filled"
           inputProps={{minLength: 5}}
@@ -162,7 +150,7 @@ export const RegisterForm = () => {
           margin="normal"
           id="repassword"
           name="repassword"
-          label={FORM_INPUT_REPASSWORD}
+          label={FORM_REGISTER.INPUT_REPASSWORD}
           type="password"
           variant="filled"
           value={registerForm.repassword}
@@ -172,10 +160,10 @@ export const RegisterForm = () => {
           helperText={formErrors.repassword}
           required
         />
-        <Button disabled={!isFormValid} variant="contained" type="submit"> {FORM_BUTTON_REGISTER} </Button>
+        <Button disabled={!isFormValid} variant="contained" type="submit"> {FORM_REGISTER.BUTTON_REGISTER} </Button>
         <Link to="/">
           <Button variant="outlined" fullWidth startIcon={<ArrowBackIosIcon/>}>
-            {FORM_BUTTON_BACK}
+            {FORM_REGISTER.BUTTON_BACK}
           </Button>
         </Link>
       </form>

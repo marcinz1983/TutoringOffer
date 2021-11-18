@@ -7,7 +7,7 @@ import {
   Pagination,
 } from "@mui/material";
 import { HomepageStyles as styles } from "./homepage-styles";
-import { HOMEPAGE_CLIENTSSAY_TITLE } from "../../utility/constants";
+import { HOMEPAGE } from "../../utility/constants";
 
 export const ClientsSaySection = () => {
   
@@ -47,7 +47,7 @@ export const ClientsSaySection = () => {
     <Grid container sx={styles.clientsSayMainContainer}>
       <Grid item xs={11} sm={11} lg={8}>
       <Typography variant="h3" sx={styles.offerTilesTitle}>
-        {HOMEPAGE_CLIENTSSAY_TITLE}
+        {HOMEPAGE.CLIENTSSAY_TITLE}
       </Typography>
       <Grid container spacing={2} sx={styles.clientsSayContainer}>
         {fakeData.map((item) => (

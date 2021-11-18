@@ -11,7 +11,7 @@ import {
 
 import {Link} from "react-router-dom";
 
-import {SIDE_MENU_STRING_1, SIDE_MENU_STRING_2, SIDE_MENU_STRING_3,} from "../utility/constants";
+import {OFFER} from "../utility/constants";
 
 import ArchiveIcon from "@mui/icons-material/Archive";
 import AddBoxIcon from "@mui/icons-material/AddBox";
@@ -48,21 +48,21 @@ export const TeacherProfile = (props: ITeacherProfile) => {
                         <ListItemIcon>
                             <ArchiveIcon/>
                         </ListItemIcon>
-                        <ListItemText primary={SIDE_MENU_STRING_1}/>
+                        <ListItemText primary={OFFER.SIDE_MENU_STRING_1}/>
                     </ListItemButton>
                     <Link to="/add-offer">
                         <ListItemButton>
                             <ListItemIcon>
                                 <AddBoxIcon/>
                             </ListItemIcon>
-                            <ListItemText primary={SIDE_MENU_STRING_2}/>
+                            <ListItemText primary={OFFER.SIDE_MENU_STRING_2}/>
                         </ListItemButton>
                     </Link>
                     <ListItemButton>
                         <ListItemIcon>
                             <SmsIcon/>
                         </ListItemIcon>
-                        <ListItemText primary={SIDE_MENU_STRING_3}/>
+                        <ListItemText primary={OFFER.SIDE_MENU_STRING_3}/>
                     </ListItemButton>
                 </List>
             </Grid>

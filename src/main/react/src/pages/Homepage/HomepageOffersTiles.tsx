@@ -1,6 +1,6 @@
 import { Grid, Paper, Typography } from "@mui/material";
 import { HomepageStyles as styles } from "./homepage-styles";
-import { HOMEPAGE_OFFERSTILES_TITLE } from "../../utility/constants";
+import { HOMEPAGE } from "../../utility/constants";
 
 export const HomepageOffersTiles = () => {
   //TODO: remove fakeData and pass data form OfferService when there will be enough records in offers
@@ -342,7 +342,7 @@ export const HomepageOffersTiles = () => {
       <Grid container sx={styles.mainContainer}>
         <Grid item xs={11} lg={8}>
         <Typography variant="h3" sx={styles.offerTilesTitle}>
-          {HOMEPAGE_OFFERSTILES_TITLE}
+          {HOMEPAGE.OFFERSTILES_TITLE}
         </Typography>
       </Grid>
       <Grid container columns={12} spacing={2} sx={styles.offerTilesContainer}>

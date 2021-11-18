@@ -10,7 +10,7 @@ import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { editOffer } from "../services/offer.service";
 import { TLocationState } from "../typescript/types";
-import { EDIT_OFFER_SUCCESS_MESSAGE } from "../utility/constants";
+import { OFFER } from "../utility/constants";
 
 export const EditOffer = (props: object) => {
   const location = useLocation<TLocationState>();
@@ -45,7 +45,7 @@ export const EditOffer = (props: object) => {
     editOffer(offerData, (): void => {history.push({
       pathname: '/',
       //TODO: add message display based on editSucess in App.tsx
-      state: { displayMessage: EDIT_OFFER_SUCCESS_MESSAGE}
+      state: { displayMessage: OFFER.EDIT_OFFER_SUCCESS_MESSAGE}
     })});
   };
 
