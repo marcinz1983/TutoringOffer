@@ -8,32 +8,14 @@ export const getAllOffers = async () => {
       return data
 }
 
-//TODO: Refactor rest of offers to use dedicated methonds delivered by axios (.get, .post e.g.)
-
 export const addOffer = (payload: IOffer) => {
-  const URL = "/api/offer/save";
-  axios(URL, {
-    method: "post",
-    data: JSON.stringify(payload),
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
-    },
-  })
+  axios.post("/api/offer/save", payload)
     .then((response) => console.log(response))
     .catch((error) => console.log(error));
-};
+  };
 
 export const editOffer = (payload: IOffer, callback: () => void) => {
-  const URL = "/api/offer/edit";
-  axios(URL, {
-    method: "put",
-    data: JSON.stringify(payload),
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
-    },
-  })
+  axios.put("/api/offer/edit", payload)
     .then((response) => {
       console.log(response);
       callback();
