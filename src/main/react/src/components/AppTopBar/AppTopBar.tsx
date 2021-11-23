@@ -130,7 +130,9 @@ export const AppTopBar = () => {
                   <MenuItem  
                     component={Link}
                     to="/register"
-                    sx={styles.menuItem}>
+                    sx={styles.menuItem}
+                    onClick={handleClose}
+                    >
                     {HAMBURGER.LIST_ITEM_3}
                   </MenuItem>
                 </>
