@@ -68,6 +68,7 @@ function App() {
                     // <OffersList {...props} offers={offersData} />
                   )}
                 />
+
                 <Route path="/edit-offer" component={EditOffer}/>
                 <Route path="/offer-details" component={OfferDetails}/>
                 <Route path="/add-offer" component={CreateOfferForm}/>
