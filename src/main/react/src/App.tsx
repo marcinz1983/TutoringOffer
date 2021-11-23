@@ -20,7 +20,6 @@ import {Footer} from "./components/Footer/Footer";
 import {AuthContextProvider} from "./context/AuthContext";
 import { SearchOffers } from "./pages/SearchOffers/SearchOffers";
 
-
 function App() {
 
   const [offersData, setOffersData] = useState<Array<IOffer> | void>([]);
@@ -68,6 +67,9 @@ function App() {
                     // <OffersList {...props} offers={offersData} />
                   )}
                 />
+
+                {/* TODO: Uncomment path when SearchOffer is ready */}
+                {/* <Route path="/search" component={SearchOffer} /> */}
                 <Route path="/edit-offer" component={EditOffer}/>
                 <Route path="/offer-details" component={OfferDetails}/>
                 <Route path="/add-offer" component={CreateOfferForm}/>

@@ -115,7 +115,12 @@ export const AppTopBar = () => {
               <HighlightOffOutlinedIcon sx={styles.highlightOffOutlinedIcon} />
             </IconButton>
             <Box>
-              <MenuItem sx={styles.menuItem}>{HAMBURGER.LIST_ITEM_1}</MenuItem>
+              <MenuItem 
+              component={Link}
+              to='/search'
+              sx={styles.menuItem}>
+                {HAMBURGER_LIST_ITEM_1}
+              </MenuItem>
               {currentUserEmail ? (
                 <>
                   <MenuItem onClick={handleLogOut} sx={styles.menuItem}>
