@@ -18,6 +18,7 @@ import {IOffer} from "./typescript/interfaces";
 import {mainTheme} from "./themes/mainTheme";
 import {Footer} from "./components/Footer/Footer";
 import {AuthContextProvider} from "./context/AuthContext";
+import { SearchOffers } from "./pages/SearchOffers/SearchOffers";
 
 
 function App() {
@@ -71,6 +72,7 @@ function App() {
                 <Route path="/offer-details" component={OfferDetails}/>
                 <Route path="/add-offer" component={CreateOfferForm}/>
                 <Route path="/register" component={RegisterForm}/>
+                <Route path="/search" component={SearchOffers}/>
               </Switch>
               <Footer/>
             </Grid>

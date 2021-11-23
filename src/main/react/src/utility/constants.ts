@@ -46,6 +46,23 @@ export enum FORM_REGISTER {
     INPUT_REPASSWORD = "Powtórz haslo",
 }
 
+export enum SEARCH_OFFER {
+    RATE_BUTTON = 'Stawka',
+    SORT_BUTTON = 'Sortowanie',
+    HIGHEST_RATED_LABEL = "Najwyżej oceniany",
+    LOWEST_RATED_LABEL = "Najniżej oceniany",
+    PRICE_GROWING = "Cena rosnąco",
+    PRICE_DESCENDING = "Cena malejąco",
+    SAVE_BUTTON = "Zapisz",
+    CURRENCY = "zł",
+    LOAD_MORE_BUTTON = "Załaduj więcej",
+    FROM = "od",
+    CURRENCY_PER_HOUR = "zł/h",
+    HEADING_FIND_TRAINER = "Znajdź idealnego trenera dla siebie",
+    MIN_RATESLIDER_VALUE = 0,
+    MAX_RATESLIDER_VALUE = 200
+}
+
 export enum OFFER {
 SIDE_MENU_STRING_1 = "Moje ogłoszenia",
 SIDE_MENU_STRING_2 = "Dodaj ogłoszenie",

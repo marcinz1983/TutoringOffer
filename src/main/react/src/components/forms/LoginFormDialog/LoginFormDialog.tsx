@@ -19,9 +19,9 @@ import { FormEvent, useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "@firebase/auth";
 import { useHistory } from "react-router";
 import { ILoginErrorForm, ILoginForm } from "../../../typescript/interfaces";
-import { ILoginFormDialogProps } from "../../../typescript/interfaces";
+import { IDialogProps } from "../../../typescript/interfaces";
 
-export const LoginFormDialog = (props: ILoginFormDialogProps) => {
+export const LoginFormDialog = (props: IDialogProps) => {
   const { onClose, open } = props;
 
   const history = useHistory();

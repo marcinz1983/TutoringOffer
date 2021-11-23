@@ -11,9 +11,27 @@ export interface IRegisterForm {
   repassword: string,
 }
 
-export interface ILoginFormDialogProps {
-  onClose: any,
-  open: boolean
+export interface IOfferItem {
+  offer: {
+    description: string,
+    price: number,
+  };
+  trainer: {
+    image: string,
+    name: string,
+    rating: number,
+  }
+}
+
+
+export interface IDialogProps {
+  onClose?: any,
+  open: boolean,
+  radioValue?: string,
+  onRadioChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
+  rateValue?: any,
+  handleRateChange?: (event: Event, newValue: number | number[]) => void,
+  setRateValue?: any,
 }
 
 export interface ILoginForm {
