@@ -26,8 +26,8 @@ export const appTopBarStyles = {
       minHeight: config.menuPaperHeight,
       width: config.menuPaperWidth,
       background:
-        "transparent linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 100%) 0% 0% no-repeat padding-box",
-      border: "2px solid rgba(255, 255, 255, 0.6)",
+        "transparent linear-gradient(200deg, rgba(244, 222, 212, 0.9) 0%, rgba(240, 227, 221, 0.9) 100%) 0% 0% no-repeat padding-box",
+      border: "3px solid rgba(255, 255, 255, 1)",
       borderRadius: config.menuPaperBorderRadius,
       backdropFilter: `blur(${config.menuPaperBackdropBlurFilter})`,
     },
