@@ -32,9 +32,7 @@ public class AppUser {
     private String firebaseIssuer;
     @Column(name = "FIREBASE_EMAIL_VERIFIED")
     private boolean firebaseEmailVerified;
-    @OneToMany(
-            mappedBy = "appUser",
-            cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "appUser",cascade = CascadeType.ALL)
     private List<Offer> offers;
 
 }

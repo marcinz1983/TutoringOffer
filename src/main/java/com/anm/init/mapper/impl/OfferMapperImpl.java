@@ -1,19 +1,25 @@
 package com.anm.init.mapper.impl;
 
-import com.anm.init.controller.request.EditOfferRequest;
 import com.anm.init.controller.request.AddOfferRequest;
+import com.anm.init.controller.request.EditOfferRequest;
+import com.anm.init.controller.response.OfferPriceResponse;
 import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.mapper.OfferMapper;
+import com.anm.init.mapper.PriceMapper;
 import com.anm.init.model.Offer;
+import com.anm.init.model.Price;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Component
 public class OfferMapperImpl implements OfferMapper {
 
     @Override
     public Offer mapRequestToEntity(AddOfferRequest request) {
+
         return Offer.builder()
                 .withFirstName(request.getFirstName())
                 .withLastName(request.getLastName())
@@ -21,13 +27,18 @@ public class OfferMapperImpl implements OfferMapper {
                 .withLongDescription(request.getLongDescription())
                 .withBackgroundDescription(request.getBackgroundDescription())
                 .withRateDescription(request.getRateDescription())
-                .withPrice(request.getPrice())
+                .withPrices(null)
                 .withUuid(UUID.randomUUID())
                 .build();
     }
 
     @Override
     public OfferResponse mapEntityToResponse(Offer offer) {
+
+        List<OfferPriceResponse> offerPricesList = offer.getPrices().stream().map(value -> {
+            return new OfferPriceResponse(value.getDescription(), value.getPrice(), value.getCurrency(), value.isMainPrice());
+        }).collect(Collectors.toList());
+
         return OfferResponse.builder()
                 .withUuid(offer.getUuid())
                 .withFirstName(offer.getFirstName())
@@ -36,7 +47,7 @@ public class OfferMapperImpl implements OfferMapper {
                 .withLongDescription(offer.getLongDescription())
                 .withBackgroundDescription(offer.getBackgroundDescription())
                 .withRateDescription(offer.getRateDescription())
-                .withPrice(offer.getPrice())
+                .withPrices(offerPricesList)
                 .build();
     }
 
@@ -50,7 +61,7 @@ public class OfferMapperImpl implements OfferMapper {
                 .withLongDescription(editOfferRequest.getLongDescription())
                 .withBackgroundDescription(editOfferRequest.getBackgroundDescription())
                 .withRateDescription(editOfferRequest.getRateDescription())
-                .withPrice(editOfferRequest.getPrice())
+                .withPrices(null)
                 .withUuid(editOfferRequest.getUuid())
                 .build();
     }

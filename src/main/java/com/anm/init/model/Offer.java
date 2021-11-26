@@ -6,8 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
-import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -41,8 +40,8 @@ public class Offer {
     @Column(name = "BACKGROUND_DESCRIPTION")
     private String backgroundDescription;
 
-    @Column(name = "PRICE")
-    private BigDecimal price;
+    @OneToMany(mappedBy = "offer",cascade = CascadeType.ALL)
+    private List<Price> prices;
 
     @Column(name = "UUID")
     private UUID uuid;

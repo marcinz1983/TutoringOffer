@@ -6,6 +6,7 @@ import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.exception.OfferNotFoundException;
 import com.anm.init.mapper.OfferMapper;
 import com.anm.init.model.Offer;
+import com.anm.init.model.Price;
 import com.anm.init.repository.OfferRepository;
 import com.anm.init.service.OfferService;
 import org.slf4j.Logger;
@@ -28,8 +29,7 @@ public class OfferServiceImpl implements OfferService {
     private final OfferRepository offerRepository;
 
     @Autowired
-    public OfferServiceImpl(final OfferMapper offerMapper,
-                            final OfferRepository offerRepository) {
+    public OfferServiceImpl(final OfferMapper offerMapper, final OfferRepository offerRepository) {
         this.offerMapper = offerMapper;
         this.offerRepository = offerRepository;
     }
@@ -37,12 +37,20 @@ public class OfferServiceImpl implements OfferService {
     @Override
     public void saveOffer(AddOfferRequest request) {
         Offer newOffer = offerMapper.mapRequestToEntity(request);
+        List<Price> newOfferPricesList = request
+                .getPrices()
+                .stream()
+                .map(value -> new Price(value.getDescription(), value.getPrice(), value.getCurrency(), value.isMainPrice(),newOffer))
+                .collect(Collectors.toList());
+        newOffer.setPrices(newOfferPricesList);
         offerRepository.save(newOffer);
     }
 
     @Override
     public List<OfferResponse> findAll() {
-        return offerRepository.findAll().stream()
+        return offerRepository
+                .findAll()
+                .stream()
                 .map(offerMapper::mapEntityToResponse)
                 .collect(Collectors.toList());
     }
@@ -51,7 +59,9 @@ public class OfferServiceImpl implements OfferService {
     //TODO do sprwawdzenia
     @Override
     public OfferResponse findByUUID(UUID uuid) {
-        OfferResponse offerResponse = offerRepository.findByUuidEquals(uuid).map(offerMapper::mapEntityToResponse)
+        OfferResponse offerResponse = offerRepository
+                .findByUuidEquals(uuid)
+                .map(offerMapper::mapEntityToResponse)
                 .orElseThrow(() -> new OfferNotFoundException(OFFER_NOT_FOUND_EXCEPTION_MESSAGE));
         return offerResponse;
     }
@@ -65,9 +75,17 @@ public class OfferServiceImpl implements OfferService {
 
     @Override
     public void editOffer(EditOfferRequest editOfferRequest) {
-        Offer oldOffer = offerRepository.findByUuidEquals(editOfferRequest.getUuid())
+        Offer oldOffer = offerRepository
+                .findByUuidEquals(editOfferRequest.getUuid())
                 .orElseThrow(() -> new OfferNotFoundException(OFFER_NOT_FOUND_EXCEPTION_MESSAGE));
-        oldOffer = offerMapper.mapEditOfferRequestToOffer(oldOffer, editOfferRequest);
+//        oldOffer = offerMapper.mapEditOfferRequestToOffer(oldOffer, editOfferRequest);
+
+        List<Price> editOfferPricesList = editOfferRequest
+                .getPrices()
+                .stream()
+                .map(value -> new Price(value.getDescription(), value.getPrice(), value.getCurrency(), value.isMainPrice(), offerMapper.mapEditOfferRequestToOffer(oldOffer, editOfferRequest)))
+                .collect(Collectors.toList());
+        oldOffer.setPrices(editOfferPricesList);
         offerRepository.save(oldOffer);
     }
 
@@ -77,7 +95,8 @@ public class OfferServiceImpl implements OfferService {
 
         LOG.debug("Finding offer with id: [{}]", offerId);
 
-        Offer offer = offerRepository.findByUuidEquals(offerId)
+        Offer offer = offerRepository
+                .findByUuidEquals(offerId)
                 .orElseThrow(() -> new OfferNotFoundException(OFFER_NOT_FOUND_EXCEPTION_MESSAGE));
 
         return offerMapper.mapEntityToResponse(offer);

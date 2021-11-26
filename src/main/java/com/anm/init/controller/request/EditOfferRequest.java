@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -41,7 +41,7 @@ public class EditOfferRequest {
     private String backgroundDescription;
 
     @NotNull
-    private BigDecimal price;
+    private List<OfferPriceRequest> prices;
 
     @NotNull
     private UUID uuid;

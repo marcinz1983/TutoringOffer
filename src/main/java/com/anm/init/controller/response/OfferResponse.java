@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -21,5 +21,5 @@ public class OfferResponse {
     private String longDescription;
     private String rateDescription;
     private String backgroundDescription;
-    private BigDecimal price;
+    private List<OfferPriceResponse> prices;
 }
