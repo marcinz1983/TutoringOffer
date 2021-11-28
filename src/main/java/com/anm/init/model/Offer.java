@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -49,5 +51,10 @@ public class Offer {
     @ManyToOne
     @JoinColumn(name = "APP_USER_ID")
     private AppUser appUser;
+
+    @OneToMany(
+            mappedBy = "offer",
+            cascade = CascadeType.ALL)
+    private List<Opinion> opinions;
 
 }

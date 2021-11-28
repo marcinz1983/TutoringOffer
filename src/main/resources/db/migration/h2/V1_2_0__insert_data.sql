@@ -42,5 +42,11 @@ INSERT INTO PRICE (DESCRIPTION, PRICE, CURRENCY, MAIN_PRICE, OFFER_ID) values
 ('Cena za 2 godziny', 180, 'PLN', false, 8),
 ('Cena za godzine', 60, 'PLN', false, 9),
 ('Cena za 2 godziny', 100, 'PLN', false, 10);
+--OPINION
+Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Super hiper nauczyciel','Jestem mega zadowolony z korepetycji z panem','5','1','1');
+Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Typowy Janusz','Tylko kasa, nic nie umie','1','2','1');
+Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Oszukał mnie','Wział 200zł a i tak nic nie umiem','1','3','4');
+Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Mega fajna atmosfera','Zajęcia bardzo fajnie prowadzone','4','4','3');
+Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Uczyli mnie lepsi','Taki sobie nauczyciel, ni w ząb ni w oko','2','5','5');
 
 

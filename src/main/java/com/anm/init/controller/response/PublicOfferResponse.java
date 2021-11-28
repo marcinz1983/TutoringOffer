@@ -1,6 +1,8 @@
 package com.anm.init.controller.response;
 
+import com.anm.init.model.Price;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +22,6 @@ public class PublicOfferResponse {
     private String longDescription;
     private String rateDescription;
     private String backgroundDescription;
-    private BigDecimal price;
+    private List<Price> priceList;
     private AppUserResponse appUserResponse;
 }

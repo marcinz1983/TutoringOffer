@@ -18,7 +18,7 @@ public class PublicOfferMapperImpl implements PublicOfferMapper {
                 .withLongDescription(offer.getLongDescription())
                 .withBackgroundDescription(offer.getBackgroundDescription())
                 .withRateDescription(offer.getRateDescription())
-                .withPrice(offer.getPrice())
+                .withPriceList(offer.getPrices())
                 .withAppUserResponse(AppUserResponse.builder()
                         .withFirebaseEmail(offer.getAppUser().getFirebaseEmail())
                         .withFirebaseEmailVerified(offer.getAppUser().isFirebaseEmailVerified())
