@@ -48,5 +48,3 @@ Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Typowy Ja
 Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Oszukał mnie','Wział 200zł a i tak nic nie umiem','1','3','4');
 Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Mega fajna atmosfera','Zajęcia bardzo fajnie prowadzone','4','4','3');
 Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Uczyli mnie lepsi','Taki sobie nauczyciel, ni w ząb ni w oko','2','5','5');
-
-
