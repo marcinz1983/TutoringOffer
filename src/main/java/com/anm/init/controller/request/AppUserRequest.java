@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -32,5 +33,8 @@ public class AppUserRequest {
 
     @NotNull(message = "Email Verified cannot be null")
     private boolean firebaseEmailVerified;
+
+    @NotNull(message = "Phone Number cannot be null")
+    private String phoneNumber;
 
 }

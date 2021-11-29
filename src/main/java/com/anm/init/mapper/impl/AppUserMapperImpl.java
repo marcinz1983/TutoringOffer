@@ -16,6 +16,7 @@ public class AppUserMapperImpl implements AppUserMapper {
                 .withFirebaseIssuer(appUserRequest.getFirebaseIssuer())
                 .withFirebasePicture(appUserRequest.getFirebasePicture())
                 .withFirebaseUid(appUserRequest.getFirebaseUid())
+                .withPhoneNumber(appUserRequest.getPhoneNumber())
                 .build();
     }
 }

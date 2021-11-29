@@ -32,6 +32,8 @@ public class AppUser {
     private String firebaseIssuer;
     @Column(name = "FIREBASE_EMAIL_VERIFIED")
     private boolean firebaseEmailVerified;
+    @Column(name = "PHONE_NUMBER")
+    private String phoneNumber;
     @OneToMany(
             mappedBy = "appUser",
             cascade = CascadeType.ALL)

@@ -1,6 +1,7 @@
 package com.anm.init.controller.response;
 
-import java.math.BigDecimal;
+
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,11 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder(setterPrefix = "with")
-public class OfferPriceResponse {
+public class Trainer {
 
-    private String description;
-    private BigDecimal price;
-    private String currency;
-    private boolean mainPrice;
-
+    private String name;
+    private String image;
+    private String rating;
+    private String phone;
 }
