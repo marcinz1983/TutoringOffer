@@ -48,3 +48,24 @@ Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Typowy Ja
 Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Oszukał mnie','Wział 200zł a i tak nic nie umiem','1','3','4');
 Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Mega fajna atmosfera','Zajęcia bardzo fajnie prowadzone','4','4','3');
 Insert into OPINION (TITLE,CONTENT,RATE,APP_USER_ID,OFFER_ID) VALUES ('Uczyli mnie lepsi','Taki sobie nauczyciel, ni w ząb ni w oko','2','5','5');
+--EXPERIENCE
+Insert into EXPERIENCE (NAME,OFFER_ID) VALUES ('Języki programowania','1');
+Insert into EXPERIENCE (NAME,OFFER_ID) VALUES ('Języki programowania','2');
+Insert into EXPERIENCE (NAME,OFFER_ID) VALUES ('Języki programowania','3');
+Insert into EXPERIENCE (NAME,OFFER_ID) VALUES ('Języki programowania','4');
+Insert into EXPERIENCE (NAME,OFFER_ID) VALUES ('Języki programowania','5');
+Insert into EXPERIENCE (NAME,OFFER_ID) VALUES ('Języki programowania','6');
+Insert into EXPERIENCE (NAME,OFFER_ID) VALUES ('Języki programowania','7');
+Insert into EXPERIENCE (NAME,OFFER_ID) VALUES ('Języki programowania','8');
+--SKILL
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('Java','1');
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('C#','1');
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('Python','1');
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('Python','2');
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('TypeScript','3');
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('JavaScript','4');
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('Python','5');
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('HTML','5');
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('CSS','7');
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('HTML','7');
+Insert into SKILL (VALUE,EXPERIENCE_ID) VALUES ('JavaScript','7');

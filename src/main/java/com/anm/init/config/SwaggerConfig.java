@@ -25,7 +25,6 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build();
     }
-
     private ApiKey apiKey() {
         return new ApiKey("JWT", "Authorization", "header");
     }

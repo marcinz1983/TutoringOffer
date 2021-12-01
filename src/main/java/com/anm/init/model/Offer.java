@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -56,5 +55,11 @@ public class Offer {
             mappedBy = "offer",
             cascade = CascadeType.ALL)
     private List<Opinion> opinions;
+
+    @OneToMany(
+            mappedBy = "offer",
+            cascade = CascadeType.ALL
+    )
+    private List<Experience> experiences;
 
 }
