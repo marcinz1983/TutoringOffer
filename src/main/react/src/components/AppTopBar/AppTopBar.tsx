@@ -1,23 +1,15 @@
-import {
-  HAMBURGER
-} from "../../utility/constants";
-import {
-  AppBar,
-  IconButton,
-  Toolbar,
-  Menu,
-  MenuItem,
-} from "@mui/material";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
-import { LoginFormDialog } from "../forms/LoginFormDialog/LoginFormDialog";
-import { appTopBarStyles as styles } from "./app-top-bar-styles";
+import {LoginFormDialog} from "../forms/LoginFormDialog/LoginFormDialog";
+import {appTopBarStyles as styles} from "./app-top-bar-styles";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
-import { getAuth, signOut } from "firebase/auth";
-import { useEffect, useState } from "react";
-import { useHistory } from "react-router";
+import {HAMBURGER} from "../../utility/constants";
+import {getAuth, signOut} from "firebase/auth";
+import {useEffect, useState} from "react";
+import {useHistory} from "react-router";
 import logo from "../../assets/logo.png";
-import { Link } from "react-router-dom";
-import { Box } from "@mui/system";
+import {Link} from "react-router-dom";
+import {Box} from "@mui/system";
+import {AppBar, IconButton, Menu, MenuItem, Toolbar,} from "@mui/material";
 
 export const AppTopBar = () => {
   const history = useHistory();

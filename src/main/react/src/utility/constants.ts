@@ -64,15 +64,43 @@ export enum SEARCH_OFFER {
 }
 
 export enum OFFER {
-SIDE_MENU_STRING_1 = "Moje ogłoszenia",
-SIDE_MENU_STRING_2 = "Dodaj ogłoszenie",
-SIDE_MENU_STRING_3 = "Wiadomości",
-EDIT_OFFER = "Edytuj ogłoszenie",
-DELETE_OFFER = "Usuń ogłoszenie",
-SUCESS_MESSAGE_SHORT = "Udało się!",
-SUCESS_MESSAGE_LONG = "Udało się!",
-DELETE_OFFER_SUCCESS_MESSAGE = "Usunęliśmy Twoje ogłoszenie.",
-EDIT_OFFER_SUCCESS_MESSAGE = "Twoje ogłoszenie zostało pomyślnie edytowane.",
+    SIDE_MENU_STRING_1 = "Moje ogłoszenia",
+    SIDE_MENU_STRING_2 = "Dodaj ogłoszenie",
+    SIDE_MENU_STRING_3 = "Wiadomości",
+    EDIT_OFFER = "Edytuj ogłoszenie",
+    DELETE_OFFER = "Usuń ogłoszenie",
+    SUCESS_MESSAGE_SHORT = "Udało się!",
+    SUCESS_MESSAGE_LONG = "Udało się!",
+    DELETE_OFFER_SUCCESS_MESSAGE = "Usunęliśmy Twoje ogłoszenie.",
+    EDIT_OFFER_SUCCESS_MESSAGE = "Twoje ogłoszenie zostało pomyślnie edytowane.",
+    EDIT_TITLE = "Edycja",
+    EDIT_TIME = "Czas",
+    EDIT_LEVEL = "Poziom",
+    EDIT_SUBMIT = "Aktualizuj",
+    EDIT_CANCEL = "Anuluj"
+}
+
+export enum CREATE_OFFER_FORM {
+    FORM_TITLE = "Stwórz swoją ofertę",
+    FORM_INPUT_NAME = "Imię",
+    FORM_INPUT_SURNAME = "Nazwisko",
+    FORM_INPUT_SHORTHAND_DESC = "Krótki opis oferty",
+    FORM_INPUT_LONG_DESC = "Szczegółowy opis oferty",
+    FORM_INPUT_PRICE = "Cena",
+    FORM_INPUT_CURRENCY = "PLN",
+    FORM_INPUT_RATE_DESC = "Czas za podaną stawkę",
+    FORM_INPUT_RATE_ADDITIONAL_DESC = "Opis dodatkowy",
+    BUTTON_ADD_OFFER = "Dodaj szczegółową ofertę",
+    BUTTON_ADD_ANOTHER_OFFER = "Dodaj kolejną szczegółową ofertę",
+    BUTTON_SUBMIT = "Wyślij",
+    BUTTON_RETURN = "Powrót"
+}
+
+export enum OFFER_DYNAMIC_SECTION {
+    INPUT_SECTION_TITLE= "Wpisz tytuł sekcji",
+    INPUT_SECTION_EL = "Wpisz element sekcji",
+    BUTTON_ADD_SECTOIN_EL = "Dodaj element sekcji",
+    ALERT_CHIP_ERROR = "Taka wartość już istnieje"
 }
 
 export enum LOGIN_FORM_CONSTS {
