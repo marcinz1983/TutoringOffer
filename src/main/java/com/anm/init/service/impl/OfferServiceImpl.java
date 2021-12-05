@@ -5,9 +5,11 @@ import com.anm.init.controller.request.EditOfferRequest;
 import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.exception.OfferNotFoundException;
 import com.anm.init.mapper.OfferMapper;
+import com.anm.init.model.AppUser;
 import com.anm.init.model.Offer;
 import com.anm.init.model.Price;
 import com.anm.init.repository.OfferRepository;
+import com.anm.init.security.auth.SecurityService;
 import com.anm.init.service.OfferService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,12 +29,15 @@ public class OfferServiceImpl implements OfferService {
 
     private final OfferMapper offerMapper;
     private final OfferRepository offerRepository;
+    private final SecurityService securityService;
 
     @Autowired
-    public OfferServiceImpl(final OfferMapper offerMapper, final OfferRepository offerRepository) {
+    public OfferServiceImpl(OfferMapper offerMapper, OfferRepository offerRepository, SecurityService securityService) {
         this.offerMapper = offerMapper;
         this.offerRepository = offerRepository;
+        this.securityService = securityService;
     }
+
 
     @Override
     public void saveOffer(AddOfferRequest request) {
@@ -40,9 +45,13 @@ public class OfferServiceImpl implements OfferService {
         List<Price> newOfferPricesList = request
                 .getPrices()
                 .stream()
-                .map(value -> new Price(value.getDescription(), value.getPrice(), value.getCurrency(), value.isMainPrice(),newOffer))
+                .map(value -> new Price(value.getDescription(), value.getPrice(), value.getCurrency(), value.isMainPrice(), newOffer))
                 .collect(Collectors.toList());
         newOffer.setPrices(newOfferPricesList);
+        AppUser appUser = securityService.getAppUserByEmail();
+        appUser.getOffers().add(newOffer);
+        newOffer.setAppUser(appUser);
+        newOffer.setOpinions(null);
         offerRepository.save(newOffer);
     }
 

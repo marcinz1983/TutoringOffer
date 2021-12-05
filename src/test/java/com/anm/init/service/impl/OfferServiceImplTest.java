@@ -4,6 +4,7 @@ import com.anm.init.controller.request.AddOfferRequest;
 import com.anm.init.mapper.OfferMapper;
 import com.anm.init.model.Offer;
 import com.anm.init.repository.OfferRepository;
+import com.anm.init.security.auth.SecurityService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,10 +28,13 @@ class OfferServiceImplTest {
     @Mock
     OfferRepository offerRepository;
 
+    @Mock
+    SecurityService securityService;
+
 
     @BeforeEach
     void setUp() {
-        testedService = new OfferServiceImpl(offerMapper, offerRepository);
+        testedService = new OfferServiceImpl(offerMapper, offerRepository,securityService);
     }
 
     @Test

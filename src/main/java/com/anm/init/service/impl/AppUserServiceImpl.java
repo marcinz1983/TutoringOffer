@@ -1,5 +1,7 @@
 package com.anm.init.service.impl;
 
+import com.anm.init.controller.response.OfferResponse;
+import com.anm.init.exception.OfferNotFoundException;
 import com.anm.init.mapper.AppUserMapper;
 import com.anm.init.model.AppUser;
 import com.anm.init.repository.AppUserRepository;
@@ -25,4 +27,13 @@ public class AppUserServiceImpl implements AppUserService {
         AppUser newAppUser = appUserMapper.mapRequestToEntity(appUserRequest);
         appUserRepository.save(newAppUser);
     }
+
+    @Override
+    public AppUser findAppUserByFirebaseEmail(String email) {
+        AppUser appUser = appUserRepository
+                .findAppUserByFirebaseEmail(email)
+                .orElseThrow(()-> new RuntimeException("Can't find appUser by this email:"+email));
+        return appUser;
+    }
+
 }

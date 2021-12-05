@@ -5,9 +5,7 @@ import com.anm.init.controller.request.EditOfferRequest;
 import com.anm.init.controller.response.OfferPriceResponse;
 import com.anm.init.controller.response.OfferResponse;
 import com.anm.init.mapper.OfferMapper;
-import com.anm.init.mapper.PriceMapper;
 import com.anm.init.model.Offer;
-import com.anm.init.model.Price;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -28,6 +26,8 @@ public class OfferMapperImpl implements OfferMapper {
                 .withBackgroundDescription(request.getBackgroundDescription())
                 .withRateDescription(request.getRateDescription())
                 .withPrices(null)
+                .withAppUser(null)
+                .withOpinions(null)
                 .withUuid(UUID.randomUUID())
                 .build();
     }
