@@ -128,3 +128,8 @@ export const AUTOCOMPLETE_INPUT_OPTIONS = [
     {label: 'Visual Basic', id: '9'},
     {label: 'SQL', id: '10'},
 ]
+
+export enum PAGE_NOT_FOUND {
+    HEADING_PAGE_NOT_FOUND= "Coś się zepsuło, strony nie znaleziono",
+    BUTTON_RETURN_TO_HOMEPAGE = "Wróć do strony głównej"
+}

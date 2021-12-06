@@ -19,6 +19,7 @@ import {mainTheme} from "./themes/mainTheme";
 import {Footer} from "./components/Footer/Footer";
 import {AuthContextProvider} from "./context/AuthContext";
 import { SearchOffers } from "./pages/SearchOffers/SearchOffers";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
                 <Route path="/add-offer" component={CreateOfferForm}/>
                 <Route path="/register" component={RegisterForm}/>
                 <Route path="/search" component={SearchOffers}/>
+                <Route path={"*"} component={PageNotFound} />
               </Switch>
               <Footer/>
             </Grid>
