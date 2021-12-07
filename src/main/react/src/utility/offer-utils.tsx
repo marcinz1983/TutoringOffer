@@ -1,6 +1,7 @@
 import {IOffer} from "../typescript/interfaces";
 import React from "react";
 
+//DynamicOfferSection
 export function AddDetailedOfferSection(currentState: IOffer, currentStateSetMethod: React.Dispatch<React.SetStateAction<IOffer>>): void {
     const newOptions = currentState.sections;
     newOptions.push({title: "", inputValue: "", chipError: false, properities: []});
@@ -65,7 +66,7 @@ export function addDetailedOfferSectionTitle(currentState: IOffer,
                                              index: number,
                                              e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
 
-    currentState.sections![index].title = e.target.value;
+    currentState.sections[index].title = e.target.value;
     setCurrentStateMethod({...currentState});
 }
 
@@ -76,4 +77,59 @@ export function addDetailedOfferChipTitle(currentState: IOffer,
 
     currentState.sections[index].inputValue = e.target.value;
     setCurrentStateMethod({...currentState});
+}
+
+//DynamicPriceSection
+
+export function AddDetailedPriceOfferSection(currentState: IOffer, currentStateSetMethod: React.Dispatch<React.SetStateAction<IOffer>>): void {
+    const newPrices = currentState.prices;
+    newPrices.push({currency: "", description: "", mainPrice: false, price: 0});
+
+    currentStateSetMethod({...currentState, prices: newPrices});
+}
+
+export function addDetailedPriceOfferSectionPrice(currentState: IOffer,
+                                             setCurrentStateMethod: React.Dispatch<React.SetStateAction<IOffer>>,
+                                             index: number,
+                                             e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
+
+    currentState.prices[index].price = parseInt(e.target.value);
+    setCurrentStateMethod({...currentState});
+}
+
+export function addDetailedPriceOfferSectionCurrency(currentState: IOffer,
+                                                  setCurrentStateMethod: React.Dispatch<React.SetStateAction<IOffer>>,
+                                                  index: number,
+                                                  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
+
+    currentState.prices[index].currency = e.target.value;
+    setCurrentStateMethod({...currentState});
+}
+
+export function addDetailedPriceOfferSectionTime(currentState: IOffer,
+                                                     setCurrentStateMethod: React.Dispatch<React.SetStateAction<IOffer>>,
+                                                     index: number,
+                                                     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
+
+    currentState.prices[index].description = e.target.value;
+    setCurrentStateMethod({...currentState});
+}
+
+export function RemoveDetailedPriceOfferSection(currentState: IOffer, currentStateSetMethod: React.Dispatch<React.SetStateAction<IOffer>>, index: number): void {
+    const newArray = currentState.prices
+    newArray.splice(index, 1);
+
+    currentStateSetMethod({...currentState, prices: newArray});
+}
+
+export function DetailedPriceOfferChangeMainPrice(currentState: IOffer, currentStateSetMethod: React.Dispatch<React.SetStateAction<IOffer>>, index: number): void {
+    const newArray = currentState.prices
+
+    newArray.forEach(price => {
+        price.mainPrice = false
+    })
+
+    newArray[index].mainPrice = true
+
+    currentStateSetMethod({...currentState, prices: newArray})
 }

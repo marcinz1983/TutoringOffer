@@ -1,5 +1,6 @@
 import auth from "firebase/auth"
 import React from "react";
+import {DetailedPriceOfferChangeMainPrice, RemoveDetailedPriceOfferSection} from "../utility/offer-utils";
 
 export interface User extends auth.User {
 }
@@ -66,7 +67,12 @@ export interface IOffer {
     firstName: string;
     lastName: string;
     longDescription: string;
-    price: number;
+    prices: {
+        currency: string,
+        description: string,
+        mainPrice: boolean,
+        price: number
+    }[];
     rateDescription: string;
     shortDescription: string;
     sections: {
@@ -90,6 +96,22 @@ export interface IOfferDynamicSection {
     addChip: (currentState: IOffer, setCurrentState: React.Dispatch<React.SetStateAction<IOffer>>, index: number, value: string) => void,
     addChipTitle: (currentState: IOffer, setCurrentState: React.Dispatch<React.SetStateAction<IOffer>>, index: number, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
     removeChip: (currentState: IOffer, setCurrentState: React.Dispatch<React.SetStateAction<IOffer>>, index: number, properity: string) => void,
+    offerDetails: IOffer,
+    setOfferDetails: React.Dispatch<React.SetStateAction<IOffer>>
+}
+
+export interface IOfferDynamicPriceSection {
+    prices: {
+        currency: string,
+        description: string,
+        mainPrice: boolean,
+        price: number
+    }[],
+    addDetailedPriceOfferSectionPrice: (currentState: IOffer, setCurrentState: React.Dispatch<React.SetStateAction<IOffer>>,index: number, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>  void,
+    addDetailedPriceOfferSectionCurrency: (currentState: IOffer, setCurrentState: React.Dispatch<React.SetStateAction<IOffer>>,index: number, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>  void,
+    addDetailedPriceOfferSectionTime: (currentState: IOffer, setCurrentState: React.Dispatch<React.SetStateAction<IOffer>>,index: number, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>  void,
+    RemoveDetailedPriceOfferSection: (currentState: IOffer, setCurrentState: React.Dispatch<React.SetStateAction<IOffer>>,index: number) =>  void,
+    DetailedPriceOfferChangeMainPrice: (currentState: IOffer, setCurrentState: React.Dispatch<React.SetStateAction<IOffer>>,index: number) =>  void,
     offerDetails: IOffer,
     setOfferDetails: React.Dispatch<React.SetStateAction<IOffer>>
 }

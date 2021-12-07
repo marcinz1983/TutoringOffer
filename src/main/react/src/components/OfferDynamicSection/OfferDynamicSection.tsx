@@ -16,7 +16,6 @@ const OfferDynamicSection = (props: IOfferDynamicSection) => {
                         label={OFFER_DYNAMIC_SECTION.INPUT_SECTION_TITLE}
                         value={option.title}
                         onChange={(e) => addSectionTitle(offerDetails, setOfferDetails, index, e)}
-                        autoFocus
                     />
                     <TextField
                         label={OFFER_DYNAMIC_SECTION.INPUT_SECTION_EL}

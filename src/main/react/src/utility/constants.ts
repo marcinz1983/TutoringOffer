@@ -77,7 +77,9 @@ export enum OFFER {
     EDIT_TIME = "Czas",
     EDIT_LEVEL = "Poziom",
     EDIT_SUBMIT = "Aktualizuj",
-    EDIT_CANCEL = "Anuluj"
+    EDIT_CANCEL = "Anuluj",
+    EDIT_YOUR_PRICING = "Edytuj swoje cenniki",
+    EDIT_DETAILED_OFFERS = "Edytuj szczegółowe informacje"
 }
 
 export enum CREATE_OFFER_FORM {
@@ -93,7 +95,11 @@ export enum CREATE_OFFER_FORM {
     BUTTON_ADD_OFFER = "Dodaj szczegółową ofertę",
     BUTTON_ADD_ANOTHER_OFFER = "Dodaj kolejną szczegółową ofertę",
     BUTTON_SUBMIT = "Wyślij",
-    BUTTON_RETURN = "Powrót"
+    BUTTON_RETURN = "Powrót",
+    BUTTON_ADD_ANOTHER_PRICE = "Dodaj kolejną cenę",
+    HEADING_ADD_DETAILED_INFO = "Dodaj szczegółowe informacje",
+    HEADING_ADD_YOUR_PRICING = "Dodaj swoje cenniki",
+
 }
 
 export enum OFFER_DYNAMIC_SECTION {

@@ -2,11 +2,11 @@ import {Box, Button, TextField, Typography} from '@mui/material';
 import {Link} from 'react-router-dom';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import {FormEvent, useState} from "react";
-import {IErrorsForm, IRegisterForm} from "../../typescript/interfaces";
+import {IErrorsForm, IRegisterForm} from "../../../typescript/interfaces";
 import {FormRegisterStyles as styles} from "./registerform-styles";
-import {FORM_REGISTER} from "../../utility/constants";
-import {RegistrationService} from "../../services/registration.service";
-import {IRegisterUserRequest} from "../../typescript/registration.model";
+import {FORM_REGISTER} from "../../../utility/constants";
+import {RegistrationService} from "../../../services/registration.service";
+import {IRegisterUserRequest} from "../../../typescript/registration.model";
 
 export const RegisterForm = () => {
 

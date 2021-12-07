@@ -14,7 +14,7 @@ const OfferListItem = (props: IOffer) => {
         longDescription,
         rateDescription,
         backgroundDescription,
-        price,
+        prices,
     } = props;
 
     return (
@@ -51,7 +51,7 @@ const OfferListItem = (props: IOffer) => {
                         <Stack direction="column" spacing={0.5}>
                             <Box component="span" sx={{display: "flex"}}>
                                 <Typography variant="h5">
-                                    {price} zł
+                                    {prices} zł
                                     <Typography variant="body2">{rateDescription}</Typography>
                                 </Typography>
                             </Box>

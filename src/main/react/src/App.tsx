@@ -4,27 +4,22 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import {CssBaseline, Grid} from "@mui/material";
 import {ThemeProvider} from "@mui/material/styles";
-import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
-import {useEffect, useState} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {AppTopBar} from "./components/AppTopBar/AppTopBar";
-import {EditOffer} from "./components/EditOffer";
+import {EditOfferForm} from "./components/forms/EditOfferForm/EditOfferForm";
 import {OfferDetails} from "./components/OfferDetails";
-import {CreateOfferForm} from "./components/Trainer/CreateOfferForm";
-import {getAllOffers} from "./services/offer.service";
+import {CreateOfferForm} from "./components/forms/CreateOfferForm/CreateOfferForm";
 import {Homepage} from "./pages/Homepage/Homepage";
-import {RegisterForm} from "./components/User/RegisterForm";
-import {IOffer} from "./typescript/interfaces";
+import {RegisterForm} from "./components/forms/RegisterForm/RegisterForm";
 import {mainTheme} from "./themes/mainTheme";
 import {Footer} from "./components/Footer/Footer";
 import {AuthContextProvider} from "./context/AuthContext";
-import { SearchOffers } from "./pages/SearchOffers/SearchOffers";
+import {SearchOffers} from "./pages/SearchOffers/SearchOffers";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 
-function App() {
 
-  const [offersData, setOffersData] = useState<Array<IOffer> | void>([]);
+function App() {
 
   // useEffect(() => {
   //   async function getOffersData() {
@@ -70,7 +65,7 @@ function App() {
                   )}
                 />
 
-                <Route path="/edit-offer" component={EditOffer}/>
+                <Route path="/edit-offer" component={EditOfferForm}/>
                 <Route path="/offer-details" component={OfferDetails}/>
                 <Route path="/add-offer" component={CreateOfferForm}/>
                 <Route path="/register" component={RegisterForm}/>
