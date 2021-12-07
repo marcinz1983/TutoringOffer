@@ -2,6 +2,8 @@ package com.anm.init.config;
 
 import java.util.Arrays;
 import java.util.List;
+
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;

@@ -25,7 +25,7 @@ public class OfferServiceImpl implements OfferService {
 
     private static final Logger LOG = LoggerFactory.getLogger(OfferServiceImpl.class);
 
-    private static final String OFFER_NOT_FOUND_EXCEPTION_MESSAGE = "Offer not found!";
+    static final String OFFER_NOT_FOUND_EXCEPTION_MESSAGE = "Offer not found!";
 
     private final OfferMapper offerMapper;
     private final OfferRepository offerRepository;
@@ -48,7 +48,7 @@ public class OfferServiceImpl implements OfferService {
                 .map(value -> new Price(value.getDescription(), value.getPrice(), value.getCurrency(), value.isMainPrice(), newOffer))
                 .collect(Collectors.toList());
         newOffer.setPrices(newOfferPricesList);
-        AppUser appUser = securityService.getAppUserByEmail();
+        AppUser appUser = securityService.findAppUserByUser();
         appUser.getOffers().add(newOffer);
         newOffer.setAppUser(appUser);
         newOffer.setOpinions(null);

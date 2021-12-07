@@ -9,5 +9,6 @@ import java.util.Optional;
 @Repository
 public interface AppUserRepository extends JpaRepository<AppUser,Long> {
 
-    Optional<AppUser> findAppUserByFirebaseEmail(String email);
+    Optional<AppUser> findByFirebaseEmailEquals(String email);
+
 }

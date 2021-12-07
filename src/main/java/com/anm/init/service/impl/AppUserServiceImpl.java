@@ -31,8 +31,8 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public AppUser findAppUserByFirebaseEmail(String email) {
         AppUser appUser = appUserRepository
-                .findAppUserByFirebaseEmail(email)
-                .orElseThrow(()-> new RuntimeException("Can't find appUser by this email:"+email));
+                .findByFirebaseEmailEquals(email)
+                .orElseThrow(()-> new RuntimeException("Can't find appUser by this email: "+email));
         return appUser;
     }
 
