@@ -2,9 +2,12 @@ package com.anm.init.mapper.impl;
 
 import com.anm.init.controller.request.AddOfferRequest;
 import com.anm.init.controller.request.EditOfferRequest;
+import com.anm.init.controller.response.ExperienceResponse;
 import com.anm.init.controller.response.OfferPriceResponse;
 import com.anm.init.controller.response.OfferResponse;
+import com.anm.init.mapper.ExperienceMapper;
 import com.anm.init.mapper.OfferMapper;
+import com.anm.init.model.Experience;
 import com.anm.init.model.Offer;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +17,12 @@ import java.util.stream.Collectors;
 
 @Component
 public class OfferMapperImpl implements OfferMapper {
+
+    private final ExperienceMapper experienceMapper;
+
+    public OfferMapperImpl(ExperienceMapper experienceMapper) {
+        this.experienceMapper = experienceMapper;
+    }
 
     @Override
     public Offer mapRequestToEntity(AddOfferRequest request) {
@@ -48,6 +57,7 @@ public class OfferMapperImpl implements OfferMapper {
                 .withBackgroundDescription(offer.getBackgroundDescription())
                 .withRateDescription(offer.getRateDescription())
                 .withPrices(offerPricesList)
+                .withSections(mapExperienceToResponse(offer.getExperiences()))
                 .build();
     }
 
@@ -64,5 +74,9 @@ public class OfferMapperImpl implements OfferMapper {
                 .withPrices(null)
                 .withUuid(editOfferRequest.getUuid())
                 .build();
+    }
+
+    private List<ExperienceResponse> mapExperienceToResponse (List<Experience> experiences){
+        return experiences.stream().map(experienceMapper::mapEntityToResponse).collect(Collectors.toList());
     }
 }

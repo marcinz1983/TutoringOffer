@@ -22,4 +22,5 @@ public class OfferResponse {
     private String rateDescription;
     private String backgroundDescription;
     private List<OfferPriceResponse> prices;
+    private List<ExperienceResponse> sections;
 }

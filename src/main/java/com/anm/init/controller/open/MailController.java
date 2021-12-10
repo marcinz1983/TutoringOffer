@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/mail")
+@RequestMapping("/public/api/mail")
 public class MailController {
 
     private final MailWithAttachmentServiceImpl mailWithAttachmentService;
