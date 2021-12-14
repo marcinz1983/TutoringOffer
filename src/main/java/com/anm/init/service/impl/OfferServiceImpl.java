@@ -40,7 +40,7 @@ public class OfferServiceImpl implements OfferService {
 
 
     @Override
-    public void saveOffer(AddOfferRequest request) {
+    public boolean saveOffer(AddOfferRequest request) {
         Offer newOffer = offerMapper.mapRequestToEntity(request);
         List<Price> newOfferPricesList = request
                 .getPrices()
@@ -49,10 +49,14 @@ public class OfferServiceImpl implements OfferService {
                 .collect(Collectors.toList());
         newOffer.setPrices(newOfferPricesList);
         AppUser appUser = securityService.findAppUserByUser();
-        appUser.getOffers().add(newOffer);
-        newOffer.setAppUser(appUser);
-        newOffer.setOpinions(null);
-        offerRepository.save(newOffer);
+        if(appUser.getOffers().size() == 0) {
+            appUser.getOffers().add(newOffer);
+            newOffer.setAppUser(appUser);
+            newOffer.setOpinions(null);
+            offerRepository.save(newOffer);
+            return true;
+        }
+        return false;
     }
 
     @Override

@@ -32,9 +32,11 @@ public class OfferController {
     }
 
     @PostMapping("/save")
-    ResponseEntity<Void> saveOffer(@Valid @RequestBody AddOfferRequest request) {
-        offerService.saveOffer(request);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    ResponseEntity<String> saveOffer(@Valid @RequestBody AddOfferRequest request) {
+
+        return offerService.saveOffer(request)
+                ? new ResponseEntity<>(HttpStatus.CREATED)
+                : new ResponseEntity<>("User already has an Offer!",HttpStatus.FORBIDDEN);
     }
 
     @GetMapping("/get")

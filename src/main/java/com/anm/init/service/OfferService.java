@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public interface OfferService {
 
-    void saveOffer(AddOfferRequest request);
+    boolean saveOffer(AddOfferRequest request);
 
     List<OfferResponse> findAll();
 
