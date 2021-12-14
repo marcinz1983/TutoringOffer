@@ -32,7 +32,7 @@ export abstract class RegistrationService {
             .catch(error => console.log(error))
     }
 
-    private static mapErrorCode(code: FirebaseRegisterError): RegistrationError {
+    public static mapErrorCode(code: FirebaseRegisterError): RegistrationError {
         switch (code) {
             case FirebaseRegisterError.EMAIL_ALREADY_IN_USE:
                 return {
@@ -47,8 +47,10 @@ export abstract class RegistrationService {
             default:
                 return {
                     propName: null,
-                    message: 'Nienany błąd'
+                    message: 'Nieznany błąd'
                 }
         }
     }
 }
+
+
