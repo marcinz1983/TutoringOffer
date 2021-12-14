@@ -62,4 +62,10 @@ public class Offer {
     )
     private List<Experience> experiences;
 
+    @ManyToMany
+    @JoinTable(
+            joinColumns = {@JoinColumn(name = "OFFER_ID")},
+            inverseJoinColumns = {@JoinColumn(name = "SPECIALIZATION_ID")}
+    )
+    private List<Specialization> specializations;
 }
