@@ -6,6 +6,7 @@ import headerMobileImage from "../../assets/main-graphic-mobile.png";
 import {HOMEPAGE} from "../../utility/constants";
 import {useHistory} from "react-router";
 import {useState} from "react";
+import {ROUTER_CONSTANTS} from "../../utility/router-constants";
 
 export const HomepageHeroSearch = () => {
 
@@ -14,7 +15,7 @@ export const HomepageHeroSearch = () => {
 
     const searchButtonClickAction = () => {
         history.push({
-            pathname: "/search",
+            pathname: ROUTER_CONSTANTS.SEARCH,
             search: searchInputValue,
             state: searchInputValue
         })
