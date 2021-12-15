@@ -9,6 +9,7 @@ import {IPublicOffer} from "../../typescript/offer.model";
 import {useHistory} from "react-router";
 import {useLocation} from "react-router-dom";
 import { Location } from 'history';
+import {ROUTER_CONSTANTS} from "../../utility/router-constants";
 
 type LocationState = {
     from: Location
@@ -40,7 +41,7 @@ export const SearchOffers = () => {
 
     const searchButtonClickAction = () => {
         history.push({
-            pathname: "/search",
+            pathname: ROUTER_CONSTANTS.SEARCH,
             search: searchInputValue,
             state: searchInputValue
         })
