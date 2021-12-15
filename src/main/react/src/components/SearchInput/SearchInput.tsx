@@ -1,38 +1,56 @@
-import { Autocomplete, IconButton, InputBase, Paper } from "@mui/material"
+import {Autocomplete, IconButton, InputBase, Paper} from "@mui/material"
 import SearchIcon from '@mui/icons-material/Search';
-import { searchInputStyles as styles } from "./search-input-styles";
-import { HOMEPAGE , AUTOCOMPLETE_INPUT_OPTIONS } from "../../utility/constants";
-import { useState } from "react";
+import {searchInputStyles as styles} from "./search-input-styles";
+import {AUTOCOMPLETE_INPUT_OPTIONS, HOMEPAGE} from "../../utility/constants";
+import React from "react";
 
-export const SearchInput = () => {
+export const SearchInput = (props: any) => {
 
-    const [searchInputValue, setSearchInputValue] = useState<string | null>(null)    
+    const {
+        searchInputValue,
+        setSearchInputValue,
+        searchButtonClickAction
+    } = props
+
+    const handleKeyPressSearch = (e:  React.KeyboardEvent<HTMLDivElement>) => {
+        if(e.key == "Enter") {
+            searchButtonClickAction()
+        }
+    }
 
     return (
         <div>
             <Paper sx={styles.paper}>
-            <Autocomplete
-                onInputChange={(e, newInputValue) => {setSearchInputValue(newInputValue)}}
-                ListboxProps={{style: styles.listBoxProps}}
-                disablePortal
-                id="search-input"
-                options={AUTOCOMPLETE_INPUT_OPTIONS}
-                PaperComponent={({ children }) => (
-                    <Paper style={ styles.autocompletePaper }>{children}</Paper>
-                  )}
-                sx={styles.autocompleteInput}
-                renderInput={(params) => {
-                    const {InputLabelProps,InputProps,...rest} = params;
-                    return <InputBase
-                     {...params.InputProps}
-                     {...rest}
-                     value={searchInputValue}
-                     onChange={(e) => setSearchInputValue(e.target.value)}
-                     placeholder={HOMEPAGE.SEARCHBAR_PLACEHOLDER}/>}}/>
+                <Autocomplete
+                    onInputChange={(e, newInputValue) => {
+                        setSearchInputValue(newInputValue)
+                    }}
+
+                    ListboxProps={{style: styles.listBoxProps}}
+                    value={searchInputValue}
+                    disablePortal
+                    freeSolo
+                    defaultValue={searchInputValue}
+                    id="search-input"
+                    options={AUTOCOMPLETE_INPUT_OPTIONS}
+                    PaperComponent={({children}) => (
+                        <Paper style={styles.autocompletePaper}>{children}</Paper>
+                    )}
+                    sx={styles.autocompleteInput}
+                    renderInput={(params) => {
+                        const {InputLabelProps, InputProps, ...rest} = params;
+                        return <InputBase
+                            autoFocus
+                            onKeyPress={(e) => handleKeyPressSearch(e)}
+                            {...params.InputProps}
+                            {...rest}
+                            onChange={(e) => setSearchInputValue(e.target.value)}
+                            placeholder={HOMEPAGE.SEARCHBAR_PLACEHOLDER}
+                        />
+                    }}/>
                 <IconButton
-                //TODO: add proper API call to onClick
-                onClick={() => console.log('SearchInput buttonClick')}
-                sx={styles.iconButton}
+                    onClick={() => searchButtonClickAction()}
+                    sx={styles.iconButton}
                 >
                     <SearchIcon sx={styles.searchIcon}/>
                 </IconButton>

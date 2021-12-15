@@ -48,5 +48,10 @@ export const offerItemStyle = {
 
     descText: {
         margin: 0
+    },
+
+    link: {
+        textDecoration: 'none',
+        color: 'black'
     }
 } as const

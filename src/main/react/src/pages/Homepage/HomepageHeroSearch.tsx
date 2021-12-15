@@ -4,8 +4,22 @@ import { HomepageStyles as styles } from "./homepage-styles";
 import headerImage from "../../assets/main-graphic.png";
 import headerMobileImage from "../../assets/main-graphic-mobile.png";
 import {HOMEPAGE} from "../../utility/constants";
+import {useHistory} from "react-router";
+import {useState} from "react";
 
 export const HomepageHeroSearch = () => {
+
+    const history = useHistory();
+    const [searchInputValue, setSearchInputValue] = useState("");
+
+    const searchButtonClickAction = () => {
+        history.push({
+            pathname: "/search",
+            search: searchInputValue,
+            state: searchInputValue
+        })
+    }
+
   return (
     <Grid container item xs={11} md={11} lg={8} sx={styles.homepageContainer}>
       <Grid item xs={12} md={6} lg={5} sx={styles.homepageHeroSearchGridItem}>
@@ -23,7 +37,7 @@ export const HomepageHeroSearch = () => {
             </Box>
           </Box>
           <Grid item xs={12} sx={styles.inputContainer}>
-            <SearchInput/>
+            <SearchInput searchInputValue={searchInputValue} setSearchInputValue={setSearchInputValue} searchButtonClickAction={searchButtonClickAction}/>
           </Grid>
         </Grid>
       </Grid>

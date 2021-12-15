@@ -60,7 +60,13 @@ export enum SEARCH_OFFER {
     CURRENCY_PER_HOUR = "zł/h",
     HEADING_FIND_TRAINER = "Znajdź idealnego trenera dla siebie",
     MIN_RATESLIDER_VALUE = 0,
-    MAX_RATESLIDER_VALUE = 200
+    MAX_RATESLIDER_VALUE = 200,
+    HEADING_NO_RESULTS_BIG= "Nie znaleźliśmy ofert spełniających podane kryteria.",
+    HEADING_NO_RESULTS_SMALL="Użyj innych słów kluczowych i spróbuj ponownie.",
+
+    //for offer api search call
+    HOW_MANY_RESULTS=9,
+    HOW_MANY_PAGES=0
 }
 
 export enum OFFER {

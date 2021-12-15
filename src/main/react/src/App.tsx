@@ -7,7 +7,7 @@ import {ThemeProvider} from "@mui/material/styles";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {AppTopBar} from "./components/AppTopBar/AppTopBar";
 import {EditOfferForm} from "./components/forms/EditOfferForm/EditOfferForm";
-import {OfferDetails} from "./components/OfferDetails";
+import OfferDetails from './pages/OfferDetails/OfferDetails';
 import {CreateOfferForm} from "./components/forms/CreateOfferForm/CreateOfferForm";
 import {Homepage} from "./pages/Homepage/Homepage";
 import {RegisterForm} from "./components/forms/RegisterForm/RegisterForm";
@@ -16,7 +16,9 @@ import {Footer} from "./components/Footer/Footer";
 import {AuthContextProvider} from "./context/AuthContext";
 import {SearchOffers} from "./pages/SearchOffers/SearchOffers";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
-
+import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs";
+import React from "react";
+import {ROUTER_CONSTANTS} from "./utility/router-constants";
 
 
 function App() {
@@ -51,6 +53,7 @@ function App() {
             <Grid container style={{minWidth: '99vw', justifyContent: 'center'}}>
               <Grid item xs={11} md={11} lg={8}>
                 <AppTopBar/>
+                <Breadcrumbs />
               </Grid>
             </Grid>
 
@@ -65,11 +68,11 @@ function App() {
                   )}
                 />
 
-                <Route path="/edit-offer" component={EditOfferForm}/>
-                <Route path="/offer-details" component={OfferDetails}/>
-                <Route path="/add-offer" component={CreateOfferForm}/>
-                <Route path="/register" component={RegisterForm}/>
-                <Route path="/search" component={SearchOffers}/>
+                <Route path={ROUTER_CONSTANTS.EDIT_OFFER} component={EditOfferForm}/>
+                <Route path={ROUTER_CONSTANTS.SEARCH_OFFER_ID} component={OfferDetails}/>
+                <Route path={ROUTER_CONSTANTS.CREATE_OFFER} component={CreateOfferForm}/>
+                <Route path={ROUTER_CONSTANTS.REGISTER} component={RegisterForm}/>
+                <Route exact path={ROUTER_CONSTANTS.SEARCH} component={SearchOffers}/>
                 <Route path={"*"} component={PageNotFound} />
               </Switch>
               <Footer/>

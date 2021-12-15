@@ -6,6 +6,7 @@ import { SEARCH_OFFER } from "../../utility/constants";
 import { SortDialog } from "./SortDialog";
 import { RateDialog } from "./RateDialog";
 import { Box } from "@mui/system";
+import {ISearchTopProps} from "../../typescript/interfaces";
 import React from "react";
 import {
   Button,
@@ -19,18 +20,15 @@ import {
   AccordionDetails,
 } from "@mui/material";
 
-export const SearchTop = () => {
+export const SearchTop = (props: ISearchTopProps) => {
 
-const minRateValue: number = SEARCH_OFFER.MIN_RATESLIDER_VALUE;
-const maxRateValue: number = SEARCH_OFFER.MAX_RATESLIDER_VALUE;
+  const { rateValue, setRateValue, searchInputValue, setSearchInputValue, radioValue, setRadioValue, searchButtonClickAction } = props;
 
   const [openRate, setOpenRate] = React.useState(false);
   const [openSort, setOpenSort] = React.useState(false);
-  const [radioValue, setRadioValue] = React.useState("HighestRate");
-  const [rateValue, setRateValue] = React.useState<number[]>([minRateValue, maxRateValue]);
 
   const handleRateChange = (event: Event, newValue: number | number[]) => {
-    setRateValue(newValue as number[]);
+    setRateValue(newValue as number[])
   };
 
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,11 +43,17 @@ const maxRateValue: number = SEARCH_OFFER.MAX_RATESLIDER_VALUE;
     setOpenRate(value)
   }
 
+
   return (
     <>
       <Grid container sx={styles.mainContainer}>
         <Grid item xs={11} sx={styles.mainContainerGridItem}>
-          <SearchInput />
+          <SearchInput
+              searchInputValue={searchInputValue}
+              setSearchInputValue={setSearchInputValue}
+              minRateValue={rateValue[1]}
+              maxRateValue={rateValue[0]}
+              searchButtonClickAction={searchButtonClickAction}/>
         </Grid>
 
         {/* mobile */}

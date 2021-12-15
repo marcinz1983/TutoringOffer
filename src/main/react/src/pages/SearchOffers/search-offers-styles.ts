@@ -116,5 +116,16 @@ export const searchOffersStyles = {
     headingFindTrainer: {
         marginBottom: '100px',
         fontWeight: 'bold'
+    },
+
+    noResultsGridItem: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        h3: {
+            margin: '20px 0'
+        }
     }
+
 } as const

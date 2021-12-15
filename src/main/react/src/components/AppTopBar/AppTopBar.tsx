@@ -10,6 +10,7 @@ import logo from "../../assets/logo.png";
 import {Link} from "react-router-dom";
 import {Box} from "@mui/system";
 import {AppBar, IconButton, Menu, MenuItem, Toolbar,} from "@mui/material";
+import {ROUTER_CONSTANTS} from "../../utility/router-constants";
 
 export const AppTopBar = () => {
   const history = useHistory();
@@ -109,7 +110,7 @@ export const AppTopBar = () => {
             <Box>
               <MenuItem 
               component={Link}
-              to='/search'
+              to={ROUTER_CONSTANTS.SEARCH}
               sx={styles.menuItem}
               onClick={handleClose}>
                 {HAMBURGER.LIST_ITEM_1}

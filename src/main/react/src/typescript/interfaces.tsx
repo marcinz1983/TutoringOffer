@@ -1,6 +1,6 @@
 import auth from "firebase/auth"
 import React from "react";
-import {DetailedPriceOfferChangeMainPrice, RemoveDetailedPriceOfferSection} from "../utility/offer-utils";
+import {IPublicOffer} from './offer.model';
 
 export interface User extends auth.User {
 }
@@ -116,6 +116,16 @@ export interface IOfferDynamicPriceSection {
     setOfferDetails: React.Dispatch<React.SetStateAction<IOffer>>
 }
 
+export interface ISearchTopProps {
+    rateValue: number[],
+    setRateValue: React.Dispatch<React.SetStateAction<number[]>>,
+    searchInputValue: string,
+    setSearchInputValue:  React.Dispatch<React.SetStateAction<string>>,
+    radioValue: string,
+    setRadioValue: React.Dispatch<React.SetStateAction<string>>,
+    searchButtonClickAction: () => void
+}
+
 export interface IOfferLocationState {
     from: {
         path: string;
@@ -130,6 +140,14 @@ export interface IOfferLocationState {
         rateDescription: string;
         shortDescription: string;
     };
+}
+
+export interface IGetAllPublicOfferPayload {
+    maxPrice: number,
+    minPrice: number,
+    page: number,
+    searchingString: string,
+    size: number
 }
 
 export interface ILocationDefaultObject {
