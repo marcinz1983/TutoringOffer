@@ -21,5 +21,5 @@ export interface IPublicOffer {
     sections: {
         title: string,
         properties: string[],
-    },
+    }[],
 }

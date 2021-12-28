@@ -117,7 +117,7 @@ export const LoginFormDialog = (props: IDialogProps) => {
               onChange={(e) =>
                 setLoginForm({ ...loginForm, email: e.target.value })
               }
-            ></TextField>
+            />
           </Grid>
           <Grid item xs={9} sx={styles.formItem}>
             <TextField
@@ -133,7 +133,7 @@ export const LoginFormDialog = (props: IDialogProps) => {
               onChange={(e) =>
                 setLoginForm({ ...loginForm, password: e.target.value })
               }
-            ></TextField>
+            />
           </Grid>
           <Grid item xs={9} sx={styles.formItemOptions}>
             <FormControlLabel

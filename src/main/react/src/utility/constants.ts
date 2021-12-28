@@ -63,6 +63,7 @@ export enum SEARCH_OFFER {
     MAX_RATESLIDER_VALUE = 200,
     HEADING_NO_RESULTS_BIG= "Nie znaleźliśmy ofert spełniających podane kryteria.",
     HEADING_NO_RESULTS_SMALL="Użyj innych słów kluczowych i spróbuj ponownie.",
+    RATE="Ocena",
 
     //for offer api search call
     HOW_MANY_RESULTS=9,
@@ -85,7 +86,11 @@ export enum OFFER {
     EDIT_SUBMIT = "Aktualizuj",
     EDIT_CANCEL = "Anuluj",
     EDIT_YOUR_PRICING = "Edytuj swoje cenniki",
-    EDIT_DETAILED_OFFERS = "Edytuj szczegółowe informacje"
+    EDIT_DETAILED_OFFERS = "Edytuj szczegółowe informacje",
+    ABOUT_ME = "O mnie",
+    HASHTAGS = "Hashtagi",
+    PRICES = "Stawki",
+    OTHER_TRAINERS_FROM_CATEGORY = "Inni trenerzy z tej kategorii"
 }
 
 export enum CREATE_OFFER_FORM {
@@ -126,6 +131,14 @@ export enum LOGIN_FORM_CONSTS {
     FORM_REGISTER_LINK = "Zarejestruj się!",
     LOGIN_ERROR_MESSAGE = "Email lub hasło są nieprawidłowe",
     EMPTY_INPUT_ERROR = "Podaj login i hasło aby się zalogować."
+}
+
+export enum OPINIONS {
+    OPINIONS = "Opinie",
+    RATE_TRAINER = "Oceń trenera",
+    YOUR_RATE = "Twoja ocena:",
+    OPTIONAL_OPINION = "Opinia (opcjonalnie)",
+    ADD_OPINION="Dodaj opinię"
 }
 
 export const AUTOCOMPLETE_INPUT_OPTIONS = [

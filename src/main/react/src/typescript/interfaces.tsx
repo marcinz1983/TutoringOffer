@@ -160,6 +160,29 @@ export interface ILocationDefaultObject {
     };
 }
 
+export interface IAvatarSquared {
+    image: string | null,
+    alt: string,
+    width: string,
+    height: string
+}
+
+export interface IContentCarousel {
+    data: {
+        name: string,
+        image: string | null,
+        rating: number,
+        price: number,
+        currency: string,
+        desc: string
+    }[]
+}
+
+export interface IOpinionData {
+    desc: string,
+    rating: null | number
+}
+
 export interface IMainTheme {
     breakpoints: {
         values: {
