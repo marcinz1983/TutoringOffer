@@ -3,14 +3,17 @@ package com.anm.init.service.impl;
 import com.anm.init.controller.request.SearchPublicOfferRequest;
 import com.anm.init.controller.response.PublicOfferAndSpecializationByKeyWordResponse;
 import com.anm.init.controller.response.PublicOfferResponse;
+import com.anm.init.exception.OfferNotFoundException;
 import com.anm.init.mapper.PublicOfferAndSpecializationByKeyWordMapper;
 import com.anm.init.mapper.PublicOfferMapper;
+import com.anm.init.model.Offer;
 import com.anm.init.repository.PublicOfferRepository;
 import com.anm.init.repository.SpecializationRepository;
 import com.anm.init.service.PublicOfferService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PublicOfferServiceImpl implements PublicOfferService {
 
+    static final String OFFER_NOT_FOUND_EXCEPTION_MESSAGE = "Offer not found!";
     private final PublicOfferRepository publicOfferRepository;
     private final SpecializationRepository specializationRepository;
     private final PublicOfferMapper publicOfferMapper;
@@ -77,6 +81,14 @@ public class PublicOfferServiceImpl implements PublicOfferService {
             resultList.addAll(emptyKeyWord);
         }
         return resultList;
+    }
+
+    @Override
+    public PublicOfferResponse findOfferByUUID(UUID offerId) {
+        Offer offer = publicOfferRepository
+                .findByUuidEquals(offerId)
+                .orElseThrow(() -> new OfferNotFoundException(OFFER_NOT_FOUND_EXCEPTION_MESSAGE));
+        return publicOfferMapper.mapEntityToResponse(offer);
     }
 
 }
