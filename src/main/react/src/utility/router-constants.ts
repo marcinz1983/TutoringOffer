@@ -3,5 +3,5 @@ export enum ROUTER_CONSTANTS {
     SEARCH = "/oferty",
     SEARCH_OFFER_ID = "/oferty/:id",
     CREATE_OFFER ="/dodaj-oferte",
-    REGISTER = "rejestracja"
+    REGISTER = "/rejestracja"
 }

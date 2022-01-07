@@ -128,7 +128,7 @@ export const AppTopBar = () => {
                   </MenuItem>
                   <MenuItem  
                     component={Link}
-                    to="/register"
+                    to={ROUTER_CONSTANTS.REGISTER}
                     sx={styles.menuItem}
                     onClick={handleClose}
                     >
