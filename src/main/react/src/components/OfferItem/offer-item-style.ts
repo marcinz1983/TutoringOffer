@@ -26,6 +26,35 @@ export const offerItemStyle = {
             cursor: 'pointer',
         },    
     },
+
+    skeletonUserImg: {
+        width: {
+            xs: '70vw',
+            sm: '25vw',
+            lg: '17vw',
+            xl: '17vw',
+        },
+        height: {
+            xs: '70vw',
+            sm: '25vw',
+            lg: '17vw',
+            xl: '17vw',
+        },
+        borderRadius: "30px"
+    },
+
+    skeletonRating: {
+        margin: '5px 0',
+        height: '40px',
+        width: '200px'
+    },
+
+    skeletonDescription: {
+        height: '70px',
+        width: '80%',
+
+    },
+
     name: {
        color: 'white',
        fontWeight: 'bold',
