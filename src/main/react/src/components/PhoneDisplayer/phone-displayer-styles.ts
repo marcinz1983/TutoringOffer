@@ -1,4 +1,3 @@
-import {IMainTheme} from "../../typescript/interfaces";
 import {mainTheme} from "../../themes/mainTheme";
 
 export const phoneDisplayerStyles = {

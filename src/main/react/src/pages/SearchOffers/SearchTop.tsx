@@ -1,24 +1,24 @@
-import { SearchInput } from "../../components/SearchInput/SearchInput";
-import { searchOffersStyles as styles } from "./search-offers-styles";
-import { RateSlider } from "../../components/RateSlider/RateSlider";
+import {searchOffersStyles as styles} from "./search-offers-styles";
+import {RateSlider} from "../../components/RateSlider/RateSlider";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { SEARCH_OFFER } from "../../utility/constants";
-import { SortDialog } from "./SortDialog";
-import { RateDialog } from "./RateDialog";
-import { Box } from "@mui/system";
+import {SEARCH_OFFER} from "../../utility/constants";
+import {SortDialog} from "./SortDialog";
+import {RateDialog} from "./RateDialog";
+import {Box} from "@mui/system";
 import {ISearchTopProps} from "../../typescript/interfaces";
 import React from "react";
 import {
-  Button,
-  Grid,
-  Typography,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
   Accordion,
-  AccordionSummary,
   AccordionDetails,
+  AccordionSummary,
+  Button,
+  FormControlLabel,
+  Grid,
+  Radio,
+  RadioGroup,
+  Typography,
 } from "@mui/material";
+import {SearchOffersInput} from "./SearchOffersInput";
 
 export const SearchTop = (props: ISearchTopProps) => {
 
@@ -48,7 +48,7 @@ export const SearchTop = (props: ISearchTopProps) => {
     <>
       <Grid container sx={styles.mainContainer}>
         <Grid item xs={11} sx={styles.mainContainerGridItem}>
-          <SearchInput
+          <SearchOffersInput
               searchInputValue={searchInputValue}
               setSearchInputValue={setSearchInputValue}
               minRateValue={rateValue[1]}

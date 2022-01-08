@@ -33,7 +33,8 @@ export const SearchOffers = () => {
     useEffect(()=> {
         let locationString = "";
         if(location.state) {
-            locationString = location.state.toString()
+            locationString = location.state.toString();
+            setSearchInputValue(locationString);
         }
 
         getAllPublicOffers(rateValue[1], rateValue[0], locationString).then(response => setFoundOffers(response))

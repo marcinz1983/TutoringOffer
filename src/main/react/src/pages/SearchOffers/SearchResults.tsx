@@ -15,7 +15,7 @@ export const SearchResults = ( props: IPublicOfferArray) => {
 
   return (
     <>
-      {foundOffers !== undefined && foundOffers.length > 0 ?
+      {foundOffers !== undefined && foundOffers.length ?
           <Grid
               container
               sx={styles.resultsGridItem}

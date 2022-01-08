@@ -48,4 +48,10 @@ export const searchInputStyles = {
        paddingLeft: config.autocompletePaddingleft,
        display: 'flex',
     },
+
+    optionAvatarSize: '30px',
+
+    homepageSearchSpanOption: {
+        marginLeft: '20px'
+    }
 }

@@ -61,13 +61,16 @@ export enum SEARCH_OFFER {
     HEADING_FIND_TRAINER = "Znajdź idealnego trenera dla siebie",
     MIN_RATESLIDER_VALUE = 0,
     MAX_RATESLIDER_VALUE = 200,
-    HEADING_NO_RESULTS_BIG= "Nie znaleźliśmy ofert spełniających podane kryteria.",
-    HEADING_NO_RESULTS_SMALL="Użyj innych słów kluczowych i spróbuj ponownie.",
-    RATE="Ocena",
+    HEADING_NO_RESULTS_BIG = "Nie znaleźliśmy ofert spełniających podane kryteria.",
+    HEADING_NO_RESULTS_SMALL = "Użyj innych słów kluczowych i spróbuj ponownie.",
+    RATE = "Ocena",
+    SPECIALIZATION = "SPECIALIZATION",
+    SEARCHING = "Szukam...",
+    KEYPRESS_ACTION = "Enter",
 
     //for offer api search call
-    HOW_MANY_RESULTS=9,
-    HOW_MANY_PAGES=0
+    HOW_MANY_RESULTS = 9,
+    HOW_MANY_PAGES = 0
 }
 
 export enum OFFER {
@@ -114,7 +117,7 @@ export enum CREATE_OFFER_FORM {
 }
 
 export enum OFFER_DYNAMIC_SECTION {
-    INPUT_SECTION_TITLE= "Wpisz tytuł sekcji",
+    INPUT_SECTION_TITLE = "Wpisz tytuł sekcji",
     INPUT_SECTION_EL = "Wpisz element sekcji",
     BUTTON_ADD_SECTOIN_EL = "Dodaj element sekcji",
     ALERT_CHIP_ERROR = "Taka wartość już istnieje"
@@ -138,23 +141,86 @@ export enum OPINIONS {
     RATE_TRAINER = "Oceń trenera",
     YOUR_RATE = "Twoja ocena:",
     OPTIONAL_OPINION = "Opinia (opcjonalnie)",
-    ADD_OPINION="Dodaj opinię"
+    ADD_OPINION = "Dodaj opinię"
 }
 
 export const AUTOCOMPLETE_INPUT_OPTIONS = [
-    {label: 'Javascript', id: '1'},
+    {label: 'Java Script', id: '1'},
     {label: 'Python', id: '2'},
     {label: 'C++', id: '3'},
     {label: 'C#', id: '4'},
     {label: 'Ruby', id: '5'},
-    {label: 'JAVA', id: '6'},
+    {label: 'Java', id: '6'},
     {label: 'Typescript', id: '7'},
     {label: 'CoffeScript', id: '8'},
     {label: 'Visual Basic', id: '9'},
     {label: 'SQL', id: '10'},
 ]
 
+export const AUTOCOMPLETE_INPUT_DEFAULT_OPTIONS = [
+    {
+        fullNameOrSpecialization: "Java Script",
+        iconOrUserAvatar: "not supported yet",
+        offerUuid: null,
+        type: "SPECIALIZATION",
+    },
+    {
+        fullNameOrSpecialization: "Python",
+        iconOrUserAvatar: "not supported yet",
+        offerUuid: null,
+        type: "SPECIALIZATION",
+    },
+    {
+        fullNameOrSpecialization: "C++",
+        iconOrUserAvatar: "not supported yet",
+        offerUuid: null,
+        type: "SPECIALIZATION",
+    },
+    {
+        fullNameOrSpecialization: "C#",
+        iconOrUserAvatar: "not supported yet",
+        offerUuid: null,
+        type: "SPECIALIZATION",
+    },
+    {
+        fullNameOrSpecialization: "Ruby",
+        iconOrUserAvatar: "not supported yet",
+        offerUuid: null,
+        type: "SPECIALIZATION",
+    },
+    {
+        fullNameOrSpecialization: "Java",
+        iconOrUserAvatar: "not supported yet",
+        offerUuid: null,
+        type: "SPECIALIZATION",
+    },
+    {
+        fullNameOrSpecialization: "Typescript",
+        iconOrUserAvatar: "not supported yet",
+        offerUuid: null,
+        type: "SPECIALIZATION",
+    },
+    {
+        fullNameOrSpecialization: "CoffeScript",
+        iconOrUserAvatar: "not supported yet",
+        offerUuid: null,
+        type: "SPECIALIZATION",
+    },
+    {
+        fullNameOrSpecialization: "Visual Basic",
+        iconOrUserAvatar: "not supported yet",
+        offerUuid: null,
+        type: "SPECIALIZATION",
+    },
+    {
+        fullNameOrSpecialization: "SQL",
+        iconOrUserAvatar: "not supported yet",
+        offerUuid: null,
+        type: "SPECIALIZATION"
+    },
+]
+
 export enum PAGE_NOT_FOUND {
-    HEADING_PAGE_NOT_FOUND= "Coś się zepsuło, strony nie znaleziono",
+    HEADING_PAGE_NOT_FOUND = "Coś się zepsuło, strony nie znaleziono",
     BUTTON_RETURN_TO_HOMEPAGE = "Wróć do strony głównej"
 }

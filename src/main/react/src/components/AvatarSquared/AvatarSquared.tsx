@@ -10,7 +10,7 @@ const AvatarSquared = (props: IAvatarSquared) => {
     return (
         <Avatar
             alt={alt}
-            src={image? image : manAvatarPlaceholder}
+            src={image? (image !== "not supported yet" ? image : manAvatarPlaceholder) : manAvatarPlaceholder}
             sx={{
                 width: width,
                 height: height,

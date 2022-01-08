@@ -1,3 +1,5 @@
+import {Location} from "history";
+
 export type TLocationState = {
     from: {
       path: string;
@@ -13,3 +15,8 @@ export type TLocationState = {
       shortDescription: string;
     };
   };
+
+export type TLocationStateAsString = {
+    from: Location
+    state: string
+}

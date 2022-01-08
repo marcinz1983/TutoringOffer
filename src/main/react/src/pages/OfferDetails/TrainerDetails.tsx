@@ -20,7 +20,7 @@ interface ITrainerDetailsProps {
 const TrainerDetails = (props: ITrainerDetailsProps) => {
 
     const {trainerDetails: {offer}} = props;
-    const {trainer, price} = offer
+    const {trainer, price, firstName} = offer
 
     return (
         <>
@@ -39,7 +39,7 @@ const TrainerDetails = (props: ITrainerDetailsProps) => {
                             variant={"h5"}
                             color={"primary"}
                             sx={styles.trainerName}>
-                            {trainer.name}
+                            {firstName}
                         </Typography>
                     </Grid>
                     <Grid item xs={5} sx={styles.favAndShareIconsGridItem}>
@@ -108,7 +108,7 @@ const TrainerDetails = (props: ITrainerDetailsProps) => {
                                         <Typography variant={"h5"}
                                                     color={"primary"}
                                                     sx={styles.trainerName}>
-                                            {trainer.name}
+                                            {firstName}
                                         </Typography>
                                         <span>
                                             <IconButton>

@@ -160,6 +160,13 @@ export interface ILocationDefaultObject {
     };
 }
 
+export interface IfoundResults {
+    fullNameOrSpecialization: string,
+    iconOrUserAvatar: string,
+    offerUuid: string | null,
+    type: string
+}
+
 export interface IAvatarSquared {
     image: string | null,
     alt: string,
@@ -176,6 +183,15 @@ export interface IContentCarousel {
         currency: string,
         desc: string
     }[]
+}
+
+export interface IOpinion {
+    opinionData: {
+        name: string,
+        image: string | null,
+        rate: number,
+        desc: string
+    }
 }
 
 export interface IOpinionData {

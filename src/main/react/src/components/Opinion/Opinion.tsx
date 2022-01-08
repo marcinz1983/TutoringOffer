@@ -1,15 +1,7 @@
-import {Avatar, Grid, Paper, Typography, Box, Rating} from "@mui/material";
+import {Avatar, Grid, Paper, Rating, Typography} from "@mui/material";
 import {opinionStyles as styles} from "./opinion-styles";
 import manPhotoPlaceholder from '../../assets/photo-placeholder-man.png'
-
-interface IOpinion {
-    opinionData: {
-        name: string,
-        image: string | null,
-        rate: number,
-        desc: string
-    }
-}
+import {IOpinion} from "../../typescript/interfaces";
 
 const Opinion = (props: IOpinion) => {
 
