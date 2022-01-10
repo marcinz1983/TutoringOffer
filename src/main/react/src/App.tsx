@@ -19,36 +19,17 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs";
 import React from "react";
 import {ROUTER_CONSTANTS} from "./utility/router-constants";
-
+import TermsOfService from "./pages/TermsOfService/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 
 function App() {
 
-  // useEffect(() => {
-  //   async function getOffersData() {
-  //     // let getOffersData = await getAllOffers();
-  //     // setOffersData(getOffersData);
-  //     await signInWithEmailAndPassword(
-  //       getAuth(),
-  //       "adye47@hotmail.com",
-  //       "adye47@hotmail.com"
-  //     ).then((res) =>
-  //       res.user
-  //         .getIdToken()
-  //         .then((data) =>
-  //           getAllOffers().then((data) => setOffersData(data))
-  //         )
-  //     );
-  //   }
-
-  //   getOffersData();
-  // }, []);
   return (
     <AuthContextProvider>
       <ThemeProvider theme={mainTheme}>
         <Router>
           <div className="App">
             <CssBaseline/>
-
 
             <Grid container style={{minWidth: '99vw', justifyContent: 'center'}}>
               <Grid item xs={11} md={11} lg={8}>
@@ -59,20 +40,14 @@ function App() {
 
             <Grid item container xs={12} direction={"row"}>
               <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={(props) => (
-                    <Homepage/>
-                    // <OffersList {...props} offers={offersData} />
-                  )}
-                />
-
+                <Route exact path="/" render={(props) => (<Homepage/>)}/>
                 <Route path={ROUTER_CONSTANTS.EDIT_OFFER} component={EditOfferForm}/>
                 <Route path={ROUTER_CONSTANTS.SEARCH_OFFER_ID} component={OfferDetails}/>
                 <Route path={ROUTER_CONSTANTS.CREATE_OFFER} component={CreateOfferForm}/>
                 <Route path={ROUTER_CONSTANTS.REGISTER} component={RegisterForm}/>
                 <Route exact path={ROUTER_CONSTANTS.SEARCH} component={SearchOffers}/>
+                <Route path={ROUTER_CONSTANTS.TERMS_OF_SERVICE} component={TermsOfService}/>
+                <Route path={ROUTER_CONSTANTS.PRIVACY_POLICY} component={PrivacyPolicy} />
                 <Route path={"*"} component={PageNotFound} />
               </Switch>
               <Footer/>

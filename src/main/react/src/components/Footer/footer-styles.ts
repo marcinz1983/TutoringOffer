@@ -1,4 +1,4 @@
-import { FooterConf as config } from "../../themes/component-styles.conf"
+import {FooterConf as config} from "../../themes/component-styles.conf"
 
 export const footerStyles = {
     footerContainer: {
@@ -14,14 +14,29 @@ export const footerStyles = {
         marginBottom: config.ulMarginBottom
     },
     footerRightContainer: {
-        display: 'flex',
+        justifyContent: 'right',
+        display: {
+            xs: 'none',
+            sm: 'flex'
+        },
     },
+
+    footerGridItem: {
+        display: 'flex',
+        flexDirection: {
+            xs: 'column',
+            sm: 'row'
+        },
+        justifyContent: 'space-between'
+    },
+
     footerLogoTypography: {
         paddingBottom: config.logoTypographyPaddingBottom,
         fontWeight: 'bold'
     },
     footerRightUl: {
         listStyle: 'none',
+        justifyContent: 'right',
         padding: config.rightUlPadding,
     },
     footerRightLi: {
@@ -37,15 +52,14 @@ export const footerStyles = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        
     },
 
     footerWhiteBarGridItem: {
-        display:'flex',
+        display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
         span: {
-            display:{
+            display: {
                 xs: 'none',
                 md: 'flex'
             },

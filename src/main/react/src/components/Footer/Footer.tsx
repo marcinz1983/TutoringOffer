@@ -13,8 +13,8 @@ export const Footer = () => {
   return (
 
     <Grid container sx={styles.footerContainer}>
-        <Grid item xs={11} lg={8} sx={{display: 'flex', flexDirection: {xs: 'column',sm: 'column', lg: 'row'}, justifyContent: 'space-between'}}>
-          <Grid item sm={12} lg={5}>
+        <Grid item xs={11} lg={8} sx={styles.footerGridItem}>
+          <Grid item sm={6} lg={5}>
             <Typography variant="h4" sx={styles.footerLogoTypography}>
               Logo
             </Typography>
@@ -29,21 +29,15 @@ export const Footer = () => {
               ))}
             </ul>
           </Grid>
-          <Grid item xs={12} sm={12} lg={6} sx={styles.footerRightContainer}>
+          <Grid item xs={10} sm={7} lg={5} sx={styles.footerRightContainer}>
             <Grid container sx={styles.footerRightContainer}>
-              <Grid item xs={6} sm={4} md={4} lg={4}>
-                <FooterLinks />
-              </Grid>
-              <Grid item xs={6} sm={4} md={4} lg={4}>
-                <FooterLinks />
-              </Grid>
-              <Grid item xs={6} sm={4} md={4} lg={4}>
+              <Grid item xs={10} sm={7} md={6} lg={6} >
                 <FooterLinks />
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-      
+
       <Grid container sx={styles.footerWhiteBar}>
         <Grid
           item
@@ -54,12 +48,6 @@ export const Footer = () => {
           sx={styles.footerWhiteBarGridItem}
         >
           <Typography variant="body1">{FOOTER.COPYRIGHT_TEXT}</Typography>
-          <span>
-            <Typography variant="h6">{FOOTER.WHITEBAR_PRIVACY}</Typography>
-            <Typography variant="h6">
-              {FOOTER.WHITEBAR_TERMS_OF_SERVICE}
-            </Typography>
-          </span>
         </Grid>
       </Grid>
     </Grid>

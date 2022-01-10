@@ -21,11 +21,11 @@ export enum HOMEPAGE {
 
 export enum FOOTER {
     LOGO_TEXT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies quam nec velit interdum, a cursus sem scelerisque. In tempus erat semper.",
-    HEADING = "Heading",
-    LINK_1_TEXT = "Link 1",
-    LINK_2_TEXT = "Link 2",
-    LINK_3_TEXT = "Link 3",
-    LINK_4_TEXT = "Link 4",
+    HEADING = "Linki",
+    LINK_1_TEXT = "Home",
+    LINK_2_TEXT = "Znajdź korepetycje",
+    LINK_3_TEXT = "Polityka prywatności",
+    LINK_4_TEXT = "Warunki użytkowania",
     COPYRIGHT_TEXT = "© 2021 Logo. All rights Reserved.",
     WHITEBAR_PRIVACY = "Privacy Policy",
     WHITEBAR_TERMS_OF_SERVICE = "Terms of service",
@@ -223,4 +223,53 @@ export const AUTOCOMPLETE_INPUT_DEFAULT_OPTIONS = [
 export enum PAGE_NOT_FOUND {
     HEADING_PAGE_NOT_FOUND = "Coś się zepsuło, strony nie znaleziono",
     BUTTON_RETURN_TO_HOMEPAGE = "Wróć do strony głównej"
+}
+
+export enum PRIVACY_POLICY {
+    PRIVACY_POLICY = "Polityka prywatności",
+    SUBHEADER_1 = "Privacy policy subheader 1",
+    SUBHEADER_2 = "Privacy policy subheader 2",
+    SUBHEADER_3 = "Privacy policy subheader 3",
+    SUBHEADER_4 = "Privacy policy subheader 4",
+    TEXT_1 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur corporis debitis illum in modi odio possimus quo. Delectus impedit laudantium minus obcaecati omnis perspiciatis ullam? Eius eos id laboriosam.",
+    TEXT_2 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur corporis debitis illum in modi odio possimus quo. Delectus impedit laudantium minus obcaecati omnis perspiciatis ullam? Eius eos id laboriosam.",
+    TEXT_3 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur corporis debitis illum in modi odio possimus quo. Delectus impedit laudantium minus obcaecati omnis perspiciatis ullam? Eius eos id laboriosam.",
+    TEXT_4 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur corporis debitis illum in modi odio possimus quo. Delectus impedit laudantium minus obcaecati omnis perspiciatis ullam? Eius eos id laboriosam.",
+}
+
+export enum TERMS_OF_SERVICE {
+    TERMS_OF_SERVICE= "Warunki użytkowania",
+    SUBHEADER_1 = "Terms of service subheader 1",
+    SUBHEADER_2 = "Terms of service subheader 2",
+    TEXT_1 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, dolorum," +
+        "ex. Accusamus architecto asperiores autem dicta doloribus expedita explicabo facere facilis f" +
+        "ugit illum inventore iste itaque minima perspiciatis placeat quae quibusdam rerum, vel velit" +
+        " voluptatibus? Deleniti laudantium nisi quo rem ut. Debitis eius hic incidunt iste laborum nisi" +
+        " officiis possimus, quod sequi voluptatum? Consequatur cupiditate, deleniti distinctio error " +
+        "esse excepturi exercitationem hic ipsam, iure nihil quod repudiandae sapiente temporibus. " +
+        "Autem, natus, totam? Ipsam libero neque obcaecati quisquam, reiciendis soluta unde vero? " +
+        "Aliquid assumenda consequatur consequuntur dolor eius error laborum, mollitia nam nobis " +
+        "porro recusandae reiciendis repellat rerum tempora temporibus! Amet autem consectetur cupiditate" +
+        " distinctio enim facere, id ipsa molestiae neque quaerat saepe sit sunt. Alias facere ipsum nulla" +
+        " quo. Aliquid amet animi aperiam autem consectetur distinctio dolor enim eveniet exercitationem " +
+        "explicabo harum illo impedit laudantium maiores minima modi molestias mollitia nesciunt optio",
+    TEXT_2 = " perferendis porro quam ratione saepe, sunt voluptatibus. Ab deleniti harum iste nihil odio +" +
+        " provident, vero? Corporis doloremque harum neque quae? A dolore eum impedit libero  +" +
+        "pariatur similique sit tempore tenetur velit voluptate. Aliquid dolorum error,  +" +
+        "expedita harum in maxime necessitatibus quis sunt. Accusantium animi asperiores delectus +" +
+        " dignissimos, dolorem harum id placeat possimus quis reiciendis! Accusantium, doloribus quos? +" +
+        " Ad distinctio ipsa itaque nobis optio quisquam tempore vel! Aspernatur enim minus nemo quae  +" +
+        "ratione reprehenderit sint veritatis? Ad aspernatur assumenda commodi corporis cumque dolores +" +
+        " expedita nam neque, quia, quo quod ratione recusandae sapiente. Accusamus animi debitis dolores +" +
+        " maiores molestiae, necessitatibus omnis provident recusandae ullam voluptatem. Explicabo id non +" +
+        " omnis suscipit. A adipisci amet animi exercitationem facere fuga id illo, impedit necessitatibus +" +
+        " numquam officiis porro quidem rerum suscipit totam vel vitae voluptatibus? A aliquid deleniti  +" +
+        "iusto nihil odit officiis quisquam velit voluptates. Aliquid animi distinctio ducimus earum fugit +" +
+        " inventore ipsa molestiae, odio placeat recusandae, suscipit veritatis? Aliquid architecto,  +" +
+        "blanditiis eius eum illo inventore magni sequi? A aspernatur distinctio dolor dolores ducimus ex +" +
+        "hic illo iste labore laboriosam, molestias mollitia natus non nostrum odit quae quod quos  +" +
+        "saepe ullam vel vero voluptate voluptatem. Accusantium aut cum doloremque illo, nobis optio  +" +
+        "perferendis quibusdam quidem sit voluptatem."
+
+
 }
