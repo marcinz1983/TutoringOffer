@@ -199,6 +199,14 @@ export interface IOpinionData {
     rating: null | number
 }
 
+export interface IOfferTileProps {
+    item: {
+        name: string,
+        color: string,
+        url: string
+    }
+}
+
 export interface IMainTheme {
     breakpoints: {
         values: {

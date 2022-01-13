@@ -170,7 +170,7 @@ export const HomepageStyles = {
     alignItems: 'center',
     justifyContent: 'center',
   },
-  
+
   offerGridItem: {
     display: "flex",
     alignItems: "center",

@@ -270,6 +270,82 @@ export enum TERMS_OF_SERVICE {
         "hic illo iste labore laboriosam, molestias mollitia natus non nostrum odit quae quod quos  +" +
         "saepe ullam vel vero voluptate voluptatem. Accusantium aut cum doloremque illo, nobis optio  +" +
         "perferendis quibusdam quidem sit voluptatem."
-
-
 }
+
+export const HOMEPAGE_TILES_LANGUAGES = [
+    {
+        name: "Javascript",
+        color: "#f1e05a",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
+    },
+    {
+        name: "HTML&CSS",
+        color: "#e57434",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
+    },
+    {
+        name: "Python",
+        color: "#3572A5",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg"
+    },
+    {
+        name: "Django",
+        color: "#17714e",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+    },
+    {
+        name: "mySQL",
+        color: "#e38c00",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"
+    },
+    {
+        name: "Java",
+        color: "#eb2d28",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"
+    },
+    {
+        name: "TypeScript",
+        color: "#2f3f91",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg"
+    },
+    {
+        name: "C-Sharp",
+        color: "#632290",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+    },
+    {
+        name: "PHP",
+        color: "#4F5D95",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg"
+    },
+    {
+        name: "C",
+        color: "#2f3f91",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+    },
+    {
+        name: "Go",
+        color: "#00ADD8",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+    },
+    {
+        name: "Kotlin",
+        color: "#A97BFF",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original-wordmark.svg"
+    },
+    {
+        name: "Ruby",
+        color: "#eb2d28",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-plain-wordmark.svg"
+    },
+    {
+        name: "Dart",
+        color: "#00B4AB",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original-wordmark.svg"
+    },
+    {
+        name: "Swift",
+        color: "#F05138",
+        url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original-wordmark.svg"
+    },
+]
