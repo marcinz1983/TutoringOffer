@@ -170,8 +170,25 @@ export interface IfoundResults {
 export interface IAvatarSquared {
     image: string | null,
     alt: string,
-    width: string,
-    height: string
+    width: string | {
+        xs: string,
+        sm: string,
+        lg: string
+    },
+    height: string | {
+        xs: string,
+        sm: string,
+        lg: string
+    },
+}
+
+export interface IOpinionCarouselProps {
+    data: {
+        name: string,
+        image: null | string,
+        rate: number,
+        desc: string
+    }[]
 }
 
 export interface IContentCarousel {

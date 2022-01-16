@@ -57,5 +57,58 @@ export const contentCarouselStyles = {
 
     sliderDescIcon: {
         margin: '20px'
+    },
+
+    //opinionCarousel
+
+    opinionBox: {
+        width: '25%'
+    },
+
+    opinionPaper: {
+        height: '200px',
+        margin: '30px',
+        borderRadius: '30px'
+    },
+
+    opinionMainGridContainer: {
+        height: '100%'
+    },
+
+    opinionGridAvatarGridItem: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+
+    gridDescriptionContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%'
+    },
+
+    gridItemDescriptionTitle: {
+        height: '30%',
+        display: 'flex',
+        alignItems: 'center'
+    },
+
+    typographyTitle: {
+        margin: '10px 20px 0 0 '
+    },
+
+    gridItemDescriptionDetails: {
+        height: '70%',
+        padding: '10px',
+        textOverflow: 'ellipsis',
+        overflow: 'hidden',
+    },
+
+    avatarSize: {
+        xs: '15vw',
+        sm: '15vw',
+        md: '8vw',
+        lg: '6vw'
     }
+
 } as const

@@ -72,7 +72,7 @@ export const OpinionsSection = (props: IOpinionsSection) => {
                     </Button>
                 </Grid>
                 <Grid item xs={12} md={7} lg={7}>
-                    {opinionMockups.map((item, index) => (
+                    {opinionMockups.slice(0,3).map((item, index) => (
                         <Opinion key={index} opinionData={item}/>
                     ))}
 

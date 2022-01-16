@@ -26,7 +26,7 @@ export enum FOOTER {
     LINK_2_TEXT = "Znajdź korepetycje",
     LINK_3_TEXT = "Polityka prywatności",
     LINK_4_TEXT = "Warunki użytkowania",
-    COPYRIGHT_TEXT = "© 2021 Logo. All rights Reserved.",
+    COPYRIGHT_TEXT = "© 2022 Logo. All rights Reserved.",
     WHITEBAR_PRIVACY = "Privacy Policy",
     WHITEBAR_TERMS_OF_SERVICE = "Terms of service",
 }

@@ -12,7 +12,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import {SEARCH_OFFER} from "../../utility/constants";
 import {IContentCarousel} from "../../typescript/interfaces";
 
-function CustomNextArrow(props: any) {
+export function CustomNextArrow(props: any) {
     const {className, onClick} = props;
     return (
         <ArrowForwardIosIcon
@@ -24,7 +24,7 @@ function CustomNextArrow(props: any) {
     );
 }
 
-function CustomPrevArrow(props: any) {
+export function CustomPrevArrow(props: any) {
     const {className, onClick} = props;
     return (
         <ArrowBackIosIcon
